@@ -1,0 +1,817 @@
+{
+  "resorts-in-Poland": [
+    {
+      "data": {
+        "name": "Wieżyca Koszałkowo",
+        "country": "PL",
+        "region": "pomorskie",
+        "href": "https://wiezyca.pl/"
+      },
+      "location": {
+        "latitude": 54.233739920483146,
+        "longitude": 18.102644473362446
+      },
+      "lifts": {
+        "status": {
+          "Orczyk A": "open",
+          "Orczyk B": "open",
+          "Orczyk C": "open",
+          "Wyciąg D snowtubbing": "closed",
+          "Wyciąg taśmowy snowtubbing": "closed",
+          "Orczyk F": "closed",
+          "Wyciąg G": "closed",
+          "Wyciąg taśmowy - Ziajalandia": "closed"
+        },
+        "stats": {
+          "open": 3,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 5
+        },
+        "percentage": {
+          "open": 37.5,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 62.5
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Arena Narciarska Jaworki Homole",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://arenanarciarska.pl/"
+      },
+      "location": {
+        "latitude": 49.403779909792135,
+        "longitude": 20.557958611907182
+      },
+      "lifts": {
+        "status": {
+          "Homole": "open",
+          "Storczyk": "open",
+          "Krokus": "open"
+        },
+        "stats": {
+          "open": 3,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Beskid Sport Arena",
+        "country": "PL",
+        "region": "śląskie",
+        "href": "https://beskidsportarena.pl/"
+      },
+      "location": {
+        "latitude": 49.721424866975866,
+        "longitude": 19.003210708030835
+      },
+      "lifts": {
+        "status": {
+          "Beskid": "open",
+          "Sportowy": "closed",
+          "Widokowy": "open"
+        },
+        "stats": {
+          "open": 2,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 1
+        },
+        "percentage": {
+          "open": 66.67,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 33.33
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Batorz",
+        "country": "PL",
+        "region": "lubelskie",
+        "href": "https://batorzski.pl/"
+      },
+      "location": {
+        "latitude": 50.849889066261575,
+        "longitude": 22.493039715185056
+      },
+      "lifts": {
+        "status": {
+          "Ośla Łączka": "closed",
+          "Wyciąg I": "closed",
+          "Wyciąg II": "closed"
+        },
+        "stats": {
+          "open": 0,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 3
+        },
+        "percentage": {
+          "open": 0,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 100
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Czarna Góra",
+        "country": "PL",
+        "region": "dolnośląskie",
+        "href": "https://czarnagora.pl/"
+      },
+      "location": {
+        "latitude": 50.2600319246233,
+        "longitude": 16.819013889045472
+      },
+      "lifts": {
+        "status": {
+          "Luxtorpeda": "open",
+          "Żmija": "open",
+          "Proca": "closed",
+          "Baba": "open",
+          "Jaga": "open",
+          "Bartuś": "open",
+          "Efka": "open",
+          "Biba": "closed",
+          "Jędruś": "open"
+        },
+        "stats": {
+          "open": 7,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 2
+        },
+        "percentage": {
+          "open": 77.78,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 22.22
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Cieńków",
+        "country": "PL",
+        "region": "śląskie",
+        "href": "http://www.cienkownarty.pl/zima/"
+      },
+      "location": {
+        "latitude": 49.632213942763165,
+        "longitude": 18.93007973030161
+      },
+      "lifts": {
+        "status": {
+          "Wyciąg A": "open",
+          "Wyciąg B": "open",
+          "Wyciąg C": "closed",
+          "Wyciąg D": "open",
+          "Wyciąg E": "open",
+          "Wyciąg F": "open"
+        },
+        "stats": {
+          "open": 5,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 1
+        },
+        "percentage": {
+          "open": 83.33,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 16.67
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Jaworzyna Krynicka",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://jaworzynakrynicka.pl/"
+      },
+      "location": {
+        "latitude": 49.419676530098286,
+        "longitude": 20.926015214716152
+      },
+      "lifts": {
+        "status": {
+          "Gondola": "open",
+          "Harnaś": "open",
+          "Izwór": "closed",
+          "Diabelski": "open",
+          "Łącznik": "closed",
+          "Mistrzowski": "closed",
+          "Jaworzyna Express": "open",
+          "Magiczny Dywan": "open",
+          "Żółwik": "open"
+        },
+        "stats": {
+          "open": 7,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 2
+        },
+        "percentage": {
+          "open": 77.78,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 22.22
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Karpacz Ski Arena",
+        "country": "PL",
+        "region": "dolnośląskie",
+        "href": "https://karpaczskiarena.pl/"
+      },
+      "location": {
+        "latitude": 50.768034711284066,
+        "longitude": 15.729149991783292
+      },
+      "lifts": {
+        "status": {
+          "Zbyszek": "closed",
+          "Jan": "closed",
+          "Liczykrupa": "open",
+          "Euro": "open",
+          "Grosik": "closed",
+          "Złotówka": "closed",
+          "Kubuś": "open",
+          "Leniuch": "open",
+          "Leniuch II": "open"
+        },
+        "stats": {
+          "open": 5,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 4
+        },
+        "percentage": {
+          "open": 55.56,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 44.44
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Kasprowy Wierch",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://www.pkl.pl/kasprowy-wierch/kasprowy.html"
+      },
+      "location": {
+        "latitude": 49.26935043069083,
+        "longitude": 19.979232990431186
+      },
+      "lifts": {
+        "status": {
+          "Kasprowy Wierch": "open",
+          "Gąsienicowa": "open",
+          "Goryczkowa": "open"
+        },
+        "stats": {
+          "open": 3,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Kotelnica Białczańska",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://bialkatatrzanska.pl/"
+      },
+      "location": {
+        "latitude": 49.390847363861354,
+        "longitude": 20.097401516980657
+      },
+      "lifts": {
+        "status": {
+          "Kotelnica I": "open",
+          "Kotelnica II": "open",
+          "Kotelnica III": "open",
+          "Kotelnica Express": "open",
+          "Bania": "open",
+          "Pasieka Express": "open",
+          "Kaniówka": "open",
+          "Jankulakowski": "open",
+          "Remiaszów": "open",
+          "Wyciąg 1": "closed",
+          "Wyciąg 2": "closed",
+          "Wyciąg 3": "open",
+          "Wyciąg 4": "open",
+          "Wyciąg 5": "open",
+          "Wyciąg 6": "open",
+          "Wyciąg 7": "open",
+          "Wyciąg 8": "open",
+          "Wyciąg 9": "open",
+          "Wyciąg 10": "open",
+          "Wyciąg 11": "open",
+          "Wyciąg 12": "open",
+          "Horników Wierch": "open"
+        },
+        "stats": {
+          "open": 20,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 2
+        },
+        "percentage": {
+          "open": 90.91,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 9.09
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Kurza Góra",
+        "country": "PL",
+        "region": "warmińsko-mazurskie",
+        "href": "https://kurzagora.pl/"
+      },
+      "location": {
+        "latitude": 53.39778237661286,
+        "longitude": 19.590207577556125
+      },
+      "lifts": {
+        "status": {
+          "Wyciąg 1": "closed",
+          "Wyciąg 2": "closed",
+          "Wyciąg 3": "closed",
+          "Wyciąg 4": "closed",
+          "Wyciąg 5": "closed",
+          "Wyciąg 6": "closed"
+        },
+        "stats": {
+          "open": 0,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 6
+        },
+        "percentage": {
+          "open": 0,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 100
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Malta Ski",
+        "country": "PL",
+        "region": "wielkopolskie",
+        "href": "https://maltaski.pl/"
+      },
+      "location": {
+        "latitude": 52.400038776864875,
+        "longitude": 16.980124157577254
+      },
+      "lifts": {
+        "status": {
+          "Orczyk 1": "closed",
+          "Orczyk 2": "closed",
+          "Krzesełko 1": "closed"
+        },
+        "stats": {
+          "open": 0,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 3
+        },
+        "percentage": {
+          "open": 0,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 100
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Małe Ciche",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://maleciche.com/"
+      },
+      "location": {
+        "latitude": 49.301996316877336,
+        "longitude": 20.07488074394587
+      },
+      "lifts": {
+        "status": {
+          "Kolej Zgorzelisko Express": "open",
+          "Kolej Małe Ciche": "open",
+          "Wyciąg orczykowy Duży": "open",
+          "Wyciąg taśmowy": "open",
+          "Wyciąg orczykowy Zgorzelisko": "open",
+          "Wyciąg taśmowy Zgorzelisko": "open"
+        },
+        "stats": {
+          "open": 6,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Murzasichle Kompleks Zimowy",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://murzasichle-ski.pl/"
+      },
+      "location": {
+        "latitude": 49.312695518391514,
+        "longitude": 20.034048440877044
+      },
+      "lifts": {
+        "status": {
+          "Wyciąg orczykowy 1": "open",
+          "Wyciąg orczykowy 2": "open",
+          "Wyciąg orczykowy 3": "open",
+          "Wyciąg orczykowy 4": "open",
+          "Wyciąg orczykowy 5": "open",
+          "Wyciąg orczykowy 6": "open",
+          "Wyciąg taśmowy": "open",
+          "Snowtubbing": "open"
+        },
+        "stats": {
+          "open": 8,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Zieleniec Sport Arena",
+        "country": "PL",
+        "region": "dolnośląskie",
+        "href": "https://zieleniec.pl/"
+      },
+      "location": {
+        "latitude": 50.335485384552676,
+        "longitude": 16.389547173216243
+      },
+      "lifts": {
+        "status": {
+          "Bartuś 1": "open",
+          "Bartuś 2": "open",
+          "Taśma Bartuś": "open",
+          "Taśma Cezbud": "closed",
+          "Diament 1": "open",
+          "Diament 2": "open",
+          "Diament 3": "open",
+          "Dziesiątka": "open",
+          "Gryglówka": "open",
+          "Śnieżka": "open",
+          "Kaja": "open",
+          "Irenka": "closed",
+          "Antek I": "open",
+          "Antek II": "open",
+          "Mieszko Czerwona": "open",
+          "Mieszko II": "open",
+          "Mieszko I": "open",
+          "Mieszko S1": "open",
+          "Mieszko S2": "closed",
+          "Transit Masarykowa": "open",
+          "Skyway Express": "open",
+          "Patyczak I": "open",
+          "Patyczak II": "open",
+          "Transit Nart.-Wint.": "open",
+          "Puchatek": "open",
+          "Winterpol Pomarańczowa Trójka": "open",
+          "Czwórka": "closed",
+          "Piątka": "open",
+          "Szóstka": "open",
+          "Taśma mała": "closed",
+          "Taśma duża": "open"
+        },
+        "stats": {
+          "open": 26,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 5
+        },
+        "percentage": {
+          "open": 83.87,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 16.13
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Szczyrk Mountain Resort",
+        "country": "PL",
+        "region": "śląskie",
+        "href": "https://zieleniec.pl/"
+      },
+      "location": {
+        "latitude": 49.695965611064615,
+        "longitude": 18.99086705802845
+      },
+      "lifts": {
+        "status": {
+          "A1": "open",
+          "B1": "open",
+          "B2": "open",
+          "B5": "open",
+          "C3": "open",
+          "M": "open",
+          "B3": "open",
+          "B4": "open",
+          "C10": "closed",
+          "C11": "closed"
+        },
+        "stats": {
+          "open": 8,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 2
+        },
+        "percentage": {
+          "open": 80,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 20
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Szelment",
+        "country": "PL",
+        "region": "podlaskie",
+        "href": "https://wosir-szelment.pl/"
+      },
+      "location": {
+        "latitude": 54.20843757031413,
+        "longitude": 22.969329999906055
+      },
+      "lifts": {
+        "status": {
+          "A - orczykowy": "open",
+          "B - orczykowy": "open",
+          "C - orczykowy": "open",
+          "D - orczykowy": "open",
+          "E - orczykowy": "open",
+          "F - orczykowy szkolny": "open",
+          "G - orczykowy szkolny": "open",
+          "H - orczykowy bezpodporowy": "closed"
+        },
+        "stats": {
+          "open": 7,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 1
+        },
+        "percentage": {
+          "open": 87.5,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 12.5
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Master Ski Tylicz",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://master-ski.pl/"
+      },
+      "location": {
+        "latitude": 49.392809422650096,
+        "longitude": 21.026275985057236
+      },
+      "lifts": {
+        "status": {
+          "W1": "open",
+          "W2": "open",
+          "W3": "open",
+          "W4": "open",
+          "W5": "open"
+        },
+        "stats": {
+          "open": 5,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "JurgówSki",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "http://www.jurgowski.pl/"
+      },
+      "location": {
+        "latitude": 49.31877306384042,
+        "longitude": 20.155624382285946
+      },
+      "lifts": {
+        "status": {
+          "Gronicek": "open",
+          "Hawranek": "open",
+          "Hawrań": "open",
+          "Kubuś": "open",
+          "Murań": "open",
+          "Przenośnik taśmowy": "open",
+          "Wierchowy": "open"
+        },
+        "stats": {
+          "open": 7,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Palenica",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://www.pkl.pl/palenica/palenica.html"
+      },
+      "location": {
+        "latitude": 49.425853402345304,
+        "longitude": 20.480722457703
+      },
+      "lifts": {
+        "status": {
+          "Palenica": "open",
+          "Szafranówka I": "open",
+          "Szafranówka II": "open",
+          "Szafranówka III": "open",
+          "Szafranówka IV": "open"
+        },
+        "stats": {
+          "open": 5,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "GrapaSki Czarna Góra",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://www.grapa.ski/zima/"
+      },
+      "location": {
+        "latitude": 49.386177834708235,
+        "longitude": 20.115302840555408
+      },
+      "lifts": {
+        "status": {
+          "Kolej": "open",
+          "Orczyk duży": "open",
+          "Orczyk mały": "open",
+          "Taśma": "open"
+        },
+        "stats": {
+          "open": 4,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        },
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    },
+
+    {
+      "data": {
+        "name": "Czorsztyn Ski Kluszkowce",
+        "country": "PL",
+        "region": "małopolskie",
+        "href": "https://www.czorsztyn-ski.com.pl/"
+      },
+      "location": {
+        "latitude": 49.46048568423831,
+        "longitude": 20.315659153885942
+      },
+      "lifts": {
+        "status": {
+          "Wyciąg A": "open",
+          "Wyciąg B": "open",
+          "Wyciąg C": "open",
+          "Wyciąg D": "closed",
+          "Wyciąg E": "open",
+          "Wyciąg F": "open",
+          "Wyciąg G": "closed",
+          "Wyciąg H": "open"
+        },
+        "stats": {
+          "open": 6,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 2
+        },
+        "percentage": {
+          "open": 75,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 25
+        }
+      }
+    }
+  ]
+}
