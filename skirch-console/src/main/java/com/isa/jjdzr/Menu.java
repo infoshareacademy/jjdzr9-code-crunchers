@@ -1,9 +1,6 @@
 package com.isa.jjdzr;
 
 
-//dołożyć logikę biznesową pod działanie menu do podmianki IO
-// DataTranferObject
-
 import java.util.Scanner;
 
 public class Menu {
