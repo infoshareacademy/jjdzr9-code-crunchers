@@ -1,12 +1,9 @@
-{
-  "resorts-in-Poland": [
-    {
-      "data": {
-        "name": "Wieżyca Koszałkowo",
-        "country": "PL",
-        "region": "pomorskie",
-        "href": "https://wiezyca.pl/"
-      },
+[
+  {"data": {
+      "name": "Wieżyca Koszałkowo",
+      "country": "PL",
+      "region": "pomorskie",
+      "href": "https://wiezyca.pl/",
       "location": {
         "latitude": 54.233739920483146,
         "longitude": 18.102644473362446
@@ -26,24 +23,21 @@
           "open": 3,
           "hold": 0,
           "scheduled": 0,
-          "closed": 5
-        },
-        "percentage": {
-          "open": 37.5,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 62.5
+          "closed": 5,
+          "percentage": {
+            "open": 37.5,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 62.5
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Arena Narciarska Jaworki Homole",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://arenanarciarska.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Arena Narciarska Jaworki Homole",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://arenanarciarska.pl/",
       "location": {
         "latitude": 49.403779909792135,
         "longitude": 20.557958611907182
@@ -58,24 +52,21 @@
           "open": 3,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Beskid Sport Arena",
-        "country": "PL",
-        "region": "śląskie",
-        "href": "https://beskidsportarena.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Beskid Sport Arena",
+      "country": "PL",
+      "region": "śląskie",
+      "href": "https://beskidsportarena.pl/",
       "location": {
         "latitude": 49.721424866975866,
         "longitude": 19.003210708030835
@@ -90,24 +81,21 @@
           "open": 2,
           "hold": 0,
           "scheduled": 0,
-          "closed": 1
-        },
-        "percentage": {
-          "open": 66.67,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 33.33
+          "closed": 1,
+          "percentage": {
+            "open": 66.67,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 33.33
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Batorz",
-        "country": "PL",
-        "region": "lubelskie",
-        "href": "https://batorzski.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Batorz",
+      "country": "PL",
+      "region": "lubelskie",
+      "href": "https://batorzski.pl/",
       "location": {
         "latitude": 50.849889066261575,
         "longitude": 22.493039715185056
@@ -122,24 +110,21 @@
           "open": 0,
           "hold": 0,
           "scheduled": 0,
-          "closed": 3
-        },
-        "percentage": {
-          "open": 0,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 100
+          "closed": 3,
+          "percentage": {
+            "open": 0,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 100
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Czarna Góra",
-        "country": "PL",
-        "region": "dolnośląskie",
-        "href": "https://czarnagora.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Czarna Góra",
+      "country": "PL",
+      "region": "dolnośląskie",
+      "href": "https://czarnagora.pl/",
       "location": {
         "latitude": 50.2600319246233,
         "longitude": 16.819013889045472
@@ -160,24 +145,21 @@
           "open": 7,
           "hold": 0,
           "scheduled": 0,
-          "closed": 2
-        },
-        "percentage": {
-          "open": 77.78,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 22.22
+          "closed": 2,
+          "percentage": {
+            "open": 77.78,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 22.22
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Cieńków",
-        "country": "PL",
-        "region": "śląskie",
-        "href": "http://www.cienkownarty.pl/zima/"
-      },
+    }},
+  {"data": {
+      "name": "Cieńków",
+      "country": "PL",
+      "region": "śląskie",
+      "href": "http://www.cienkownarty.pl/zima/",
       "location": {
         "latitude": 49.632213942763165,
         "longitude": 18.93007973030161
@@ -195,24 +177,21 @@
           "open": 5,
           "hold": 0,
           "scheduled": 0,
-          "closed": 1
-        },
-        "percentage": {
-          "open": 83.33,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 16.67
+          "closed": 1,
+          "percentage": {
+            "open": 83.33,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 16.67
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Jaworzyna Krynicka",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://jaworzynakrynicka.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Jaworzyna Krynicka",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://jaworzynakrynicka.pl/",
       "location": {
         "latitude": 49.419676530098286,
         "longitude": 20.926015214716152
@@ -233,24 +212,21 @@
           "open": 7,
           "hold": 0,
           "scheduled": 0,
-          "closed": 2
-        },
-        "percentage": {
-          "open": 77.78,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 22.22
+          "closed": 2,
+          "percentage": {
+            "open": 77.78,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 22.22
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Karpacz Ski Arena",
-        "country": "PL",
-        "region": "dolnośląskie",
-        "href": "https://karpaczskiarena.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Karpacz Ski Arena",
+      "country": "PL",
+      "region": "dolnośląskie",
+      "href": "https://karpaczskiarena.pl/",
       "location": {
         "latitude": 50.768034711284066,
         "longitude": 15.729149991783292
@@ -271,24 +247,21 @@
           "open": 5,
           "hold": 0,
           "scheduled": 0,
-          "closed": 4
-        },
-        "percentage": {
-          "open": 55.56,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 44.44
+          "closed": 4,
+          "percentage": {
+            "open": 55.56,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 44.44
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Kasprowy Wierch",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://www.pkl.pl/kasprowy-wierch/kasprowy.html"
-      },
+    }},
+  {"data": {
+      "name": "Kasprowy Wierch",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://www.pkl.pl/kasprowy-wierch/kasprowy.html",
       "location": {
         "latitude": 49.26935043069083,
         "longitude": 19.979232990431186
@@ -303,24 +276,21 @@
           "open": 3,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Kotelnica Białczańska",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://bialkatatrzanska.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Kotelnica Białczańska",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://bialkatatrzanska.pl/",
       "location": {
         "latitude": 49.390847363861354,
         "longitude": 20.097401516980657
@@ -354,24 +324,21 @@
           "open": 20,
           "hold": 0,
           "scheduled": 0,
-          "closed": 2
-        },
-        "percentage": {
-          "open": 90.91,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 9.09
+          "closed": 2,
+          "percentage": {
+            "open": 90.91,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 9.09
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Kurza Góra",
-        "country": "PL",
-        "region": "warmińsko-mazurskie",
-        "href": "https://kurzagora.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Kurza Góra",
+      "country": "PL",
+      "region": "warmińsko-mazurskie",
+      "href": "https://kurzagora.pl/",
       "location": {
         "latitude": 53.39778237661286,
         "longitude": 19.590207577556125
@@ -389,24 +356,21 @@
           "open": 0,
           "hold": 0,
           "scheduled": 0,
-          "closed": 6
-        },
-        "percentage": {
-          "open": 0,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 100
+          "closed": 6,
+          "percentage": {
+            "open": 0,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 100
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Malta Ski",
-        "country": "PL",
-        "region": "wielkopolskie",
-        "href": "https://maltaski.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Malta Ski",
+      "country": "PL",
+      "region": "wielkopolskie",
+      "href": "https://maltaski.pl/",
       "location": {
         "latitude": 52.400038776864875,
         "longitude": 16.980124157577254
@@ -421,24 +385,21 @@
           "open": 0,
           "hold": 0,
           "scheduled": 0,
-          "closed": 3
-        },
-        "percentage": {
-          "open": 0,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 100
+          "closed": 3,
+          "percentage": {
+            "open": 0,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 100
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Małe Ciche",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://maleciche.com/"
-      },
+    }},
+  {"data": {
+      "name": "Małe Ciche",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://maleciche.com/",
       "location": {
         "latitude": 49.301996316877336,
         "longitude": 20.07488074394587
@@ -456,24 +417,21 @@
           "open": 6,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Murzasichle Kompleks Zimowy",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://murzasichle-ski.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Murzasichle Kompleks Zimowy",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://murzasichle-ski.pl/",
       "location": {
         "latitude": 49.312695518391514,
         "longitude": 20.034048440877044
@@ -493,24 +451,21 @@
           "open": 8,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Zieleniec Sport Arena",
-        "country": "PL",
-        "region": "dolnośląskie",
-        "href": "https://zieleniec.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Zieleniec Sport Arena",
+      "country": "PL",
+      "region": "dolnośląskie",
+      "href": "https://zieleniec.pl/",
       "location": {
         "latitude": 50.335485384552676,
         "longitude": 16.389547173216243
@@ -553,24 +508,21 @@
           "open": 26,
           "hold": 0,
           "scheduled": 0,
-          "closed": 5
-        },
-        "percentage": {
-          "open": 83.87,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 16.13
+          "closed": 5,
+          "percentage": {
+            "open": 83.87,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 16.13
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Szczyrk Mountain Resort",
-        "country": "PL",
-        "region": "śląskie",
-        "href": "https://zieleniec.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Szczyrk Mountain Resort",
+      "country": "PL",
+      "region": "śląskie",
+      "href": "https://zieleniec.pl/",
       "location": {
         "latitude": 49.695965611064615,
         "longitude": 18.99086705802845
@@ -592,24 +544,21 @@
           "open": 8,
           "hold": 0,
           "scheduled": 0,
-          "closed": 2
-        },
-        "percentage": {
-          "open": 80,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 20
+          "closed": 2,
+          "percentage": {
+            "open": 80,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 20
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Szelment",
-        "country": "PL",
-        "region": "podlaskie",
-        "href": "https://wosir-szelment.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Szelment",
+      "country": "PL",
+      "region": "podlaskie",
+      "href": "https://wosir-szelment.pl/",
       "location": {
         "latitude": 54.20843757031413,
         "longitude": 22.969329999906055
@@ -629,24 +578,21 @@
           "open": 7,
           "hold": 0,
           "scheduled": 0,
-          "closed": 1
-        },
-        "percentage": {
-          "open": 87.5,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 12.5
+          "closed": 1,
+          "percentage": {
+            "open": 87.5,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 12.5
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Master Ski Tylicz",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://master-ski.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Master Ski Tylicz",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://master-ski.pl/",
       "location": {
         "latitude": 49.392809422650096,
         "longitude": 21.026275985057236
@@ -663,24 +609,21 @@
           "open": 5,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "JurgówSki",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "http://www.jurgowski.pl/"
-      },
+    }},
+  {"data": {
+      "name": "JurgówSki",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "http://www.jurgowski.pl/",
       "location": {
         "latitude": 49.31877306384042,
         "longitude": 20.155624382285946
@@ -699,24 +642,21 @@
           "open": 7,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Palenica",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://www.pkl.pl/palenica/palenica.html"
-      },
+    }},
+  {"data": {
+      "name": "Palenica",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://www.pkl.pl/palenica/palenica.html",
       "location": {
         "latitude": 49.425853402345304,
         "longitude": 20.480722457703
@@ -733,24 +673,21 @@
           "open": 5,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "GrapaSki Czarna Góra",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://www.grapa.ski/zima/"
-      },
+    }},
+  {"data": {
+      "name": "GrapaSki Czarna Góra",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://www.grapa.ski/zima/",
       "location": {
         "latitude": 49.386177834708235,
         "longitude": 20.115302840555408
@@ -766,24 +703,21 @@
           "open": 4,
           "hold": 0,
           "scheduled": 0,
-          "closed": 0
-        },
-        "percentage": {
-          "open": 100,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 0
+          "closed": 0,
+          "percentage": {
+            "open": 100,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 0
+          }
         }
       }
-    },
-
-    {
-      "data": {
-        "name": "Czorsztyn Ski Kluszkowce",
-        "country": "PL",
-        "region": "małopolskie",
-        "href": "https://www.czorsztyn-ski.com.pl/"
-      },
+    }},
+  {"data": {
+      "name": "Czorsztyn Ski Kluszkowce",
+      "country": "PL",
+      "region": "małopolskie",
+      "href": "https://www.czorsztyn-ski.com.pl/",
       "location": {
         "latitude": 49.46048568423831,
         "longitude": 20.315659153885942
@@ -803,15 +737,14 @@
           "open": 6,
           "hold": 0,
           "scheduled": 0,
-          "closed": 2
-        },
-        "percentage": {
-          "open": 75,
-          "hold": 0,
-          "scheduled": 0,
-          "closed": 25
+          "closed": 2,
+          "percentage": {
+            "open": 75,
+            "hold": 0,
+            "scheduled": 0,
+            "closed": 25
+          }
         }
       }
-    }
+    }}
   ]
-}
