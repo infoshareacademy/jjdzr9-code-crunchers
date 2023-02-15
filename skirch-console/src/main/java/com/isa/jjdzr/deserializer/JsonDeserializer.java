@@ -9,26 +9,18 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class JsonDeserializer {
-    public void deserialize() {
+    public static List<Resort> deserialize() {
         ObjectMapper mapper = new ObjectMapper();
         String result;
+        List<Resort> resortsJsonList;
         try {
             result = new String(Files.readAllBytes(Paths.get("skirch-console/src/main/resources/resorts.json")));
-            List<Resort> resortsJsonList = mapper.readValue(result, new TypeReference<>() {
+            resortsJsonList = mapper.readValue(result, new TypeReference<>() {
             });
-            for (int i = 0; i < resortsJsonList.size(); i++) {
-                System.out.println("--------------------- " + (i+1) + " ---------------------");
-                System.out.println("Name: " + resortsJsonList.get(i).getData().getName());
-                System.out.println("Country: " + resortsJsonList.get(i).getData().getCountry());
-                System.out.println("Region: " + resortsJsonList.get(i).getData().getRegion());
-                System.out.println("Href: " + resortsJsonList.get(i).getData().getHref());
-                System.out.println("Location: " + resortsJsonList.get(i).getData().getLocation());
-                System.out.println("Lifts stats: " + resortsJsonList.get(i).getData().getLifts().getStats());
-            }
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return resortsJsonList;
     }
 
 }
