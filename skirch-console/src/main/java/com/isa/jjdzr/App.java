@@ -19,6 +19,8 @@ public class App
         sE.searchByName("Wieżyca Koszałkowo", resorts);
         // wyszukiwanie po województwie, w miejsce stringa wskoczy to co poda użytkownik
         sE.searchByRegion("śląskie", resorts);
+        // wyszukiwanie po kraju, w miejsce stringa wskoczy to co poda użytkownik
+        sE.searchByCountry("PL", resorts);
 
 
 

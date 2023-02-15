@@ -28,6 +28,17 @@ public class SearchEngine {
         }
     }
 
+    public void searchByCountry(String country, List<Resort> resorts) {
+        List<Resort> resortsInCountry = resorts
+                .stream()
+                .filter(s -> s.getData().getCountry().equals(country))
+                .collect(Collectors.toList());
+        for (int i = 0; i < resortsInCountry.size(); i++) {
+            printResort(resortsInCountry.get(i));
+            System.out.println();
+        }
+    }
+
     private void printResort(Resort resort) {
         System.out.println("Nazwa: " + resort.getData().getName());
         System.out.println("Kraj, województwo: " + resort.getData().getCountry() + ", " + resort.getData().getRegion());
