@@ -11,7 +11,8 @@ public class App
     public static void main( String[] args ) throws IOException {
         System.out.println( "Code crunchers" );
         System.out.println();
-
+        Menu menu = new Menu();
+        menu.menu();
         List<Resort> resorts = JsonDeserializer.deserialize();
         SearchEngine sE = new SearchEngine();
 
