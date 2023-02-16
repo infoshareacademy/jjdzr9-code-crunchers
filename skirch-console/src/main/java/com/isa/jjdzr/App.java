@@ -6,6 +6,7 @@ import com.isa.jjdzr.deserializer.Resort;
 import java.io.IOException;
 import java.util.List;
 
+
 public class App {
     public static void main(String[] args) throws IOException {
         System.out.println("Code crunchers");
@@ -24,7 +25,6 @@ public class App {
         // wyszukiwanie w promieniu podanych kilometrów od danego punktu,
         // w miejsce dwóch pierwszych parametrów wskakują współrzędne od użytkownika, w trzecią promień wyszukiwania
         sE.searchByCoordinates(54.3785887091789, 18.60158028024147, 400.0, resorts);
-
 
     }
 }
