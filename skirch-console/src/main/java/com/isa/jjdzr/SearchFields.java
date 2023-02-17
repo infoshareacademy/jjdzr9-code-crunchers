@@ -2,7 +2,6 @@ package com.isa.jjdzr;
 import java.util.Scanner;
 
 public class SearchFields {
-
     public String Name() {
         System.out.println("Podaj nazwe ośrodka:");
         Scanner scanner = new Scanner(System.in);
