@@ -1,16 +1,12 @@
 package com.isa.jjdzr;
-
-
 import com.isa.jjdzr.deserializer.Location;
 import com.isa.jjdzr.deserializer.Resort;
 import org.geotools.referencing.GeodeticCalculator;
 import com.isa.jjdzr.deserializer.Resort;
-
-
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SearchEngine {
+public class SearchEngine extends SearchFields {
 
     public void searchByName(String name, List<Resort> resorts) {
         Resort resort = resorts
