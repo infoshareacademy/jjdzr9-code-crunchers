@@ -1,7 +1,7 @@
 [
   {"data": {
       "name": "Wieżyca Koszałkowo",
-      "country": "PL",
+      "country": "Polska",
       "region": "pomorskie",
       "href": "https://wiezyca.pl/",
       "location": {
@@ -35,7 +35,7 @@
     }},
   {"data": {
       "name": "Arena Narciarska Jaworki Homole",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://arenanarciarska.pl/",
       "location": {
@@ -64,7 +64,7 @@
     }},
   {"data": {
       "name": "Beskid Sport Arena",
-      "country": "PL",
+      "country": "Polska",
       "region": "śląskie",
       "href": "https://beskidsportarena.pl/",
       "location": {
@@ -93,7 +93,7 @@
     }},
   {"data": {
       "name": "Batorz",
-      "country": "PL",
+      "country": "Polska",
       "region": "lubelskie",
       "href": "https://batorzski.pl/",
       "location": {
@@ -122,7 +122,7 @@
     }},
   {"data": {
       "name": "Czarna Góra",
-      "country": "PL",
+      "country": "Polska",
       "region": "dolnośląskie",
       "href": "https://czarnagora.pl/",
       "location": {
@@ -157,7 +157,7 @@
     }},
   {"data": {
       "name": "Cieńków",
-      "country": "PL",
+      "country": "Polska",
       "region": "śląskie",
       "href": "http://www.cienkownarty.pl/zima/",
       "location": {
@@ -189,7 +189,7 @@
     }},
   {"data": {
       "name": "Jaworzyna Krynicka",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://jaworzynakrynicka.pl/",
       "location": {
@@ -224,7 +224,7 @@
     }},
   {"data": {
       "name": "Karpacz Ski Arena",
-      "country": "PL",
+      "country": "Polska",
       "region": "dolnośląskie",
       "href": "https://karpaczskiarena.pl/",
       "location": {
@@ -259,7 +259,7 @@
     }},
   {"data": {
       "name": "Kasprowy Wierch",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://www.pkl.pl/kasprowy-wierch/kasprowy.html",
       "location": {
@@ -288,7 +288,7 @@
     }},
   {"data": {
       "name": "Kotelnica Białczańska",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://bialkatatrzanska.pl/",
       "location": {
@@ -336,7 +336,7 @@
     }},
   {"data": {
       "name": "Kurza Góra",
-      "country": "PL",
+      "country": "Polska",
       "region": "warmińsko-mazurskie",
       "href": "https://kurzagora.pl/",
       "location": {
@@ -368,7 +368,7 @@
     }},
   {"data": {
       "name": "Malta Ski",
-      "country": "PL",
+      "country": "Polska",
       "region": "wielkopolskie",
       "href": "https://maltaski.pl/",
       "location": {
@@ -397,7 +397,7 @@
     }},
   {"data": {
       "name": "Małe Ciche",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://maleciche.com/",
       "location": {
@@ -429,7 +429,7 @@
     }},
   {"data": {
       "name": "Murzasichle Kompleks Zimowy",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://murzasichle-ski.pl/",
       "location": {
@@ -463,7 +463,7 @@
     }},
   {"data": {
       "name": "Zieleniec Sport Arena",
-      "country": "PL",
+      "country": "Polska",
       "region": "dolnośląskie",
       "href": "https://zieleniec.pl/",
       "location": {
@@ -520,7 +520,7 @@
     }},
   {"data": {
       "name": "Szczyrk Mountain Resort",
-      "country": "PL",
+      "country": "Polska",
       "region": "śląskie",
       "href": "https://www.szczyrkowski.pl/",
       "location": {
@@ -556,7 +556,7 @@
     }},
   {"data": {
       "name": "Szelment",
-      "country": "PL",
+      "country": "Polska",
       "region": "podlaskie",
       "href": "https://wosir-szelment.pl/",
       "location": {
@@ -590,7 +590,7 @@
     }},
   {"data": {
       "name": "Master Ski Tylicz",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://master-ski.pl/",
       "location": {
@@ -621,7 +621,7 @@
     }},
   {"data": {
       "name": "JurgówSki",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "http://www.jurgowski.pl/",
       "location": {
@@ -654,7 +654,7 @@
     }},
   {"data": {
       "name": "Palenica",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://www.pkl.pl/palenica/palenica.html",
       "location": {
@@ -685,7 +685,7 @@
     }},
   {"data": {
       "name": "GrapaSki Czarna Góra",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://www.grapa.ski/zima/",
       "location": {
@@ -715,7 +715,7 @@
     }},
   {"data": {
       "name": "Czorsztyn Ski Kluszkowce",
-      "country": "PL",
+      "country": "Polska",
       "region": "małopolskie",
       "href": "https://www.czorsztyn-ski.com.pl/",
       "location": {
@@ -746,5 +746,498 @@
           }
         }
       }
-    }}
+    }},
+
+  {"data": {
+    "name": "Jasná",
+    "country": "Słowacja",
+    "region": "Žilina Region",
+    "href": "https://www.jasna.sk/",
+    "location": {
+      "latitude": 48.97102197996228,
+      "longitude": 19.584325393123304
+    },
+    "lifts": {
+      "status": {
+        "Priehyba - Chopok": "open",
+        "Kosodrevina - Chopok": "open",
+        "Grand - Brhliská": "open",
+        "Krupová - Kosodrevina": "open",
+        "Biela Púť - Priehyba": "open",
+        "Záhradky - Rovná Hoľa": "open",
+        "Záhradky - Priehyba (Kofola Line)": "open",
+        "Biela Púť - Koliesko": "open",
+        "Koliesko - Luková": "open",
+        "Otupné - Luková": "open",
+        "Srdiečko - Kosodrevina": "open",
+        "Rovná Hoľa - Konský Grúň": "closed",
+        "Lúčky - Vyhliadka": "open",
+        "Koliesko - Luková": "closed",
+        "Otupné - Zrkadlo": "closed",
+        "Krupová": "open",
+        "Zadné Dereše": "open"
+      },
+      "stats": {
+        "open": 14,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 3,
+        "percentage": {
+          "open": 82.35,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 17.65
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "Park Snow Donovaly",
+    "country": "Słowacja",
+    "region": "Banská Bystrica",
+    "href": "https://www.parksnow.sk/",
+    "location": {
+      "latitude": 48.8793642793822,
+      "longitude": 19.235491439322562
+    },
+    "lifts": {
+      "status": {
+        "SL-6 Telemix Nová hola": "open",
+        "LV F12 Mišúty": "open",
+        "LV F12 Patočiny": "open",
+        "SL-4 Buly Expres": "open",
+        "LV Lomená poma": "open",
+        "LV Leitner Záhradište I": "open",
+        "LV Leitner Záhradište II": "closed",
+        "LV P1": "open",
+        "LV P2": "open",
+        "LV P3": "open",
+        "LV P4": "closed",
+        "LV P5": "open",
+        "LV P6 Encián": "open",
+        "LV S1": "open",
+        "LV S2": "closed",
+        "LV S3": "open"
+      },
+      "stats": {
+        "open": 13,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 3,
+        "percentage": {
+          "open": 81.25,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 18.75
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "Snowparadise Veľká Rača Oščadnica",
+    "country": "Słowacja",
+    "region": "Žilina Region",
+    "href": "https://snowparadise.sk/",
+    "location": {
+      "latitude": 49.415272992086486,
+      "longitude": 18.920413134768637
+    },
+    "lifts": {
+      "status": {
+        "ALPHA Grandfather": "open",
+        "Bobsleigh track Alpin Coaster": "closed",
+        "Ski nursery Košariská": "open",
+        "Children's conveyor belt": "open",
+        "Children's rope tow": "closed",
+        "Telecord Na Hrebeni": "closed",
+        "BLV – 2 On the Ridge": "open",
+        "UNIFIX Marguška": "closed",
+        "Telemix 6/8 Laliky": "open"
+      },
+      "stats": {
+        "open": 5,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 4,
+        "percentage": {
+          "open": 55.56,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 44.44
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "Malinô Brdo - Ski & Bike Park Ružomberok",
+    "country": "Słowacja",
+    "region": "Žilina Region",
+    "href": "https://www.skipark.sk/",
+    "location": {
+      "latitude": 49.069905577507186,
+      "longitude": 19.2723820846797
+    },
+    "lifts": {
+      "status": {
+        "8 KLD Kabínková lanovka": "open",
+        "4 SLD Sedačková lanovka": "closed",
+        "H 210 Zalomená poma": "open",
+        "H 130 Poma": "open",
+        "LV P1 Detský vlek": "open",
+        "LV P2 Detský vlek": "open",
+        "LV P3 Detský vlek": "open"
+      },
+      "stats": {
+        "open": 6,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 1,
+        "percentage": {
+          "open": 85.71,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 14.29
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "Ischgl",
+    "country": "Austria",
+    "region": "Tyrol",
+    "href": "https://www.ischgl.com/en",
+    "location": {
+      "latitude": 47.01259798775967,
+      "longitude": 10.294542521902388
+    },
+    "lifts": {
+      "status": {
+        "Silvrettabahn": "open",
+        "Pardatschgratbahn": "open",
+        "Fimbabahn": "open",
+        "Velillbahn": "open",
+        "Förderband Viderböden": "open",
+        "Flimjochbahn": "open",
+        "Idjochbahn": "open",
+        "Greitspitzlift": "open",
+        "Sonnenbahn": "open",
+        "Übungslift Velill": "open",
+        "Übungslift Viderböden": "open",
+        "Gratbahn": "open",
+        "Förderband Übungsareal": "open",
+        "Höllbodenbahn": "open",
+        "Höllkarbahn": "open",
+        "Sassgalunbahn": "open",
+        "Nachtweidebahn": "open",
+        "Lange Wandbahn": "open",
+        "Palinkopfbahn": "open",
+        "Zeblasbahn": "open",
+        "Paznauner Thayabahn": "open",
+        "Höllspitzbahn": "open",
+        "Bodenalpbahn": "open",
+        "Gampenbahn": "open",
+        "Piz Val Grondabahn": "open",
+        "Velilleckbahn": "open",
+        "Pardoramabahn": "open",
+        "Übungslift Mathon": "open",
+        "Schwarzwasserlift": "open",
+        "Double-decker aerial tramway": "open",
+        "Luftseilbahn": "open",
+        "Grivaleabahn": "open",
+        "Mullerbahn": "open",
+        "Flimsattelbahn": "open",
+        "Visnitzbahn": "open",
+        "Milolift (Übungslift)": "open",
+        "Viderjochbahn 1": "open",
+        "Alp Trider Sattelbahn": "open",
+        "Greitspitzbahn": "open",
+        "Blais Grondalift": "open",
+        "Viderjochbahn 2": "open",
+        "Musellalift": "open",
+        "Förderband Musella 1": "open",
+        "Förderband Musella 2": "open",
+        "Alp Trider Ecklift": "closed"
+      },
+      "stats": {
+        "open": 44,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 1,
+        "percentage": {
+          "open": 97.78,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 2.22
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "See",
+    "country": "Austria",
+    "region": "Tyrol",
+    "href": "https://www.see.at/en",
+    "location": {
+      "latitude": 47.073267952824686,
+      "longitude": 10.477577489392694
+    },
+    "lifts": {
+      "status": {
+        "8 EUB Versing": "open",
+        "Medrigjoch 6er Kabinenbahn": "open",
+        "EUB Furglerblick": "open",
+        "Zeinis": "open",
+        "Rossmoos": "open",
+        "Medrigalmlift": "open",
+        "Conveyor band I": "open",
+        "Tellerlift": "open",
+        "Förderband II": "open",
+        "Förderband III": "open"
+      },
+      "stats": {
+        "open": 10,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 0,
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "Skigebiet Silvapark Galtür",
+    "country": "Austria",
+    "region": "Tyrol",
+    "href": "https://www.galtuer.com/en",
+    "location": {
+      "latitude": 46.966148253382535,
+      "longitude": 10.14528886017513
+    },
+    "lifts": {
+      "status": {
+        "Breitspitzbahn": "open",
+        "Alpkogelbahn": "open",
+        "Ballunspitzbahn": "open",
+        "Birkhahnbahn": "open",
+        "Klein - Zeinislift": "open",
+        "Kopsseelifte I+II": "open",
+        "Soppalift": "open",
+        "Übungslift - Wirl": "open",
+        "Förderband": "open",
+        "Rückbringerlift": "closed"
+      },
+      "stats": {
+        "open": 9,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 1,
+        "percentage": {
+          "open": 90,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 10
+        }
+      }
+    }
+  }},
+
+
+  {"data": {
+    "name": "Verbier",
+    "country": "Szwajcaria",
+    "region": "Valais",
+    "href": "https://www.verbier.ch/winter/",
+    "location": {
+      "latitude": 46.09426275168989,
+      "longitude": 7.233256991584633
+    },
+    "lifts": {
+      "status": {
+        "Chassoure": "open",
+        "Chaux 2": "open",
+        "Esserts": "open",
+        "Funispace": "open",
+        "Lac Des Vaux 1": "open",
+        "Lac Des Vaux 2": "open",
+        "Mayentzet": "open",
+        "Medran 2": "open",
+        "Mont-Gele": "open",
+        "Tapis Esserts": "open",
+        "Attelas": "open",
+        "Barnes Line": "open",
+        "Chaux-Express": "open",
+        "Le Chable-Verbier": "open",
+        "Moulins": "open",
+        "Rouge": "open",
+        "Tapis Rouge": "open"
+      },
+      "stats": {
+        "open": 17,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 0,
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "La Tzoumaz",
+    "country": "Szwajcaria",
+    "region": "Valais",
+    "href": "https://www.latzoumaz.ch/winter/",
+    "location": {
+      "latitude": 46.14526894844061,
+      "longitude": 7.232854200087102
+    },
+    "lifts": {
+      "status": {
+        "Etablons": "open",
+        "La Tzoumaz-Savoleyres": "open",
+        "Nord": "open",
+        "Savoleyres Sud": "open",
+        "Taillay": "open",
+        "Tapis Tzoumaz": "open",
+        "Tournelle": "open",
+        "Verbier-Savoleyres": "open"
+      },
+      "stats": {
+        "open": 8,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 0,
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "Val d'Anniviers",
+    "country": "Szwajcaria",
+    "region": "Valais",
+    "href": "https://www.valdanniviers.ch/en/homepage.html",
+    "location": {
+      "latitude": 46.22144778757441,
+      "longitude": 7.597339993823505
+    },
+    "lifts": {
+      "status": {
+        "Grimentz-Bendolla": "open",
+        "Grimentz - Sorebois": "open",
+        "Zinal-Sorebois": "open",
+        "Sorebois-Espace Weisshorn": "open",
+        "Col du Pouce": "open",
+        "Tsarva": "open",
+        "Chiesso": "open",
+        "Corne de Sorebois": "open",
+        "Grands Plans": "open",
+        "Becs-de-Bosson": "open",
+        "Durand": "open",
+        "Lona 2": "open",
+        "Orzival": "open",
+        "Tsarmettaz": "open",
+        "Marenda": "open",
+        "Remointze": "open",
+        "Ecole": "open",
+        "Sorebois": "open",
+        "Minigliss Bendolla": "open",
+        "Minigliss Sorebois": "open",
+        "Minigliss Zinal (Swisspeak)": "open"
+      },
+      "stats": {
+        "open": 21,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 0,
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    }
+  }},
+
+  {"data": {
+    "name": "Livigno",
+    "country": "Włochy",
+    "region": "Sndrio",
+    "href": "https://www.livigno.eu/en/",
+    "location": {
+      "latitude": 46.538645408686634,
+      "longitude": 10.135056503241385
+    },
+    "lifts": {
+      "status": {
+        "Palipert": "open",
+        "Mottolino": "open",
+        "Monte Sponda": "open",
+        "Mini Lift": "open",
+        "Federia": "open",
+        "Cassana": "open",
+        "Carosello 3000 II": "open",
+        "Carosello 3000 I": "open",
+        "Campo Scuola": "open",
+        "Botarel": "open",
+        "Blesaccia II": "open",
+        "Blesaccia I": "open",
+        "Baby Lac Salin": "open",
+        "Amerikan": "open",
+        "Livigno-Tagliede": "open",
+        "San Rocco": "open",
+        "Fontane-Vetta": "open",
+        "Skilift Ski School Area": "open",
+        "Tagliede-Costaccia": "open",
+        "Valandrea-Vetta": "open",
+        "Valandrea": "open",
+        "Trepalle": "open",
+        "Teola-Pianoni Bassi": "open",
+        "Sciovia Del Sole": "open",
+        "Pian Della Volpe": "open",
+        "Planon": "open",
+        "Valfin-M.Della Neve": "open",
+        "Yepi Lift": "open",
+        "Easy Lift": "open",
+        "Doss": "open"
+      },
+      "stats": {
+        "open": 30,
+        "hold": 0,
+        "scheduled": 0,
+        "closed": 0,
+        "percentage": {
+          "open": 100,
+          "hold": 0,
+          "scheduled": 0,
+          "closed": 0
+        }
+      }
+    }
+  }}
+
+
+
+
+
   ]

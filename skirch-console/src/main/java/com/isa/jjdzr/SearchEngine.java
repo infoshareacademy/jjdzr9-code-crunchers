@@ -1,6 +1,11 @@
 package com.isa.jjdzr;
 
+
+import com.isa.jjdzr.deserializer.Location;
 import com.isa.jjdzr.deserializer.Resort;
+import org.geotools.referencing.GeodeticCalculator;
+import com.isa.jjdzr.deserializer.Resort;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,6 +41,23 @@ public class SearchEngine {
         for (int i = 0; i < resortsInCountry.size(); i++) {
             printResort(resortsInCountry.get(i));
             System.out.println();
+        }
+    }
+
+   public void searchByCoordinates(Double userLatitude, Double userLongitude, Double distance, List<Resort> resorts) {
+        GeodeticCalculator calc = new GeodeticCalculator();
+        calc.setStartingGeographicPoint(userLongitude, userLatitude);
+        Double distanceToResort;
+        System.out.println("Ośrodki w promieniu " + distance.shortValue() + " km: ");
+        System.out.println();
+        for (int i = 0; i < resorts.size(); i++) {
+            calc.setDestinationGeographicPoint(resorts.get(i).getData().getLocation().getLongitude(), resorts.get(i).getData().getLocation().getLatitude());
+            distanceToResort = calc.getOrthodromicDistance()/1000;
+            if (distanceToResort <= distance){
+                printResort(resorts.get(i));
+                System.out.println("Odległość do ośrodka: " + distanceToResort.shortValue() + " km");
+                System.out.println();
+            }
         }
     }
 
