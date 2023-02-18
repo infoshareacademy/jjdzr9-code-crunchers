@@ -33,7 +33,7 @@ public class SearchFields {
             Scanner scanner = new Scanner(System.in);
             double radius;
             try {
-                radius = scanner.nextInt();
+                radius = scanner.nextDouble();
         } catch (Exception ignored) {
             System.out.println("Podaj wartość liczbową");
             return Radius();
@@ -46,7 +46,7 @@ public class SearchFields {
         Scanner scanner = new Scanner(System.in);
         double userLatitude;
         try {
-            userLatitude = scanner.nextInt();
+            userLatitude = scanner.nextDouble();
         } catch (Exception ignored) {
             System.out.println("Podaj wartość liczbową");
             return Latitude();
@@ -59,7 +59,7 @@ public class SearchFields {
         Scanner scanner = new Scanner(System.in);
         double userLongitude;
         try {
-            userLongitude = scanner.nextInt();
+            userLongitude = scanner.nextDouble();
         } catch (Exception ignored) {
             System.out.println("Podaj wartość liczbową");
             return Longitude();
