@@ -1,29 +1,36 @@
 package com.isa.jjdzr;
 
+import com.isa.jjdzr.deserializer.JsonDeserializer;
+import com.isa.jjdzr.deserializer.Resort;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Menu {
 
-    private final List<String> options = List.of("1. Wyszukaj po nazwie", "2. Wyszukaj po koordynatach",
+    private final List<String> options = List.of("1. Wyszukaj po nazwie", "2. Wyszukaj ośrodki w podanej odległości",
             "3. Wyszukaj po kraju", "4. Wyszukaj po regionie", "5. Zaloguj", "6. Utwórz użytkownika");
 
     public void menu() {
-        System.out.println(" ------- WITAMY W WYSZUKIWARCE DLA WIELBICIELI BIAŁEGO SZALEŃSTWA!!! ------- ");
+
+        List<Resort> resorts = JsonDeserializer.deserialize();
+        SearchEngine searchEngine = new SearchEngine();
+        SearchFields searchFields = new SearchFields();
         sleep();
         displayOptions();
-
-        Scanner scanner = new Scanner(System.in);
-
-        int direction = scanner.nextInt();
+        sleep();
+        System.out.println();
+        System.out.println("Podaj, którą opcję menu wybierasz:");
+        int direction = searchFields.menuOptions();
         switch (direction) {
-            case 1 -> System.out.println("1");
-            case 2 -> System.out.println("2");
-            case 3 -> System.out.println("3");
-            case 4 -> System.out.println("4");
-            case 5 -> System.out.println("5");
-            default -> System.out.println("0!");
+            case 1 -> searchEngine.searchByName(searchFields.name(), resorts);
+            case 2 ->
+                    searchEngine.searchByCoordinates(searchFields.latitude(), searchFields.longitude(), searchFields.radius(), resorts);
+            case 3 -> searchEngine.searchByCountry(searchFields.country(), resorts);
+            case 4 -> searchEngine.searchByRegion(searchFields.region(), resorts);
+            case 5, 6 -> {
+                System.out.println("Obecnie niedostępne");
+                searchFields.ifSearchAgain();
+            }
         }
     }
 
