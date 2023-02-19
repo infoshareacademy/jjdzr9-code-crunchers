@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Menu {
 
-    private final List<String> options = List.of("1. Wyszukaj po nazwie", "2. Wyszukaj ośrodki w podanej odległości",
-            "3. Wyszukaj po kraju", "4. Wyszukaj po regionie", "5. Zaloguj", "6. Utwórz użytkownika");
+    private final List<String> options = List.of("1. Wyszukaj ośrodki narciarskie po nazwie", "2. Wyszukaj ośrodki narciarskie w podanej odległości",
+            "3. Wyszukaj ośrodki narciarskie po kraju", "4. Wyszukaj ośrodki narciarskie po regionie", "5. Zaloguj", "6. Utwórz użytkownika");
 
     public void menu() {
 

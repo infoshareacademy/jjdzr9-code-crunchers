@@ -1,12 +1,6 @@
 package com.isa.jjdzr;
 
-import com.isa.jjdzr.deserializer.JsonDeserializer;
-import com.isa.jjdzr.deserializer.Resort;
-
-import javax.naming.Name;
 import java.io.IOException;
-import java.util.List;
-import java.util.Scanner;
 
 
 public class App {

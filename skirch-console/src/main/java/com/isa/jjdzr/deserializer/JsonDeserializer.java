@@ -14,7 +14,7 @@ public class JsonDeserializer {
         String result;
         List<Resort> resortsJsonList;
         try {
-            result = new String(Files.readAllBytes(Paths.get("skirch-console/src/main/resources/resorts.json")));
+            result = new String(Files.readAllBytes(Paths.get("src/main/resources/resorts.json")));
             resortsJsonList = mapper.readValue(result, new TypeReference<>() {
             });
         } catch (IOException e) {

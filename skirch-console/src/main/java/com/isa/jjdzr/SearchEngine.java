@@ -1,9 +1,7 @@
 package com.isa.jjdzr;
 
-import com.isa.jjdzr.deserializer.Location;
 import com.isa.jjdzr.deserializer.Resort;
 import org.geotools.referencing.GeodeticCalculator;
-import com.isa.jjdzr.deserializer.Resort;
 
 import java.util.ArrayList;
 import java.util.List;
