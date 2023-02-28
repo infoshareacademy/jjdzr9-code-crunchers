@@ -27,6 +27,7 @@ public class Menu {
                     searchEngine.searchByCoordinates(searchFields.latitude(), searchFields.longitude(), searchFields.radius(), resorts);
             case 3 -> searchEngine.searchByCountry(searchFields.country(), resorts);
             case 4 -> searchEngine.searchByRegion(searchFields.region(), resorts);
+            //TODO: Zaimplementować opcję 6-tą
             case 5, 6 -> {
                 System.out.println("Obecnie niedostępne");
                 searchFields.ifSearchAgain();
