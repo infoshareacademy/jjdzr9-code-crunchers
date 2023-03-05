@@ -31,7 +31,8 @@ public class Menu {
                 System.out.println("Obecnie niedostępne");
                 searchFields.ifSearchAgain();
             }
-        }
+        } //opcja czyszczenia ekranu
+        System.out.flush();
     }
 
     public void displayOptions() {
