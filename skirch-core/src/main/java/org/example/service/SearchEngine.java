@@ -1,14 +1,13 @@
-package com.isa.jjdzr;
+package org.example.service;
 
-import com.isa.jjdzr.deserializer.Resort;
+import org.example.model.Resort;
 import org.geotools.referencing.GeodeticCalculator;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SearchEngine extends SearchFields {
-    SearchFields searchFields = new SearchFields();
+public class SearchEngine {
 
     public void searchByName(String name, List<Resort> resorts) {
         Resort resort = resorts
@@ -16,13 +15,13 @@ public class SearchEngine extends SearchFields {
                 .filter(s -> s.getData().getName().equals(name))
                 .findFirst()
                 .orElse(null);
-        if (resort != null){
-        printResort(resort);
-        System.out.println();
+        if (resort != null) {
+            printResort(resort);
+            System.out.println();
         } else {
             System.out.println("Nie odnaleziono ośrodka o podanej nazwie.");
         }
-        searchFields.ifSearchAgain();
+//        searchFields.ifSearchAgain();
     }
 
 
@@ -38,7 +37,7 @@ public class SearchEngine extends SearchFields {
         if (resortsInRegion.size() == 0){
             System.out.println("Nie znaleziono ośrodka w podanym regionie.");
         }
-        searchFields.ifSearchAgain();
+//        searchFields.ifSearchAgain();
     }
 
     public void searchByCountry(String country, List<Resort> resorts) {
@@ -53,7 +52,7 @@ public class SearchEngine extends SearchFields {
         if (resortsInCountry.size() == 0){
             System.out.println("Nie znaleziono ośrodka w podanym kraju.");
         }
-        searchFields.ifSearchAgain();
+//        searchFields.ifSearchAgain();
     }
 
     public void searchByCoordinates(Double userLatitude, Double userLongitude, Double radius, List<Resort> resorts) {
@@ -76,7 +75,7 @@ public class SearchEngine extends SearchFields {
         if (resortInRadius.size()==0) {
             System.out.println("Brak ośrodków narciarskich w podanym promieniu km.");
         }
-        searchFields.ifSearchAgain();
+//        searchFields.ifSearchAgain();
     }
 
     private void printResort(Resort resort) {
