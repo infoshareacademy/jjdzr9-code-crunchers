@@ -1,7 +1,9 @@
 package com.isa.jjdzr;
 
-import com.isa.jjdzr.deserializer.JsonDeserializer;
-import com.isa.jjdzr.deserializer.Resort;
+
+import com.isa.jjdzr.model.Resort;
+import com.isa.jjdzr.service.JsonDeserializer;
+import com.isa.jjdzr.service.SearchEngine;
 
 import java.util.List;
 
@@ -22,16 +24,28 @@ public class Menu {
         System.out.println("Podaj, którą opcję menu wybierasz:");
         int direction = searchFields.menuOptions();
         switch (direction) {
-            case 1 -> searchEngine.searchByName(searchFields.name(), resorts);
-            case 2 ->
-                    searchEngine.searchByCoordinates(searchFields.latitude(), searchFields.longitude(), searchFields.radius(), resorts);
-            case 3 -> searchEngine.searchByCountry(searchFields.country(), resorts);
-            case 4 -> searchEngine.searchByRegion(searchFields.region(), resorts);
+            case 1 -> {
+                searchEngine.searchByName(searchFields.name(), resorts);
+                searchFields.ifSearchAgain();
+            }
+            case 2 -> {
+                searchEngine.searchByCoordinates(searchFields.latitude(), searchFields.longitude(), searchFields.radius(), resorts);
+                searchFields.ifSearchAgain();
+            }
+            case 3 -> {
+                searchEngine.searchByCountry(searchFields.country(), resorts);
+                searchFields.ifSearchAgain();
+            }
+            case 4 -> {
+                searchEngine.searchByRegion(searchFields.region(), resorts);
+                searchFields.ifSearchAgain();
+            }
             case 5, 6 -> {
                 System.out.println("Obecnie niedostępne");
                 searchFields.ifSearchAgain();
             }
         }
+        System.out.flush();
     }
 
     public void displayOptions() {
