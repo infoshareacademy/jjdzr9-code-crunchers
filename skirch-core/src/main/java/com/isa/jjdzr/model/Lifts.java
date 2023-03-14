@@ -1,4 +1,4 @@
-package com.isa.jjdzr.deserializer;
+package com.isa.jjdzr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

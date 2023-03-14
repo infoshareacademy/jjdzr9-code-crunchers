@@ -42,11 +42,6 @@
     </dependencies>
     <repositories>
         <repository>
-            <id>example-repo</id>
-            <name>Example Repository</name>
-            <url>file://$Home/.m2</url>
-        </repository>
-        <repository>
             <id>repo1</id>
             <name>Geo repository</name>
             <url>https://repo.osgeo.org/repository/release/</url>

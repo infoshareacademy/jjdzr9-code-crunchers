@@ -1,4 +1,4 @@
-package org.example.model;
+package com.isa.jjdzr.model;
 
 public class Percentage {
     Double open;

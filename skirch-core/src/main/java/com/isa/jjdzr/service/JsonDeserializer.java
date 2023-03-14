@@ -1,7 +1,8 @@
-package com.isa.jjdzr.deserializer;
+package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.isa.jjdzr.model.Resort;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +15,7 @@ public class JsonDeserializer {
         String result;
         List<Resort> resortsJsonList;
         try {
-            result = new String(Files.readAllBytes(Paths.get("skirch-console/src/main/resources/resorts.json")));
+            result = new String(Files.readAllBytes(Paths.get("skirch-core/src/main/resources/resorts.json")));
             resortsJsonList = mapper.readValue(result, new TypeReference<>() {
             });
         } catch (IOException e) {
