@@ -1,7 +1,7 @@
-package com.isa.jjdzr.deserializer;
+package com.isa.jjdzr.model;
 
 public class Resort {
-    Data data;
+    private Data data;
 
     public Data getData() {
         return data;
