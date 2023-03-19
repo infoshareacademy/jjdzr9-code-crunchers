@@ -1,8 +1,8 @@
-package com.isa.jjdzr;
+package com.isa.jjdzr.controllers;
 
 import java.util.Scanner;
 
-public class SearchFields {
+public class ResortController {
     public String name() {
         System.out.println("Podaj nazwe ośrodka:");
         Scanner scanner = new Scanner(System.in);
