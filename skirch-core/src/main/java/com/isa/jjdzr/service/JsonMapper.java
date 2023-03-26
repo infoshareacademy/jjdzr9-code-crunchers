@@ -16,15 +16,15 @@ public class JsonMapper {
 
     public <T> List<T> deserialize(String path) {
         String result;
-        List<T> resortsJsonList;
+        List<T> list;
         try {
             result = new String(Files.readAllBytes(Paths.get(path)));
-            resortsJsonList = mapper.readValue(result, new TypeReference<>() {
+            list = mapper.readValue(result, new TypeReference<>() {
             });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return resortsJsonList;
+        return list;
     }
     // TODO - Maciej
     public <T> void serialize(T list){
