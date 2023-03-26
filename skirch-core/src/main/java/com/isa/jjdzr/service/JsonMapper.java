@@ -2,26 +2,33 @@ package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.isa.jjdzr.model.Resort;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class JsonDeserializer {
-    public static List<Resort> deserialize() {
-        ObjectMapper mapper = new ObjectMapper();
+public class JsonMapper {
+    private ObjectMapper mapper = new ObjectMapper();
+
+    public JsonMapper() {
+    }
+
+    public <T> List<T> deserialize(String path) {
         String result;
-        List<Resort> resortsJsonList;
+        List<T> resortsJsonList;
         try {
-            result = new String(Files.readAllBytes(Paths.get("skirch-core/src/main/resources/resorts.json")));
+            result = new String(Files.readAllBytes(Paths.get(path)));
             resortsJsonList = mapper.readValue(result, new TypeReference<>() {
             });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return resortsJsonList;
+    }
+    // TODO - Maciej
+    public <T> void serialize(T list){
+
     }
 
 }

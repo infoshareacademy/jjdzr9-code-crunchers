@@ -1,8 +1,9 @@
 package com.isa.jjdzr;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.isa.jjdzr.model.Resort;
-import com.isa.jjdzr.service.JsonDeserializer;
+import com.isa.jjdzr.service.JsonMapper;
 import com.isa.jjdzr.service.SearchEngine;
 
 import java.util.List;
@@ -13,8 +14,8 @@ public class Menu {
             "3. Wyszukaj ośrodki narciarskie po kraju", "4. Wyszukaj ośrodki narciarskie po regionie", "5. Zaloguj", "6. Utwórz użytkownika");
 
     public void menu() {
-
-        List<Resort> resorts = JsonDeserializer.deserialize();
+        JsonMapper jsonMapper = new JsonMapper();
+        List<Resort> resorts = jsonMapper.deserialize("skirch-core/src/main/resources/resorts.json");
         SearchEngine searchEngine = new SearchEngine();
         SearchFields searchFields = new SearchFields();
         sleep();
