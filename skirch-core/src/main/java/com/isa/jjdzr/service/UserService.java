@@ -2,22 +2,26 @@ package com.isa.jjdzr.service;
 
 import com.isa.jjdzr.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
-    private final List<User> users;
+    private final JsonMapper jsonMapper = new JsonMapper();
 
     public UserService() {
-        this.users = new ArrayList<>();
+
     }
 
     public void saveUser(User user) {
-        users.add(user);
+        Database.getListOfUsers().add(user);
+        saveToFile(Database.getListOfUsers());
     }
 
     public List<User> allUsers() {
-        return users;
+        return Database.getListOfUsers();
+    }
+
+    private void saveToFile(List<User> userList){
+     jsonMapper.serialize(userList);
     }
 }
 
