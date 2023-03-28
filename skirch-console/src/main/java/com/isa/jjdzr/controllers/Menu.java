@@ -1,8 +1,7 @@
 package com.isa.jjdzr.controllers;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.isa.jjdzr.model.Resort;
+import com.isa.jjdzr.service.Database;
 import com.isa.jjdzr.service.JsonMapper;
 import com.isa.jjdzr.service.SearchEngine;
 
@@ -15,8 +14,6 @@ public class Menu {
             "3. Wyszukaj ośrodki narciarskie po kraju", "4. Wyszukaj ośrodki narciarskie po regionie", "5. Zaloguj", "6. Utwórz użytkownika");
 
     public void menu() {
-        JsonMapper jsonMapper = new JsonMapper();
-        List<Resort> resorts = jsonMapper.deserialize("skirch-core/src/main/resources/resorts.json");
         SearchEngine searchEngine = new SearchEngine();
         ResortController resortController = new ResortController();
         sleep();
@@ -27,19 +24,19 @@ public class Menu {
         int direction = resortController.menuOptions();
         switch (direction) {
             case 1 -> {
-                searchEngine.searchByName(resortController.name(), resorts);
+                searchEngine.searchByName(resortController.name(), Database.getListOfResorts());
                 resortController.ifSearchAgain();
             }
             case 2 -> {
-                searchEngine.searchByCoordinates(resortController.latitude(), resortController.longitude(), resortController.radius(), resorts);
+                searchEngine.searchByCoordinates(resortController.latitude(), resortController.longitude(), resortController.radius(), Database.getListOfResorts());
                 resortController.ifSearchAgain();
             }
             case 3 -> {
-                searchEngine.searchByCountry(resortController.country(), resorts);
+                searchEngine.searchByCountry(resortController.country(), Database.getListOfResorts());
                 resortController.ifSearchAgain();
             }
             case 4 -> {
-                searchEngine.searchByRegion(resortController.region(), resorts);
+                searchEngine.searchByRegion(resortController.region(), Database.getListOfResorts());
                 resortController.ifSearchAgain();
             }
             case 5 -> {
