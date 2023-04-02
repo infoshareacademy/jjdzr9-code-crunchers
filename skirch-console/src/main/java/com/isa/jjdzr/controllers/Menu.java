@@ -2,7 +2,6 @@ package com.isa.jjdzr.controllers;
 
 
 import com.isa.jjdzr.service.Database;
-import com.isa.jjdzr.service.JsonMapper;
 import com.isa.jjdzr.service.SearchEngine;
 
 import java.util.List;
@@ -36,7 +35,7 @@ public class Menu {
                 resortController.ifSearchAgain();
             }
             case 4 -> {
-                searchEngine.searchByRegion(resortController.region(), Database.getListOfResorts());
+                searchEngine.searchByRegion(resortController.region());
                 resortController.ifSearchAgain();
             }
             case 5 -> {

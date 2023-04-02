@@ -19,16 +19,12 @@ public class SearchEngine {
         }
     }
 
+    public List<Resort> searchByRegion(String region) {
+        return Database.getListOfResorts()
+                .stream()
+                .filter(s -> s.getData().getRegion().equals(region))
+                .toList();
 
-    public void searchByRegion(String region, List<Resort> resorts) {
-        List<Resort> resortsInRegion = resorts.stream().filter(s -> s.getData().getRegion().equals(region)).collect(Collectors.toList());
-        for (int i = 0; i < resortsInRegion.size(); i++) {
-            printResort(resortsInRegion.get(i));
-            System.out.println();
-        }
-        if (resortsInRegion.size() == 0) {
-            System.out.println("Nie znaleziono ośrodka w podanym regionie.");
-        }
     }
 
     public void searchByCountry(String country, List<Resort> resorts) {
