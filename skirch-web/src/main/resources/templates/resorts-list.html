@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home page</title>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+</head>
+<body>
+<p>
+    <span th:text="List of products"></span>
+</p>
+<div th:if="${ not#lists.isEmpty(products)}">
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Region</th>
+            <th>Name</th>
+        </tr>
+        <tr th:each="resort : ${resorts}">
+            <td th:text="${resort.data.country}"></td>
+            <td th:text="${resort.data.region}"></td>
+            <td th:text="${resort.data.name}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
