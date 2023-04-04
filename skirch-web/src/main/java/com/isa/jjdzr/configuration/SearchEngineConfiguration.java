@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 class SearchEngineConfiguration {
 
- @Bean
- SearchEngine searchEngine() {
-  return new SearchEngine();
- }
+    @Bean
+    SearchEngine searchEngine() {
+        return new SearchEngine();
+    }
 }
