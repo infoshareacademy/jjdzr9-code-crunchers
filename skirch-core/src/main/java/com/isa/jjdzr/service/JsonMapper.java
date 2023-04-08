@@ -2,6 +2,7 @@ package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.isa.jjdzr.model.Resort;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,9 +21,9 @@ public class JsonMapper {
     public JsonMapper() {
     }
 
-    public <T> List<T> deserialize(String path) {
+    public List<Resort> deserialize(String path) {
         String result;
-        List<T> list = new ArrayList<>();
+        List<Resort> list = new ArrayList<>();
         try {
             result = new String(Files.readAllBytes(Paths.get(path)));
             if (!result.isEmpty()) {
@@ -34,6 +35,7 @@ public class JsonMapper {
         }
         return list;
     }
+
     public <T> void serialize(List<T> list) {
 
         PrintWriter writer = null;
@@ -42,7 +44,7 @@ public class JsonMapper {
             PrintWriter finalWriter = writer;
             list.forEach(object -> {
                 try {
-                   finalWriter.println(mapper.writeValueAsString(object));
+                    finalWriter.println(mapper.writeValueAsString(object));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

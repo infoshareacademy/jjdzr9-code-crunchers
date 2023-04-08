@@ -1,8 +1,7 @@
 package com.isa.jjdzr.controllers;
 
-
-import com.isa.jjdzr.service.Database;
 import com.isa.jjdzr.service.SearchEngine;
+import com.isa.jjdzr.utils.PrinterUtils;
 
 import java.util.List;
 
@@ -15,6 +14,7 @@ public class Menu {
     public void menu() {
         SearchEngine searchEngine = new SearchEngine();
         ResortController resortController = new ResortController();
+        PrinterUtils printerUtils = new PrinterUtils();
         sleep();
         displayOptions();
         sleep();
@@ -23,19 +23,25 @@ public class Menu {
         int direction = resortController.menuOptions();
         switch (direction) {
             case 1 -> {
-                searchEngine.searchByName(resortController.name(), Database.getListOfResorts());
+                printerUtils.printSearchByName
+                        (searchEngine.searchByName(resortController.name()));
                 resortController.ifSearchAgain();
             }
             case 2 -> {
-                searchEngine.searchByCoordinates(resortController.latitude(), resortController.longitude(), resortController.radius(), Database.getListOfResorts());
+                printerUtils.printSearchByCoordinates
+                        (searchEngine.searchByCoordinates
+                                (resortController.latitude(),resortController.longitude(),resortController.radius()),
+                                resortController.radius());
                 resortController.ifSearchAgain();
             }
             case 3 -> {
-                searchEngine.searchByCountry(resortController.country(), Database.getListOfResorts());
+                printerUtils.printSearchByCountry
+                        (searchEngine.searchByCountry(resortController.country()));
                 resortController.ifSearchAgain();
             }
             case 4 -> {
-                searchEngine.searchByRegion(resortController.region());
+                printerUtils.printSearchByRegion
+                        (searchEngine.searchByRegion(resortController.region()));
                 resortController.ifSearchAgain();
             }
             case 5 -> {
