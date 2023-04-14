@@ -35,6 +35,11 @@
             <version>28.1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.isa.jjdzr</groupId>
+            <artifactId>skirch-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
