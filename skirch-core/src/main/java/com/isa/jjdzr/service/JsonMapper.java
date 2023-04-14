@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.ManagedBean;
 
 import static com.isa.jjdzr.SkirchCoreConstants.USERS_PATH;
 
@@ -21,19 +22,17 @@ public class JsonMapper {
     public JsonMapper() {
     }
 
-    public List<Resort> deserialize(String path) {
-        String result;
-        List<Resort> list = new ArrayList<>();
+    public <T> T deserialize(String path, TypeReference<T> typeReference) {
+        T result = null;
         try {
-            result = new String(Files.readAllBytes(Paths.get(path)));
-            if (!result.isEmpty()) {
-                list = mapper.readValue(result, new TypeReference<>() {
-                });
+            final var stringValue = new String(Files.readAllBytes(Paths.get(path)));
+            if (!stringValue.isEmpty()) {
+                result = mapper.readValue(stringValue, typeReference);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return list;
+        return result;
     }
 
     public <T> void serialize(List<T> list) {

@@ -14,6 +14,6 @@ public class Database {
     }
     public static List<User> getListOfUsers(){
         return listOfUsers;
-    };
+    }
 
 }
