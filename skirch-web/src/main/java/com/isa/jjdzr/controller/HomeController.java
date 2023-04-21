@@ -9,12 +9,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/homepage")
+@RequestMapping()
 public class HomeController {
     private final ResortService resortService;
 
     @GetMapping("/hello")
     public String homePage(Model model) {
         return "homepage";
+    }
+
+    @GetMapping("/main")
+    public String mainPage() {
+        return "main-page";
+    }
+
+    @GetMapping("/search-by-coordinates")
+    public String searchByCoordinates() {
+        return "search-coordinates";
     }
 }
