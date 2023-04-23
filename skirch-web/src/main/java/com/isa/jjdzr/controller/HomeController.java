@@ -23,8 +23,15 @@ public class HomeController {
         return "main-page";
     }
 
-    @GetMapping("/search-by-coordinates")
-    public String searchByCoordinates() {
-        return "search-coordinates";
+    @GetMapping("/login")
+    public String userLogin() {
+        return "user-login";
     }
+
+    @GetMapping("/registration")
+    public String userRegistration() {
+        return "user-registration";
+    }
+
+
 }
