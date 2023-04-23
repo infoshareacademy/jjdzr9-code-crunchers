@@ -1,8 +1,8 @@
-package com.isa.jjdzr;
+package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.isa.jjdzr.model.Resort;
-import com.isa.jjdzr.service.JsonMapper;
+
 import java.util.List;
 
 import static com.isa.jjdzr.SkirchCoreConstants.RESORTS_PATH;
