@@ -11,7 +11,7 @@ public class SearchEngine {
     public Resort searchByName(String name) {
         return Database.getListOfResorts()
                 .stream()
-                .filter(s -> s.getData().getName().equals(name))
+                .filter(s -> s.getData().getName().equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
     }
@@ -19,14 +19,14 @@ public class SearchEngine {
     public List<Resort> searchByRegion(String region) {
         return Database.getListOfResorts()
                 .stream()
-                .filter(s -> s.getData().getRegion().equals(region))
+                .filter(s -> s.getData().getRegion().equalsIgnoreCase(region))
                 .toList();
     }
 
     public List<Resort> searchByCountry(String country) {
         return Database.getListOfResorts()
                 .stream()
-                .filter(s -> s.getData().getCountry().equals(country))
+                .filter(s -> s.getData().getCountry().equalsIgnoreCase(country))
                 .toList();
     }
 

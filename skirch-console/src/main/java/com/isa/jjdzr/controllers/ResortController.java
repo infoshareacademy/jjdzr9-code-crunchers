@@ -111,10 +111,10 @@ public class ResortController {
                 String userDecision = scanner.nextLine();
                 String yes = "T";
                 String no = "N";
-                if (userDecision.equals(yes)){
+                if (userDecision.equalsIgnoreCase(yes)){
                     menu.menu();
                     inputIncorrect = false;
-                } else if (userDecision.equals(no)){
+                } else if (userDecision.equalsIgnoreCase(no)){
                     System.out.println("Dziękujemy za skorzystanie z wyszukiwarki i zapraszamy ponownie! :)");
                     inputIncorrect = false;
                 } else {
