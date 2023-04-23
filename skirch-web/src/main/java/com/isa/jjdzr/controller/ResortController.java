@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/resorts")
+@RequestMapping("/search")
 public class ResortController {
     private final ResortService resortService;
 
     @GetMapping("/by-region")
     public String getFindByRegionForm(Model model) {
         model.addAttribute("searchQuery", new SearchQuery());
-        return "search-resorts";
+        return "search-region";
     }
 
     @GetMapping("/by-region/all")
@@ -26,4 +26,20 @@ public class ResortController {
         model.addAttribute("resorts", resortService.searchByRegion(searchQuery.getKeyword()));
         return "resorts-list"; //tutaj ma się mapa wyświetlać
     }
+    //TODO póki co nie działa, bo w html już jest miejscami podpięty thymeleaf, po dopisaniu controllera jak dla /by-region powinno działać
+    @GetMapping("/by-name")
+    public String searchByName() {
+        return "search-name";
+    }
+    //TODO póki co nie działa, bo w html już jest miejscami podpięty thymeleaf, po dopisaniu controllera jak dla /by-region powinno działać
+    @GetMapping("/by-country")
+    public String searchByCountry() {
+        return "search-country";
+    }
+
+    @GetMapping("/by-coordinates")
+    public String searchByCoordinates() {
+        return "search-coordinates";
+    }
+
 }
