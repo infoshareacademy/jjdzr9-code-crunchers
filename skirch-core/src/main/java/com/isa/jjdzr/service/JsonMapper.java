@@ -41,13 +41,11 @@ public class JsonMapper {
         try {
             writer = new PrintWriter(new FileWriter(USERS_PATH));
             PrintWriter finalWriter = writer;
-            list.forEach(object -> {
                 try {
-                    finalWriter.println(mapper.writeValueAsString(object));
+                    finalWriter.println(mapper.writeValueAsString(list));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-            });
             writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
