@@ -35,17 +35,17 @@ public class JsonMapper {
         return result;
     }
 
-    public <T> void serialize(List<T> list) {
+    public <T> void serialize(List<T> list, String path) {
 
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter(new FileWriter(USERS_PATH));
+            writer = new PrintWriter(new FileWriter(path));
             PrintWriter finalWriter = writer;
-                try {
-                    finalWriter.println(mapper.writeValueAsString(list));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+            try {
+                finalWriter.println(mapper.writeValueAsString(list));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

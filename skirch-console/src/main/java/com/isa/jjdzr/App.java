@@ -3,6 +3,7 @@ package com.isa.jjdzr;
 import com.isa.jjdzr.controllers.Menu;
 import com.isa.jjdzr.service.LoadDatabase;
 
+import com.isa.jjdzr.service.LoadDatabase;
 import java.io.IOException;
 
 
