@@ -1,4 +1,4 @@
-package com.isa.jjdzr;
+package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.isa.jjdzr.model.Resort;
