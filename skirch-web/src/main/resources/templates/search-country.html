@@ -67,7 +67,8 @@
                 <br><br>
                 <br><br>
                 <h2 class="text-white mb-4 col-center ">Wpisz nazwę kraju, z którego chcesz wyszukać ośrodki:</h2>
-                <form action="/resorts/by-country/all" class="form-signup" id="contactForm" th:object="${searchQuery}">
+                <form action="/resorts/by-country/all" class="form-signup" id="contactForm"
+                      th:object="${searchAttributes}">
                     <div class="row input-group-newsletter">
                         <div class="col"><input aria-label="Nazwa kraju..." class="form-control"
                                                 data-sb-validations="required,email"

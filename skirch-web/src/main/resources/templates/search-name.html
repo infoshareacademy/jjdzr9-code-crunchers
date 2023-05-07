@@ -40,7 +40,7 @@
                        id="navbarDropdownBlog" role="button">Wyszukiwanie zaawansowane</a>
                     <ul aria-labelledby="navbarDropdownBlog" class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="search-country.html">po kraju</a></li>
-                        <li><a class="dropdown-item" href="search-region.html">po regionie</a></li>
+                        <li><a class="dropdown-item" href="search.html">po regionie</a></li>
                         <li><a class="dropdown-item" href="search-coordinates.html">po koordynatach</a></li>
                     </ul>
                 </li>
@@ -67,10 +67,12 @@
                 <br><br>
                 <br><br>
                 <h2 class="text-white mb-4 col-center ">Wpisz nazwę ośrodka, jaki Cię interesuje:</h2>
-                <form action="/resorts/by-region/all" class="form-signup" id="contactForm" th:object="${searchQuery}">
+                <form class="form-signup" id="contactForm" th:action="/resorts/by-name/all"
+                      th:object="${searchAttributes}">
                     <!-- Email address input-->
                     <div class="row input-group-newsletter">
-                        <div class="col"><input aria-label="Nazwa ośrodka..." class="form-control" data-sb-validations="required,email"
+                        <div class="col"><input aria-label="Nazwa ośrodka..." class="form-control"
+                                                data-sb-validations="required,email"
                                                 id="keyword" placeholder="Nazwa ośrodka..."
                                                 th:field="*{keyword}"/></div>
                         <div class="col-md-auto">
