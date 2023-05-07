@@ -26,14 +26,17 @@ public class ResortController {
         model.addAttribute("resorts", resortService.searchByRegion(searchQuery.getKeyword()));
         return "resorts-list"; //tutaj ma się mapa wyświetlać
     }
+
     //TODO póki co nie działa, bo w html już jest miejscami podpięty thymeleaf, po dopisaniu controllera jak dla /by-region powinno działać
     @GetMapping("/by-name")
     public String searchByName() {
         return "search-name";
     }
+
     //TODO póki co nie działa, bo w html już jest miejscami podpięty thymeleaf, po dopisaniu controllera jak dla /by-region powinno działać
     @GetMapping("/by-country")
-    public String searchByCountry() {
+    public String searchByCountry(Model model) {
+        model.addAttribute("searchQuery", new SearchQuery());
         return "search-country";
     }
 

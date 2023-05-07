@@ -16,42 +16,14 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
     <style>
-        body{
+        body {
             background-image: url("/assets/img/bg-masthead.jpg")
         }
     </style>
 </head>
 <body id="page-top">
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4">
-        <a class="navbar-brand" href="main-page.html">Strona główna</a>
-        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
-                class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" data-bs-toggle="collapse"
-                type="button">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="search-name.html">Wyszukiwanie po nazwie</a></li>
-                <li class="nav-item dropdown">
-                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                       id="navbarDropdownBlog" role="button">Wyszukiwanie zaawansowane</a>
-                    <ul aria-labelledby="navbarDropdownBlog" class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="search-country.html">po kraju</a></li>
-                        <li><a class="dropdown-item" href="search-region.html">po regionie</a></li>
-                        <li><a class="dropdown-item" href="search-coordinates.html">po koordynatach</a></li>
-                    </ul>
-                </li>
-<!--                <li class="nav-item"><a class="nav-link" href="#">Ulubione ośrodki</a></li>-->
-                <li class="nav-item"><a class="nav-link" href="user-login.html">Logowanie</a></li>
-                <li class="nav-item"><a class="nav-link" href="user-registration.html">Rejestracja</a></li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
+<div th:replace="fragments :: nav-bar"></div>
 <!-- Masthead-->
 <header class="masthead">
     <div class="container px-4 px-lg-5">
@@ -71,7 +43,8 @@
                 <form action="/resorts/by-region/all" class="form-signup" id="contactForm" th:object="${searchQuery}">
                     <!-- Email address input-->
                     <div class="row input-group-newsletter">
-                        <div class="col"><input aria-label="Wpisz region..." class="form-control" data-sb-validations="required,email"
+                        <div class="col"><input aria-label="Wpisz region..." class="form-control"
+                                                data-sb-validations="required,email"
                                                 id="keyword" placeholder="Wpisz region..."
                                                 th:field="*{keyword}"/></div>
                         <div class="col-md-auto">
