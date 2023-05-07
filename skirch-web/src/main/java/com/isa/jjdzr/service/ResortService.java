@@ -4,6 +4,7 @@ import com.isa.jjdzr.model.Resort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -22,5 +23,9 @@ public class ResortService {
 
     public List<Resort> searchByCountry(String country) {
         return searchEngine.searchByCountry(country);
+    }
+
+    public List<Resort> searchByCoordinates(String keyword) {
+        return Collections.emptyList();// TODO do wypełnienia @Piotr Olszewski
     }
 }

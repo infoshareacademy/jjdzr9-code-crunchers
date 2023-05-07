@@ -22,9 +22,7 @@
     </style>
 </head>
 <body id="page-top">
-<!-- Navigation-->
-<!--<div th:replace="fragments :: nav-bar"></div>-->
-<!-- Masthead-->
+<div th:insert="nav-bar"></div>
 <header class="masthead">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5">
@@ -40,7 +38,7 @@
                 <br><br>
                 <h2 class="text-white mb-4 col-center ">Wpisz region, z którego chcesz wyszukać ośrodki
                     narciarskie:</h2>
-                <form class="form-signup" id="contactForm" th:action="*{endpoint}" th:object="${searchAttributes}">
+                <form class="form-signup" id="contactForm" th:action="@{/search/list}" th:object="${searchAttributes}">
                     <div class="row input-group-newsletter">
                         <div class="col"><input aria-label="Wpisz region..." class="form-control"
                                                 data-sb-validations="required,email"
