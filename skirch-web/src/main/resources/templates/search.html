@@ -44,11 +44,15 @@
                                                 data-sb-validations="required,email"
                                                 id="keyword" placeholder="Wpisz region..."
                                                 th:field="*{keyword}"/></div>
+                        <input aria-label="Wpisz region..." class="form-control"
+                                                data-sb-validations="required,email"
+                                                id="attribute" th:hidden="true"
+                                                th:field="*{attribute}"/>
+                        <div class="col-md-auto">
                         <div class="col-md-auto">
                             <button class="btn btn-primary activate" id="submitButton" type="submit">Szukaj</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
