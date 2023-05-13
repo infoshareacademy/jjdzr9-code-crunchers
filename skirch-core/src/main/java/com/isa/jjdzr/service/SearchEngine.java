@@ -5,15 +5,15 @@ import org.geotools.referencing.GeodeticCalculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class SearchEngine {
 
-    public Resort searchByName(String name) {
+    public Optional<Resort> searchByName(String name) {
         return Database.getListOfResorts()
                 .stream()
                 .filter(s -> s.getData().getName().equalsIgnoreCase(name))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
 
     public List<Resort> searchByRegion(String region) {
