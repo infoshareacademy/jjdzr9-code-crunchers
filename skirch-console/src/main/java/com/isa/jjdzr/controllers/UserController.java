@@ -4,6 +4,7 @@ import com.isa.jjdzr.model.User;
 import com.isa.jjdzr.service.UserService;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public class UserController {
     private final Scanner scanner;
@@ -30,7 +31,7 @@ public class UserController {
     }
 
     private void saveUser(String name, String email, String password) {
-        User user = new User(name, email, password);
+        User user = new User(name, email, password, UUID.randomUUID().toString());
         userService.saveUser(user);
     }
 }
