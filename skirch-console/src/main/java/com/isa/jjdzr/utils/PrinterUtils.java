@@ -4,6 +4,7 @@ import com.isa.jjdzr.model.Resort;
 import org.geotools.referencing.GeodeticCalculator;
 
 import java.util.List;
+import java.util.Optional;
 
 public class PrinterUtils {
 
@@ -27,9 +28,9 @@ public class PrinterUtils {
         }
     }
 
-    public void printSearchByName(Resort resort) {
+    public void printSearchByName(Optional<Resort> resort) {
         if (resort != null) {
-            printResort(resort);
+            printResort(resort.orElseThrow());
             System.out.println();
         } else {
             System.out.println("Nie odnaleziono ośrodka o podanej nazwie.");
