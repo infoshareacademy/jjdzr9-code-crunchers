@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -16,9 +17,8 @@ public class ResortService {
         return searchEngine.searchByRegion(region);
     }
 
-    public Resort searchByName(String name) {
-        return searchEngine.searchByName(name)
-                .orElseThrow(() -> new RuntimeException("Resort not found"));
+    public Optional<Resort> searchByName(String name) {
+        return searchEngine.searchByName(name);
     }
 
     public List<Resort> searchByCountry(String country) {
