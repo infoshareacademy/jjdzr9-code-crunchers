@@ -1,61 +1,25 @@
 package com.isa.jjdzr.service;
 
+import com.isa.jjdzr.dto.UserDto;
+import com.isa.jjdzr.mappers.UserMapper;
 import com.isa.jjdzr.model.User;
-
-import java.util.List;
-
-import static com.isa.jjdzr.service.IdGenerator.generateNewId;
-
+import com.isa.jjdzr.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@RequiredArgsConstructor
+@Service
 public class UserService {
-    private final JsonMapper jsonMapper = new JsonMapper();
-    private Database database;
+    @Autowired
+    private final UserMapper userMapper;
+    @Autowired
+    private final UserRepository userRepository;
 
-    public User saveUser(User newUser) {
-        User user = new User();
-        user.setUsername(newUser.getUsername());
-        user.setEmail(newUser.getEmail());
-        user.setPassword(newUser.getPassword());
-        user.setMatchingPassword(newUser.getMatchingPassword());
-        int newId = generateNewId();
-        user.setId(newId);
-        Database.getListOfUsers().add(user);
-        saveToFile(Database.getListOfUsers());
-        return user;
+    public UserDto saveUser(UserDto userDto) {
+        User user = userMapper.toEntity(userDto);
+        User savedUser = userRepository.save(user);
+        return userMapper.toDto(savedUser);
     }
-    
-    public List<User> allUsers() {
-        return Database.getListOfUsers();
-    }
-
-    private void saveToFile(List<User> userList) {
-        jsonMapper.serialize(userList);
-    }
-
-
-//    public User registerNewUser(List<User> allUsers) throws RuntimeException {
-//        if (emailExists(user.getEmail())) {
-//            throw new RuntimeException("There is an account with that email address: "
-//                    + user.getEmail());
-//        }
-//        User newUser = new User();
-//        newUser.setUsername(user.getUsername());
-//        newUser.setPassword(user.getPassword());
-//        newUser.setEmail(user.getEmail());
-//
-//        return database.getListOfUsers().add(newUser);
-//    }
-
-//    private boolean emailExists (String email){
-//        return database.findByEmail(email)!= null;
-//    }
-
-
-
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//
-//        return null;
-//    }
 }
 
 

@@ -2,7 +2,6 @@ package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.isa.jjdzr.model.Resort;
 
 import java.io.FileWriter;
 import java.io.IOException;

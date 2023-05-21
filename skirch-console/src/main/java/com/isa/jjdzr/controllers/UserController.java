@@ -1,24 +1,22 @@
 package com.isa.jjdzr.controllers;
 
-import com.isa.jjdzr.model.User;
+import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Scanner;
-
+@RequiredArgsConstructor
 public class UserController {
     private final Scanner scanner;
+    @Autowired
     private final UserService userService;
 
-    public UserController() {
-        scanner = new Scanner(System.in);
-        userService = new UserService();
-    }
-
-    public void createUser(){
+    public void createUser() {
         System.out.println("Dzień Dobry.");
         System.out.println("Proszę podać dane użytkownika");
         System.out.println("Podaj imię.");
-        String username = scanner.nextLine();
+        String name = scanner.nextLine();
 
         System.out.println("Podaj email.");
         String email = scanner.nextLine();
@@ -26,12 +24,12 @@ public class UserController {
         System.out.println("Podaj hasło.");
         String password = scanner.nextLine();
 
-        saveUser(username, email, password);
+        saveUser(name, email, password);
     }
 
-    private void saveUser(String username, String email, String password) {
-        User user = new User(username, email, password);
-        userService.saveUser(user);
+    private void saveUser(String name, String email, String password) {
+        UserDto userDto = new UserDto(null, name, email, password);
+        userService.saveUser(userDto);
     }
 }
 
