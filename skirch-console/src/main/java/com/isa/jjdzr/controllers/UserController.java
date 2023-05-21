@@ -18,7 +18,7 @@ public class UserController {
         System.out.println("Dzień Dobry.");
         System.out.println("Proszę podać dane użytkownika");
         System.out.println("Podaj imię.");
-        String name = scanner.nextLine();
+        String username = scanner.nextLine();
 
         System.out.println("Podaj email.");
         String email = scanner.nextLine();
@@ -26,11 +26,11 @@ public class UserController {
         System.out.println("Podaj hasło.");
         String password = scanner.nextLine();
 
-        saveUser(name, email, password);
+        saveUser(username, email, password);
     }
 
-    private void saveUser(String name, String email, String password) {
-        User user = new User(name, email, password);
+    private void saveUser(String username, String email, String password) {
+        User user = new User(username, email, password);
         userService.saveUser(user);
     }
 }

@@ -16,5 +16,9 @@ public class Database {
     public static List<User> getListOfUsers() {
         return listOfUsers;
     }
+//    public static User findByEmail(String email){
+//        return listOfUsers.stream().filter(n->n.getEmail().equals(email)).findFirst().get();
+//    }
+
 }
 
