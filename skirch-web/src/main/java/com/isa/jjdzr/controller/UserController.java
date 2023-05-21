@@ -1,6 +1,6 @@
 package com.isa.jjdzr.controller;
 
-import com.isa.jjdzr.model.User;
+import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -28,13 +28,13 @@ public class UserController {
 
     @GetMapping("/registration")
     public String getRegistrationUserForm(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserDto());
         return "user-registration";
     }
 
     @PostMapping("/registration")
-    public String userRegistration(Model model, @ModelAttribute("user") User user) {
-        model.addAttribute("user", userService.saveUser(user));
+    public String userRegistration(Model model, @ModelAttribute("user") UserDto userDto) {
+        model.addAttribute("user", userService.saveUser(userDto));
         return "main-page";
     }
 

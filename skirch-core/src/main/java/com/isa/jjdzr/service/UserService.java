@@ -5,13 +5,14 @@ import com.isa.jjdzr.mappers.UserMapper;
 import com.isa.jjdzr.model.User;
 import com.isa.jjdzr.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class UserService {
-    @Autowired
-    private final UserMapper userMapper;
+
+    private final UserMapper userMapper= Mappers.getMapper(UserMapper.class);
     @Autowired
     private final UserRepository userRepository;
 

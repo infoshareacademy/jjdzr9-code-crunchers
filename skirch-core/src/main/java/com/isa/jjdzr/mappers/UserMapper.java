@@ -4,7 +4,7 @@ import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.model.User;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserMapper {
     User toEntity(UserDto userDto);
     UserDto toDto(User user);
