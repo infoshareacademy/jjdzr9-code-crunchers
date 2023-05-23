@@ -30,7 +30,7 @@
       <div class="text-center">
         <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
         <h4 class="text-white-50 mx-auto mt-2 mb-5">Rejestracja użytkownika</h4>
-        <form th:action="@{/user/registration}" th:object="${user}" method="post">
+        <form th:action="@{/registration}" th:object="${user}" method="post">
           <label class= "text-white-50 mx-auto mt-2 mb-5" for="name">Nazwa użytkownika:</label>
           <input th:field="*{name}" type="text" id="name" name="name"><br>
 <!--          <p th:each="error : ${#fields.errors('username')}" th:text="${error}">Validation error</p>-->

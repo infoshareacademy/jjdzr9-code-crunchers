@@ -12,13 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/")
 public class UserController {
     @Autowired
     private final UserService userService;
 
     @GetMapping("/login")
-    public String userLogin() {
+    public String userLogin(Model model, UserDto userDto) {
+        model.addAttribute("user", userDto);
+        // UserDto loggedUser = userService.findByEmail(userDto.getEmail());
+        // coś tu jeszcze trzeba dopisać
         return "user-login";
     }
 
@@ -29,9 +32,9 @@ public class UserController {
     }
 
     @PostMapping("/registration")
-    public String userRegistration(Model model, UserDto userDto) {
+    public String userRegistration(UserDto userDto) {
         userService.saveUser(userDto);
-        return "main-page";
+        return "main-page_signed-in";
     }
 
 //    @PostMapping("/registration")
