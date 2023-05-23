@@ -20,7 +20,7 @@ public class UserController {
     @GetMapping("/login")
     public String userLogin(Model model, UserDto userDto) {
         model.addAttribute("user", userDto);
-        // UserDto loggedUser = userService.findByEmail(userDto.getEmail());
+        UserDto loggedUser = userService.findByEmail(userDto.getEmail());
         // coś tu jeszcze trzeba dopisać
         return "user-login";
     }
