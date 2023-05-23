@@ -17,8 +17,7 @@ public class LoadDatabase {
     private static final JsonMapper jsonMapper = new JsonMapper();
 
     public static void loadDatabase() {
-        getListOfUsers().addAll(jsonMapper.deserialize(USERS_PATH, new TypeReference<List<User>>() {
-        }));
+
         getListOfResorts().addAll(jsonMapper.deserialize(RESORTS_PATH, new TypeReference<List<Resort>>() {
         }));
 

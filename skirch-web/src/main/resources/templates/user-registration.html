@@ -30,21 +30,21 @@
       <div class="text-center">
         <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
         <h4 class="text-white-50 mx-auto mt-2 mb-5">Rejestracja użytkownika</h4>
-        <form th:action="@{/user/login}" th:object="${user}" method="post">
-          <label class= "text-white-50 mx-auto mt-2 mb-5" for="username">Nazwa użytkownika:</label>
-          <input th:field="*{username}" type="text" id="username" name="username"><br>
+        <form th:action="@{/user/registration}" th:object="${user}" method="post">
+          <label class= "text-white-50 mx-auto mt-2 mb-5" for="name">Nazwa użytkownika:</label>
+          <input th:field="*{name}" type="text" id="name" name="name"><br>
 <!--          <p th:each="error : ${#fields.errors('username')}" th:text="${error}">Validation error</p>-->
-          <label class= "text-white-50 mx-auto mt-2 mb-5" for="username">Adres e-mail:</label>
+          <label class= "text-white-50 mx-auto mt-2 mb-5" for="email">Adres e-mail:</label>
           <input th:field="*{email}" type="text" id="email" name="email"><br>
           <label class="text-white-50 mx-auto mt-2 mb-1"for="password">Hasło:</label>
           <input th:field="*{password}" type="password" id="password" name="password"><br>
 <!--          <p th:each="error : ${#fields.errors('password')}" th:text="${error}">Validation error</p>-->
-          <label class="text-white-50 mx-auto mt-2 mb-5"for="password">Powtórz hasło:</label>
-          <input th:field="*{matchingPassword}" type="password" id="matchingPassword" name="matchingPassword"><br><br>
+<!--          <label class="text-white-50 mx-auto mt-2 mb-5"for="password">Powtórz hasło:</label>-->
+<!--          <input th:field="*{matchingPassword}" type="password" id="matchingPassword" name="matchingPassword"><br><br>-->
 <!--          <p th:each="error : ${#fields.errors('matchingPassword')}" th:text="${error}">Validation error</p>-->
 
 
-        <a class="btn btn-primary">Zarejestruj się</a>
+          <button class="btn btn-primary activate" id="submitButton" type="submit">Zarejestruj się</button>
         <h6 class="text-white-50 mx-auto mt-2 mb-5"><p class="nav-item"><a class="nav-link"><b></b></a></p></h6>
         </form>
       </div>

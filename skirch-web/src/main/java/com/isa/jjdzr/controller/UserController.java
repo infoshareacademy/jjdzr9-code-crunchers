@@ -3,10 +3,10 @@ package com.isa.jjdzr.controller;
 import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,12 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
-    UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    private final UserService userService;
 
     @GetMapping("/login")
     public String userLogin() {
@@ -33,8 +29,8 @@ public class UserController {
     }
 
     @PostMapping("/registration")
-    public String userRegistration(Model model, @ModelAttribute("user") UserDto userDto) {
-        model.addAttribute("user", userService.saveUser(userDto));
+    public String userRegistration(Model model, UserDto userDto) {
+        userService.saveUser(userDto);
         return "main-page";
     }
 
