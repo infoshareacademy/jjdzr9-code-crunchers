@@ -19,18 +19,19 @@
     </style>
 </head>
 <body id="page-top">
-<div th:insert="nav-bar"></div>
+<div th:insert="nav-bar_signed-in.html"></div>
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
             <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
                 <h4 class="text-white-50 mx-auto mt-2 mb-5">Wyszukiwarka ośrodków narciarskich</h4>
-                <a class="btn btn-primary" th:href="@{/login}">Zaloguj się</a>
-                <h6 class="text-white-50 mx-auto mt-2 mb-5"><i>*Zalogowani użytkownicy mają dostęp do dodatkowych funkcjonalności</i></h6>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">Jeżeli nie masz jeszcze konta przejdź do sekcji <p
-                        class="nav-item"><a class="nav-link" th:href="@{/registration}"><b>Rejestracja</b></a></p>
-                </h2>
+                <br>
+                <h5 class="text-white-50 mx-auto mt-2 mb-5">Witamy w naszej aplikacji! Jako zalogowany
+                    użytkownik masz dostęp do dodatkowych funkcjonalności, które znajdziesz w pasku
+                    nawigacyjnym powyżej. U nas znajdziesz najważniejsze informacje dotyczące
+                    największych ośrodków narciarskich w Polsce i nie tylko.</h5>
+                <h4 class="text-white-50 mx-auto mt-2 mb-5">Udanego szusowania :)</h4>
             </div>
         </div>
     </div>

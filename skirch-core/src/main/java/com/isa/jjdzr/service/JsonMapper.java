@@ -2,16 +2,13 @@ package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.isa.jjdzr.model.Resort;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.ManagedBean;
 
 import static com.isa.jjdzr.SkirchCoreConstants.USERS_PATH;
 
