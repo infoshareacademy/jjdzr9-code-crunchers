@@ -1,16 +1,17 @@
 package com.isa.jjdzr.model;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-//@Embeddable
+@NoArgsConstructor
+@Embeddable
 public class Location {
     private Double latitude;
     private Double longitude;
 
-    public Location() {
 
-    }
 }

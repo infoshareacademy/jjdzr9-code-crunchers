@@ -1,5 +1,5 @@
 package com.isa.jjdzr.model;
-
+@lombok.Data
 public class ResortExternalDto {
     private Data data;
 

@@ -13,12 +13,12 @@ public class Data {
     private String country;
     private String region;
     private String href;
-    @Transient
+    @Embedded
     private Location location;
     @Transient
     private Lifts lifts;
-
-    @Id
     private String name;
+    @Id
+    private int id;
 
 }
