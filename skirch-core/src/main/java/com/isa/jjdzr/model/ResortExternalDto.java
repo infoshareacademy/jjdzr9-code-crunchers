@@ -1,6 +1,6 @@
 package com.isa.jjdzr.model;
 
-public class Resort {
+public class ResortExternalDto {
     private Data data;
 
     public Data getData() {
