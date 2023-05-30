@@ -2,9 +2,12 @@ package com.isa.jjdzr.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@lombok.Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "resorts")
@@ -13,12 +16,26 @@ public class Data {
     private String country;
     private String region;
     private String href;
-    @Embedded
+    @OneToOne(mappedBy = "data", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private Location location;
-    @Transient
+    @OneToOne(mappedBy = "data", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private Lifts lifts;
     private String name;
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    public void setLocation(Location location){
+        this.location = location;
+        this.location.setData(this);
+    }
+
+    public void setLifts(Lifts lifts){
+        this.lifts = lifts;
+        this.lifts.setData(this);
+    }
 
 }

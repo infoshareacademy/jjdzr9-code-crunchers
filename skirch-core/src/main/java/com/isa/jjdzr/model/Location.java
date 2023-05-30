@@ -1,17 +1,26 @@
 package com.isa.jjdzr.model;
 
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Embeddable
+@Entity
+@Table(name = "locations")
 public class Location {
     private Double latitude;
     private Double longitude;
-
+    @Id
+    @Column(name = "data_id")
+    private Long id;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name="data_id")
+    private Data data;
 
 }

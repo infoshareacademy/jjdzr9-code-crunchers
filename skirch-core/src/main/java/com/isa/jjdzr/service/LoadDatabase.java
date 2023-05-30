@@ -2,13 +2,13 @@ package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.isa.jjdzr.model.ResortExternalDto;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static com.isa.jjdzr.SkirchCoreConstants.RESORTS_PATH;
 import static com.isa.jjdzr.service.Database.getListOfResorts;
-@Repository
+@Component
 public class LoadDatabase {
 
     private static final JsonMapper jsonMapper = new JsonMapper();
