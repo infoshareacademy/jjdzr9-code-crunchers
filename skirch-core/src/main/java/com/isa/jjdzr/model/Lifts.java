@@ -1,37 +1,43 @@
 package com.isa.jjdzr.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@JsonIgnoreProperties(value = {"status"})
+import java.util.Map;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "lifts")
+//@JsonIgnoreProperties(value = {"status"})
 
 public class Lifts {
-    Status status;
-    Stats stats;
+    @OneToMany(mappedBy = "lifts")
+    private Map<String,String> status;
+    @OneToOne(mappedBy = "lifts", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Stats stats;
+    @Id
+    @Column(name = "data_id")
+    private Long id;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "data_id")
+    private Data data;
 
-    public Lifts() {
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Stats getStats() {
-        return stats;
-    }
-
-    public void setStats(Stats stats) {
+    public void setStats(Stats stats){
         this.stats = stats;
+        this.stats.setLifts(this);
+    }
+    public void setStatus(Map<String, String> status){
+        this.status = status;
+        this.status.setLifts(this);
     }
 
-    @Override
-    public String toString() {
-        return "Lifts{" +
-                "status=" + status +
-                ", stats=" + stats +
-                '}';
-    }
+
 }

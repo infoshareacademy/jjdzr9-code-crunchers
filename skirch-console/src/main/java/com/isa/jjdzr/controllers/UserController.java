@@ -3,13 +3,11 @@ package com.isa.jjdzr.controllers;
 import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Scanner;
 @RequiredArgsConstructor
 public class UserController {
     private final Scanner scanner;
-    @Autowired
     private final UserService userService;
 
     public void createUser() {

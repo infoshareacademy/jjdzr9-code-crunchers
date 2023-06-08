@@ -44,16 +44,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:if="${resorts!=null and resorts.isEmpty()}">
+                        <tr th:if="${resortExternalDtos!=null and resortExternalDtos.isEmpty()}">
                             <td colspan="2"> No Resorts Available</td>
                         </tr>
-                        <tr th:each="resort : ${resorts}">
-                            <td class="text-white mb-4" th:text="${resorts.indexOf(resort)+1}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.name}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.country}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.region}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.href}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.lifts.stats.open.shortValue()}"></td>
+                        <tr th:each="resortExternalDto : ${resortExternalDtos}">
+                            <td class="text-white mb-4" th:text="${resortExternalDtos.indexOf(resortExternalDto)+1}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resortExternalDto.data.name}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resortExternalDto.data.country}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resortExternalDto.data.region}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resortExternalDto.data.href}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resortExternalDto.data.lifts.stats.open.shortValue()}"></td>
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
                                 <div>

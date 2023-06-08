@@ -1,6 +1,6 @@
 package com.isa.jjdzr.utils;
 
-import com.isa.jjdzr.model.Resort;
+import com.isa.jjdzr.model.ResortExternalDto;
 import org.geotools.referencing.GeodeticCalculator;
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class PrinterUtils {
 
-    public void printSearchByRegion(List<Resort> resortsInRegion) {
+    public void printSearchByRegion(List<ResortExternalDto> resortsInRegion) {
         for (int i = 0; i < resortsInRegion.size(); i++) {
             printResort(resortsInRegion.get(i));
             System.out.println();
@@ -18,7 +18,7 @@ public class PrinterUtils {
         }
     }
 
-    public void printSearchByCountry(List<Resort> resortsInCountry) {
+    public void printSearchByCountry(List<ResortExternalDto> resortsInCountry) {
         for (int i = 0; i < resortsInCountry.size(); i++) {
             printResort(resortsInCountry.get(i));
             System.out.println();
@@ -28,7 +28,7 @@ public class PrinterUtils {
         }
     }
 
-    public void printSearchByName(Optional<Resort> resort) {
+    public void printSearchByName(Optional<ResortExternalDto> resort) {
         if (resort != null) {
             printResort(resort.orElseThrow());
             System.out.println();
@@ -37,7 +37,7 @@ public class PrinterUtils {
         }
     }
 
-    public void printSearchByCoordinates(List<Resort> resortsByCoordinates, Double radius) {
+    public void printSearchByCoordinates(List<ResortExternalDto> resortsByCoordinates, Double radius) {
         GeodeticCalculator calc = new GeodeticCalculator();
         for (int i = 0; i < resortsByCoordinates.size(); i++) {
             calc.setDestinationGeographicPoint(resortsByCoordinates.get(i).getData().getLocation().getLongitude(),
@@ -54,11 +54,11 @@ public class PrinterUtils {
     }
 
 
-    private void printResort(Resort resort) {
-        System.out.println("Nazwa: " + resort.getData().getName());
-        System.out.println("Kraj, region: " + resort.getData().getCountry() + ", " + resort.getData().getRegion());
-        System.out.println("Współrzędne geograficzne: " + resort.getData().getLocation().getLatitude() + ", " + resort.getData().getLocation().getLongitude());
-        System.out.println("Strona internetowa: " + resort.getData().getHref());
-        System.out.println("Liczba działających obecnie wyciągów: " + resort.getData().getLifts().getStats().getOpen().shortValue());
+    private void printResort(ResortExternalDto resortExternalDto) {
+        System.out.println("Nazwa: " + resortExternalDto.getData().getName());
+        System.out.println("Kraj, region: " + resortExternalDto.getData().getCountry() + ", " + resortExternalDto.getData().getRegion());
+        System.out.println("Współrzędne geograficzne: " + resortExternalDto.getData().getLocation().getLatitude() + ", " + resortExternalDto.getData().getLocation().getLongitude());
+        System.out.println("Strona internetowa: " + resortExternalDto.getData().getHref());
+        System.out.println("Liczba działających obecnie wyciągów: " + resortExternalDto.getData().getLifts().getStats().getOpen().shortValue());
     }
 }

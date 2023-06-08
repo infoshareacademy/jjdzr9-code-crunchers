@@ -1,63 +1,35 @@
 package com.isa.jjdzr.model;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "stats")
+@Entity
 public class Stats {
-    Double open;
-    Double hold;
-    Double scheduled;
-    Double closed;
-    Percentage percentage;
 
-    public Stats() {
-    }
+    private Double open;
+    private Double hold;
+    private Double scheduled;
+    private Double closed;
+    @OneToOne(mappedBy = "stats", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Percentage percentage;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name="lifts_id")
+    private Lifts lifts;
+    @Id
+    @Column(name = "lifts_id")
+    private Long id;
 
-    public Double getOpen() {
-        return open;
-    }
-
-    public void setOpen(Double open) {
-        this.open = open;
-    }
-
-    public Double getHold() {
-        return hold;
-    }
-
-    public void setHold(Double hold) {
-        this.hold = hold;
-    }
-
-    public Double getScheduled() {
-        return scheduled;
-    }
-
-    public void setScheduled(Double scheduled) {
-        this.scheduled = scheduled;
-    }
-
-    public Double getClosed() {
-        return closed;
-    }
-
-    public void setClosed(Double closed) {
-        this.closed = closed;
-    }
-
-    public Percentage getPercentage() {
-        return percentage;
-    }
-
-    public void setPercentage(Percentage percentage) {
+    public void setPercentage(Percentage percentage){
         this.percentage = percentage;
+        this.percentage.setStats(this);
     }
 
-    @Override
-    public String toString() {
-        return "Stats{" +
-                "open=" + open +
-                ", hold=" + hold +
-                ", scheduled=" + scheduled +
-                ", closed=" + closed +
-                ", percentage=" + percentage +
-                '}';
-    }
 }
