@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="stats_percentage")
+@Table(name="percentages")
 @Entity
 public class Percentage {
     private Double open;
