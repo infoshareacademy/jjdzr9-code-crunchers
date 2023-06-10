@@ -1,4 +1,7 @@
-package com.isa.jjdzr.model;
+package com.isa.jjdzr.dto;
+
+import com.isa.jjdzr.model.Data;
+
 @lombok.Data
 public class ResortExternalDto {
     private Data data;

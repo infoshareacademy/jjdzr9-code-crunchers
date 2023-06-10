@@ -1,7 +1,7 @@
 package com.isa.jjdzr.mappers;
 
 import com.isa.jjdzr.model.Data;
-import com.isa.jjdzr.model.ResortExternalDto;
+import com.isa.jjdzr.dto.ResortExternalDto;
 import org.springframework.stereotype.Component;
 
 @Component

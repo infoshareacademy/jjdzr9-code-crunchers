@@ -1,13 +1,13 @@
 package com.isa.jjdzr.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.isa.jjdzr.model.ResortExternalDto;
+import com.isa.jjdzr.dto.ResortExternalDto;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.isa.jjdzr.SkirchCoreConstants.RESORTS_PATH;
-import static com.isa.jjdzr.service.Database.getListOfResorts;
 @Component
 public class LoadDatabase {
 
@@ -19,10 +19,10 @@ public class LoadDatabase {
     }
 
     public static void loadDatabase() {
-        System.out.println("ResortServiceCore: " + resortServiceCore);
-        getListOfResorts().addAll(jsonMapper.deserialize(RESORTS_PATH, new TypeReference<List<ResortExternalDto>>() {
+        List<ResortExternalDto> listOfResorts = new ArrayList<>();
+        listOfResorts.addAll(jsonMapper.deserialize(RESORTS_PATH, new TypeReference<List<ResortExternalDto>>() {
         }));
-        resortServiceCore.saveAll(getListOfResorts());
+        resortServiceCore.saveAll(listOfResorts);
 
     }
 }

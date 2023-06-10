@@ -1,17 +1,28 @@
 package com.isa.jjdzr.service;
 
-import com.isa.jjdzr.model.ResortExternalDto;
+import com.isa.jjdzr.dao.ResortsDao;
+import com.isa.jjdzr.dto.ResortExternalDto;
+import com.isa.jjdzr.model.Data;
 import com.isa.jjdzr.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class Database {
-    private static List<ResortExternalDto> listOfResortExternalDtos = new ArrayList<>();
+
+    private static ResortsDao resortsDao;
+    private static List<Data> listOfResortExternalDtos = new ArrayList<>();
     private static List<User> listOfUsers = new ArrayList<>();
 
+    @Autowired
+    public Database(ResortsDao resortsDao) {
+        this.resortsDao=resortsDao;
+    }
+
     public static List<ResortExternalDto> getListOfResorts() {
-        return listOfResortExternalDtos;
+        return resortsDao.getAllResorts();
     }
     public static List<User> getListOfUsers() {
         return listOfUsers;

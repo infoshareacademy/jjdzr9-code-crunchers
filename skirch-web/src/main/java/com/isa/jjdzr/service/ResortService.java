@@ -1,6 +1,6 @@
 package com.isa.jjdzr.service;
 
-import com.isa.jjdzr.model.ResortExternalDto;
+import com.isa.jjdzr.dto.ResortExternalDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
