@@ -49,8 +49,8 @@ CREATE TABLE skirch.percentages(
                                    FOREIGN KEY (stats_id) REFERENCES resorts(id)
 );
 
-DROP TABLE skirch.percentages;
-DROP TABLE skirch.stats;
-DROP TABLE skirch.lifts;
-DROP TABLE skirch.locations;
-DROP TABLE skirch.resorts;
+# DROP TABLE skirch.percentages;
+# DROP TABLE skirch.stats;
+# DROP TABLE skirch.lifts;
+# DROP TABLE skirch.locations;
+# DROP TABLE skirch.resorts;
