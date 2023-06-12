@@ -1,28 +1,28 @@
 package com.isa.jjdzr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Map;
-
 @Setter
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "lifts")
-//@JsonIgnoreProperties(value = {"status"})
+@JsonIgnoreProperties(value = {"status"})
 
 public class Lifts {
-    @OneToMany(mappedBy = "lifts")
-    private Map<String,String> status;
+    @Transient
+    private Status status;
     @OneToOne(mappedBy = "lifts", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Stats stats;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "data_id")
     private Long id;
     @OneToOne
@@ -33,10 +33,6 @@ public class Lifts {
     public void setStats(Stats stats){
         this.stats = stats;
         this.stats.setLifts(this);
-    }
-    public void setStatus(Map<String, String> status){
-        this.status = status;
-        this.status.setLifts(this);
     }
 
 

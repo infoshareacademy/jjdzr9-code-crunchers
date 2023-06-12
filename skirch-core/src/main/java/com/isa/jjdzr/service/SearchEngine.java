@@ -1,6 +1,6 @@
 package com.isa.jjdzr.service;
 
-import com.isa.jjdzr.model.ResortExternalDto;
+import com.isa.jjdzr.dto.ResortExternalDto;
 import org.geotools.referencing.GeodeticCalculator;
 
 import java.util.ArrayList;
@@ -17,6 +17,7 @@ public class SearchEngine {
     }
 
     public List<ResortExternalDto> searchByRegion(String region) {
+        List<ResortExternalDto> listOfResorts = Database.getListOfResorts();
         return Database.getListOfResorts()
                 .stream()
                 .filter(s -> s.getData().getRegion().equalsIgnoreCase(region))

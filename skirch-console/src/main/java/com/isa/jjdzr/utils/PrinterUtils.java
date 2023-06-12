@@ -1,6 +1,6 @@
 package com.isa.jjdzr.utils;
 
-import com.isa.jjdzr.model.ResortExternalDto;
+import com.isa.jjdzr.dto.ResortExternalDto;
 import org.geotools.referencing.GeodeticCalculator;
 
 import java.util.List;
