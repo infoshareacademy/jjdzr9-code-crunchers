@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class UserService {
@@ -25,12 +28,15 @@ public class UserService {
         return userMapper.toDto(savedUser);
     }
 
-    public UserDto findByEmail(String email){
-        return userRepository.findByEmail(email);
+    public UserDto findByEmail(String email) {
+        List<User> listOfUsers = Database.getListOfUsers();
+        for (int i = 0; i < listOfUsers.size(); i++) {
+            if (listOfUsers.get(i).getEmail().equals(email)) {
+                return userRepository.findByEmail(email);
+            }
+        }
+        return null;
     }
-
-
-
 }
 
 
