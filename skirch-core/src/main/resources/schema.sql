@@ -1,13 +1,12 @@
-CREATE SCHEMA skirch;
-
-CREATE TABLE skirch.users(
+CREATE SCHEMA IF NOT EXISTS skirch;
+CREATE TABLE IF NOT EXISTS skirch.users(
                       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                       name VARCHAR(255) NOT NULL,
                       email VARCHAR(255) NOT NULL,
                       password VARCHAR(255) NOT NULL
                       );
 
-CREATE TABLE skirch.resorts(
+CREATE TABLE IF NOT EXISTS skirch.resorts(
                                country VARCHAR(255) NOT NULL,
                                region VARCHAR(255) NOT NULL,
                                href VARCHAR(255) NOT NULL,
@@ -19,19 +18,19 @@ ALTER TABLE skirch.resorts MODIFY COLUMN name TEXT CHARACTER SET utf8;
 ALTER TABLE skirch.resorts MODIFY COLUMN region TEXT CHARACTER SET utf8;
 ALTER TABLE skirch.resorts MODIFY COLUMN country TEXT CHARACTER SET utf8;
 
-CREATE TABLE skirch.locations(
+CREATE TABLE IF NOT EXISTS skirch.locations(
                                  latitude DOUBLE NOT NULL,
                                  longitude DOUBLE NOT NULL,
                                  data_id INT,
                                  FOREIGN KEY (data_id) REFERENCES resorts(id)
 );
 
-CREATE TABLE skirch.lifts(
+CREATE TABLE IF NOT EXISTS skirch.lifts(
                              data_id INT,
                              FOREIGN KEY (data_id) REFERENCES resorts(id)
 );
 
-CREATE TABLE skirch.stats(
+CREATE TABLE IF NOT EXISTS skirch.stats(
                              open DOUBLE NOT NULL,
                              hold DOUBLE NOT NULL,
                              scheduled DOUBLE NOT NULL,
@@ -40,7 +39,7 @@ CREATE TABLE skirch.stats(
                              FOREIGN KEY (lifts_id) REFERENCES resorts(id)
 );
 
-CREATE TABLE skirch.percentages(
+CREATE TABLE IF NOT EXISTS skirch.percentages(
                                    open DOUBLE NOT NULL,
                                    hold DOUBLE NOT NULL,
                                    scheduled DOUBLE NOT NULL,
@@ -49,8 +48,8 @@ CREATE TABLE skirch.percentages(
                                    FOREIGN KEY (stats_id) REFERENCES resorts(id)
 );
 
-DROP TABLE skirch.percentages;
-DROP TABLE skirch.stats;
-DROP TABLE skirch.lifts;
-DROP TABLE skirch.locations;
-DROP TABLE skirch.resorts;
+# DROP TABLE skirch.percentages;
+# DROP TABLE skirch.stats;
+# DROP TABLE skirch.lifts;
+# DROP TABLE skirch.locations;
+# DROP TABLE skirch.resorts;
