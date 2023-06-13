@@ -14,9 +14,9 @@ import java.util.List;
 @Service
 public class ResortServiceCore {
 
-    @Autowired
+
     private final ResortMapper resortMapper;
-    @Autowired
+
     private final ResortRepository resortRepository;
 
     public void saveAll(List<ResortExternalDto> listOfResorts){
@@ -25,6 +25,9 @@ public class ResortServiceCore {
             resortRepository.save(resortEntity);
         }
     }
-
+    public Data findById(Integer id) {
+        return resortRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Resort not found"));
+    }
 
 }

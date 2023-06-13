@@ -16,7 +16,7 @@ import static com.isa.jjdzr.constants.Endpoints.RESORT;
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/search")
-public class ResortController {
+public class ResortSearchController {
     private final ResortService resortService;
 
     @GetMapping("/by-region")

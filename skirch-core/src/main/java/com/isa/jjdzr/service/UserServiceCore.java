@@ -5,7 +5,6 @@ import com.isa.jjdzr.mappers.UserMapper;
 import com.isa.jjdzr.model.User;
 import com.isa.jjdzr.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +12,14 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class UserService {
-    @Autowired
+public class UserServiceCore {
+
+    private final ResortServiceCore resortServiceCore;
+
     private final UserMapper userMapper;
-    @Autowired
+
     private final UserRepository userRepository;
-    @Autowired
+
     private final PasswordEncoder passwordEncoder;
 
     public UserDto saveUser(UserDto userDto) {
@@ -32,10 +33,20 @@ public class UserService {
         List<User> listOfUsers = Database.getListOfUsers();
         for (int i = 0; i < listOfUsers.size(); i++) {
             if (listOfUsers.get(i).getEmail().equals(email)) {
-                return userRepository.findByEmail(email);
+                return userRepository.findByEmail(email)
+                        .map(userMapper::toDto)
+                        .orElse(null);
             }
         }
         return null;
+
+    }
+
+    public void addToFavorites(Integer id) {
+        User toUpdate = userRepository.findByEmail("jacek@wp.pl")
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        toUpdate.getFavoriteResorts().add(resortServiceCore.findById(id));
+        userRepository.save(toUpdate);
     }
 }
 

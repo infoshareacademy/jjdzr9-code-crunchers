@@ -1,14 +1,14 @@
 package com.isa.jjdzr.controllers;
 
 import com.isa.jjdzr.dto.UserDto;
-import com.isa.jjdzr.service.UserService;
+import com.isa.jjdzr.service.UserServiceCore;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Scanner;
 @RequiredArgsConstructor
 public class UserController {
     private final Scanner scanner;
-    private final UserService userService;
+    private final UserServiceCore userServiceCore;
 
     public void createUser() {
         System.out.println("Dzień Dobry.");
@@ -27,7 +27,7 @@ public class UserController {
 
     private void saveUser(String name, String email, String password) {
         UserDto userDto = new UserDto(null, name, email, password);
-        userService.saveUser(userDto);
+        userServiceCore.saveUser(userDto);
     }
 }
 
