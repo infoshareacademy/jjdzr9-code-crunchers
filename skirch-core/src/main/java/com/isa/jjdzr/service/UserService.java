@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RequiredArgsConstructor
 @Service
@@ -32,7 +33,7 @@ public class UserService {
         List<User> listOfUsers = Database.getListOfUsers();
         for (int i = 0; i < listOfUsers.size(); i++) {
             if (listOfUsers.get(i).getEmail().equals(email)) {
-                return userRepository.findByEmail(email);
+                return userRepository.findByEmail(email).orElseThrow(NoSuchElementException::new);
             }
         }
         return null;
