@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Skirch - rejestracja</title>
-  <link rel="icon" type="image/x-icon" th:href="@{/assets/img/ski.png}"/>
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
-  <style>
-    body{
-      background-image: url("/assets/img/bg-masthead.jpg")
-    }
-  </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Skirch - rejestracja</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/assets/img/ski.png}"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <style>
+        body {
+            background-image: url("/assets/img/bg-masthead.jpg")
+        }
+    </style>
 </head>
 <body id="page-top">
 <!-- Navigation-->
 <div th:insert="nav-bar"></div>
 <!-- Masthead-->
 <header class="masthead">
-  <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-    <div class="d-flex justify-content-center">
-      <div class="text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
-        <h4 class="text-white-50 mx-auto mt-2 mb-5">Rejestracja użytkownika</h4>
-        <form th:action="@{/registration}" th:object="${user}" method="post">
-          <label class= "text-white-50 mx-auto mt-2 mb-5" for="name">Nazwa użytkownika:</label>
-          <input th:field="*{name}" type="text" id="name" name="name"><br>
-          <p th:each="error : ${#fields.errors('name')}" th:text="${error}">Validation error</p>
-          <label class= "text-white-50 mx-auto mt-2 mb-5" for="email">Adres e-mail:</label>
-          <input th:field="*{email}" type="text" id="email" name="email"><br>
-          <p th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation error</p>
-          <label class="text-white-50 mx-auto mt-2 mb-1"for="password">Hasło:</label>
-          <input th:field="*{password}" type="password" id="password" name="password"><br>
-          <p th:each="error : ${#fields.errors('password')}" th:text="${error}">Validation error</p>
-
-          <button class="btn btn-primary activate" id="submitButton" type="submit">Zarejestruj się</button>
-        <h6 class="text-white-50 mx-auto mt-2 mb-5"><p class="nav-item"><a class="nav-link"><b></b></a></p></h6>
-        </form>
-      </div>
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
+                <h4 class="text-white-50 mx-auto mt-2 mb-5">Rejestracja użytkownika</h4>
+                <form th:action="@{/registration}" th:object="${userDto}" method="post">
+                    <label class="text-white-50 mx-auto mt-2 mb-2" for="name">Nazwa użytkownika:</label>
+                    <input th:field="*{name}" type="text" id="name" name="name"><br>
+                    <p class="alert alert-danger text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Validation error</p>
+                    <label class="text-white-50 mx-auto mt-2 mb-2" for="email">Adres e-mail:</label>
+                    <input th:field="*{email}" type="text" id="email" name="email"><br>
+                    <p class="alert alert-danger text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Validation error</p>
+                    <label class="text-white-50 mx-auto mt-2 mb-2" for="password">Hasło:</label>
+                    <input th:field="*{password}" type="password" id="password" name="password"><br>
+                    <p class="alert alert-danger text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Validation error</p>
+                    <br>
+                    <button class="btn btn-primary activate" id="submitButton" type="submit">Zarejestruj się</button>
+                    <h6 class="text-white-50 mx-auto mt-2 mb-5"><p class="nav-item"><a class="nav-link"><b></b></a></p>
+                    </h6>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
 
 <!-- Bootstrap core JS-->

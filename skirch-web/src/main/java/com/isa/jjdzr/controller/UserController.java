@@ -30,17 +30,17 @@ public class UserController {
 
     @GetMapping("/registration")
     public String getRegistrationUserForm(Model model) {
-        model.addAttribute("user", new UserDto());
+        model.addAttribute("userDto", new UserDto());
         return "user-registration";
     }
 
     @PostMapping("/registration")
     public String userRegistration(@Valid UserDto userDto, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            model.addAttribute("user", userDto);
+            model.addAttribute("userDto", userDto);
             return "user-registration";
         }
-        model.addAttribute("user", userDto);
+        model.addAttribute("userDto", userDto);
         userService.saveUser(userDto);
         return "main-page_signed-in";
     }
