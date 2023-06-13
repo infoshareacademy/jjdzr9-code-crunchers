@@ -6,11 +6,11 @@ import com.isa.jjdzr.model.User;
 import com.isa.jjdzr.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @RequiredArgsConstructor
 @Service
@@ -33,7 +33,7 @@ public class UserService {
         List<User> listOfUsers = Database.getListOfUsers();
         for (int i = 0; i < listOfUsers.size(); i++) {
             if (listOfUsers.get(i).getEmail().equals(email)) {
-                return userRepository.findByEmail(email).orElseThrow(NoSuchElementException::new);
+                return userRepository.findByEmail(email).orElseThrow(()-> new UsernameNotFoundException("User not found"));
             }
         }
         return null;
