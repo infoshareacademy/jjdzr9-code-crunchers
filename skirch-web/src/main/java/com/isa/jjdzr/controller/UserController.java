@@ -47,7 +47,8 @@ public class UserController {
     }
 
     @PostMapping("/favorite-resorts/{id}")
-    public void addToFavorites(@PathVariable Integer id) {
+    public String addToFavorites(@PathVariable Integer id) {
         userServiceCore.addToFavorites(id);
+        return "main-page_signed-in";
     }
 }
