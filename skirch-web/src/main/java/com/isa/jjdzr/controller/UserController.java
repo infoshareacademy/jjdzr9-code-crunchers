@@ -44,13 +44,4 @@ public class UserController {
         return "user-login";
     }
 
-//    @PostMapping("/registration")
-//    public String createUserAccount(@ModelAttribute("user") @Valid User user, HttpServletRequest request, Errors errors) {
-//        try {
-//            userService.saveUser(user);
-//        } catch (RuntimeException uaeEx) {
-//            mav.addObject("message", "An account for that username/email already exists.");
-//            return mav;
-//        }
-//    }
 }

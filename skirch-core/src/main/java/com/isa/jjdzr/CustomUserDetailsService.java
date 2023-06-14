@@ -22,8 +22,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     private UserMapper userMapper;
 
     @Autowired
-    public CustomUserDetailsService(UserRepository userRepository) {
+    public CustomUserDetailsService(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userMapper = userMapper;
     }
 
     @Override

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -23,7 +23,7 @@
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
-            <div class="text-center">
+            <div sec:authorize="hasRole('USER')" class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
                 <h4 class="text-white-50 mx-auto mt-2 mb-5">Wyszukiwarka ośrodków narciarskich</h4>
                 <a class="btn btn-primary" th:href="@{/login}">Zaloguj się</a>

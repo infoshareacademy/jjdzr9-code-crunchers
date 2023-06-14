@@ -25,7 +25,7 @@ public class WebSecurityConfig {
                                 .anyRequest().authenticated())
                 .csrf().disable()
                 .formLogin(form -> form
-                        .loginPage("/login")
+//                        .loginPage("/login")
                         .loginProcessingUrl("/login")
                         .failureUrl("/login")
                         .usernameParameter("email")
