@@ -21,15 +21,14 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests(request ->
-                        request.requestMatchers("/","/registration").permitAll()
-                                .anyRequest().authenticated())
+                        request.requestMatchers("/","/registration", "/css/*.css", "/js/*.js", "/assets/**")
+                            .permitAll()
+                            .anyRequest()
+                            .authenticated())
                 .csrf().disable()
                 .formLogin(form -> form
 //                        .loginPage("/login")
-                        .loginProcessingUrl("/login")
                         .failureUrl("/login")
-                        .usernameParameter("email")
-                        .passwordParameter("password")
                         .defaultSuccessUrl("/"))
                 .logout(logout -> logout
                         .logoutUrl("/logout")
@@ -38,6 +37,5 @@ public class WebSecurityConfig {
                         .logoutSuccessUrl("/"));
         return http.build();
     }
-
 
 }

@@ -5,6 +5,7 @@ import com.isa.jjdzr.model.User;
 import com.isa.jjdzr.repositories.UserRepository;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,17 +16,11 @@ import java.util.Optional;
 
 @Service(value="userServiceDetails")
 @Data
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private UserRepository userRepository;
-    private UserMapper userMapper;
-
-    @Autowired
-    public CustomUserDetailsService(UserRepository userRepository, UserMapper userMapper) {
-        this.userRepository = userRepository;
-        this.userMapper = userMapper;
-    }
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

@@ -1,38 +1,59 @@
 package com.isa.jjdzr.controller;
 
-import com.isa.jjdzr.model.User;
+import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.service.UserService;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.validation.Valid;
 
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping()
+@RequestMapping("/")
+@Slf4j
 public class HomeController {
 
-    UserService userService;
+    private final UserService userService;
 
-    @GetMapping("/")
+    @GetMapping()
     public String mainPage() {
-        return "main-page";
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "main-page";
+        } else {
+            return "main-page_signed-in";
+        }
     }
 
-//    @GetMapping("/")
-//    public String mainPageForUsers() {
-//        return "main-page_login";
-//    }
+    @GetMapping("login")
+    public String getUserLoginForm(Model model) {
+        model.addAttribute("userDto", new UserDto());
+        return "user-login";
+    }
 
+    @GetMapping("/registration")
+    public String getRegistrationUserForm(Model model) {
+        model.addAttribute("userDto", new UserDto());
+        return "user-registration";
+    }
 
-
-
+    @PostMapping("/registration")
+    public String userRegistration(@Valid UserDto userDto, BindingResult bindingResult, Model model) {
+        UserDto savedUser = userService.saveUser(userDto);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("userDto", userDto);
+            return "user-registration";
+        }
+        model.addAttribute("userDto", savedUser);
+        return "redirect:/login";
+    }
 }
