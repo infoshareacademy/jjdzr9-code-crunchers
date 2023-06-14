@@ -24,7 +24,6 @@ public class ResortController {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_REGION));
         return "search";
     }
-
     @GetMapping("/list")
     public String getResorts(@ModelAttribute("searchAttributes") SearchAttributes searchAttributes, Model model) {
         switch (searchAttributes.getAttribute()) {

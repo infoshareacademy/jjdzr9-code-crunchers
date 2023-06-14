@@ -10,8 +10,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @RequiredArgsConstructor
 @Service
 public class UserService {
@@ -23,20 +21,19 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
     public UserDto saveUser(UserDto userDto) {
+        if(userRepository.existsByEmail(userDto.getEmail())){
+            throw new RuntimeException("User already exists");
+        }
         User user = userMapper.toEntity(userDto);
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        User savedUser = userRepository.save(user);
+        User savedUser = userRepository.saveAndFlush(user);
         return userMapper.toDto(savedUser);
     }
 
     public UserDto findByEmail(String email) {
-        List<User> listOfUsers = Database.getListOfUsers();
-        for (int i = 0; i < listOfUsers.size(); i++) {
-            if (listOfUsers.get(i).getEmail().equals(email)) {
-                return userRepository.findByEmail(email).orElseThrow(()-> new UsernameNotFoundException("User not found"));
-            }
-        }
-        return null;
+        return userRepository.findByEmail(email)
+                .map(userMapper::toDto)
+                .orElseThrow(()-> new UsernameNotFoundException("User not found"));
     }
 }
 

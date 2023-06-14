@@ -30,13 +30,13 @@
       <div class="text-center">
         <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
         <h4 class="text-white-50 mx-auto mt-2 mb-5">Logowanie użytkownika</h4>
-        <form  method="post">
-          <label class= "text-white-50 mx-auto mt-2 mb-5" for="username">Nazwa użytkownika:</label>
-          <input type="text" id="username" name="username"><br>
-<!--          <p class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username error</p>-->
+        <form th:action="@{/login}" th:object="${userDto}" method="post">
+          <label class= "text-white-50 mx-auto mt-2 mb-5" for="email">E-mail:</label>
+          <input type="text" id="email" name="email" th:field="*{email}"><br>
+          <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</p>
           <label class="text-white-50 mx-auto mt-2 mb-5"for="password">Hasło:</label>
-          <input type="password" id="password" name="password">
-<!--          <p class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</p>-->
+          <input type="password" id="password" name="password" th:field="*{password}">
+          <p class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</p>
           <br><br>
         <button class="btn btn-primary activate" id="submitButton" type="submit">Zaloguj się</button>
           <h6 class="text-white-50 mx-auto mt-2 mb-5"><p class="nav-item"><a class="nav-link" href="#"><b></b></a></p></h6>

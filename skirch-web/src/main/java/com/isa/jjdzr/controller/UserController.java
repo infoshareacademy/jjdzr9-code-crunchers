@@ -1,9 +1,9 @@
 package com.isa.jjdzr.controller;
 
+import com.isa.jjdzr.CustomUserDetailsService;
 import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,14 +17,13 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/")
 public class UserController {
-    @Autowired
     private final UserService userService;
 
+    private final CustomUserDetailsService customUserDetailsService;
+
     @GetMapping("/login")
-    public String userLogin(Model model, UserDto userDto) {
-        model.addAttribute("user", userDto);
-        UserDto loggedUser = userService.findByEmail(userDto.getEmail());
-        // coś tu jeszcze trzeba dopisać
+    public String getUserLoginForm(Model model) {
+        model.addAttribute("userDto", new UserDto());
         return "user-login";
     }
 
@@ -36,13 +35,13 @@ public class UserController {
 
     @PostMapping("/registration")
     public String userRegistration(@Valid UserDto userDto, BindingResult bindingResult, Model model) {
+        UserDto savedUser = userService.saveUser(userDto);
         if (bindingResult.hasErrors()) {
             model.addAttribute("userDto", userDto);
             return "user-registration";
         }
-        model.addAttribute("userDto", userDto);
-        userService.saveUser(userDto);
-        return "main-page_signed-in";
+        model.addAttribute("userDto", savedUser);
+        return "user-login";
     }
 
 //    @PostMapping("/registration")

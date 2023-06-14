@@ -1,7 +1,7 @@
 package com.isa.jjdzr;
 
-import com.isa.jjdzr.CustomUserDetails;
-import com.isa.jjdzr.dto.UserDto;
+import com.isa.jjdzr.mappers.UserMapper;
+import com.isa.jjdzr.model.User;
 import com.isa.jjdzr.repositories.UserRepository;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,12 +13,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
+@Service(value="userServiceDetails")
 @Data
 @NoArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepository;
+    private UserMapper userMapper;
 
     @Autowired
     public CustomUserDetailsService(UserRepository userRepository) {
@@ -26,8 +27,10 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<UserDto> userDto = userRepository.findByEmail(username);
-        return new CustomUserDetails(userDto.get());
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Optional<User> user = userRepository.findByEmail(email);
+        return new CustomUserDetails(user
+                .map(userMapper::toDto)
+                .orElse(null));
     }
 }
