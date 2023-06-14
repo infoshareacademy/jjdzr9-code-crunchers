@@ -19,6 +19,7 @@
         body {
             background-image: url("/assets/img/bg-masthead.jpg")
         }
+
     </style>
 </head>
 <body id="page-top">
@@ -26,7 +27,7 @@
 <header class="masthead">
 
     <div class="container d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
+        <div>
             <div class="text-center">
                 <h3 class="text-white mb-1 col-center ">Wyniki wyszukiwania</h3>
                 <div>
@@ -37,10 +38,10 @@
                             <th class="text-white mb-4 col-center">Nazwa</th>
                             <th class="text-white mb-4 col-center">Kraj</th>
                             <th class="text-white mb-4 col-center">Region</th>
-                            <th class="text-white mb-4 col-center">Strona internetowa</th>
-                            <th class="text-white mb-4 col-center">Otwarte wyciągi</th>
+<!--                            <th class="text-white mb-4 col-center">Strona internetowa</th>-->
+<!--                            <th class="text-white mb-4 col-center">Otwarte wyciągi</th>-->
                             <th class="text-white mb-4 col-center"> </th>
-                            <th class="text-white mb-4 col-center">Dodaj do ulubionych</th>
+                            <th class="text-white mb-4 col-center"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -52,13 +53,13 @@
                             <td class="text-white mb-4 col-center" th:text="${resort.data.name}"></td>
                             <td class="text-white mb-4 col-center" th:text="${resort.data.country}"></td>
                             <td class="text-white mb-4 col-center" th:text="${resort.data.region}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.href}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.lifts.stats.open.shortValue()}"></td>
+<!--                            <td class="text-white mb-4 col-center" th:text="${resort.data.href}"></td>-->
+<!--                            <td class="text-white mb-4 col-center" th:text="${resort.data.lifts.stats.open.shortValue()}"></td>-->
                             <td class="text-white mb-4 col-center"></td>
-                            <td class="text-white mb-4 col-center">
-                                <div>
-                                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-                                </div>
+                            <td>
+                                <form th:action="@{/search/resort}">
+                                    <input type="submit" value="Więcej" />
+                                </form>
                             </td>
                         </tr>
                         </tbody>
