@@ -1,6 +1,7 @@
 package com.isa.jjdzr.controller;
 
 import com.isa.jjdzr.constants.SearchAttributesEnum;
+import com.isa.jjdzr.dto.ResortExternalDto;
 import com.isa.jjdzr.model.SearchAttributes;
 import com.isa.jjdzr.service.ResortService;
 import lombok.RequiredArgsConstructor;
@@ -68,4 +69,12 @@ public class ResortSearchController {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COORDINATES));
         return "search";
     }
+
+    @GetMapping("/resort-list")
+    public String chooseOneResort(Model model, ResortExternalDto resort) {
+        String zmienna = resort.getData().getName();
+        model.addAttribute("resortName", zmienna);
+        return "resort";
+    }
+
 }
