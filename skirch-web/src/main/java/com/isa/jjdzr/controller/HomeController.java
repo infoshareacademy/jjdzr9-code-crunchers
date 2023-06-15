@@ -1,8 +1,7 @@
 package com.isa.jjdzr.controller;
 
 import com.isa.jjdzr.dto.UserDto;
-import com.isa.jjdzr.service.UserService;
-import javax.validation.Valid;
+import com.isa.jjdzr.service.UserServiceCore;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -12,8 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 
 @RequiredArgsConstructor
@@ -22,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class HomeController {
 
-    private final UserService userService;
+    private final UserServiceCore userServiceCore;
 
     @GetMapping()
     public String mainPage() {
@@ -34,10 +36,22 @@ public class HomeController {
         }
     }
 
-    @GetMapping("login")
-    public String getUserLoginForm(Model model) {
-        model.addAttribute("userDto", new UserDto());
-        return "user-login";
+    @GetMapping("/login")
+    public String getUserLoginForm(Model model, UserDto userDto) {
+        model.addAttribute("userDto", userDto);
+        return "user-redirect:/login";
+    }
+
+    @PostMapping("/login")
+    public String loginUser(Model model, UserDto userDto) {
+        model.addAttribute("userDto", userDto);
+        userServiceCore.findByEmail(userDto.getEmail());
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "user-login";
+        } else {
+            return "main-page_signed-in";
+        }
     }
 
     @GetMapping("/registration")
@@ -48,7 +62,7 @@ public class HomeController {
 
     @PostMapping("/registration")
     public String userRegistration(@Valid UserDto userDto, BindingResult bindingResult, Model model) {
-        UserDto savedUser = userService.saveUser(userDto);
+        UserDto savedUser = userServiceCore.saveUser(userDto);
         if (bindingResult.hasErrors()) {
             model.addAttribute("userDto", userDto);
             return "user-registration";
@@ -56,4 +70,11 @@ public class HomeController {
         model.addAttribute("userDto", savedUser);
         return "redirect:/login";
     }
+
+    @PostMapping("/favorite-resorts/{id}")
+    public String addToFavorites(@PathVariable Integer id, UserDto userDto) {
+        userServiceCore.addToFavorites(id, userDto);
+        return "favourites";
+    }
+
 }

@@ -22,11 +22,11 @@
     </style>
 </head>
 <body id="page-top">
-<div th:insert="nav-bar_signed-in.html"></div>
+<div th:insert="nav-bar_signed-in"></div>
 <header class="masthead">
 
     <div class="container d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
+        <div>
             <div class="text-center">
                 <h3 class="text-white mb-1 col-center ">Wyniki wyszukiwania</h3>
                 <div>
@@ -39,7 +39,6 @@
                             <th class="text-white mb-4 col-center">Region</th>
                             <th class="text-white mb-4 col-center"> </th>
                             <th class="text-white mb-4 col-center">Ulubione</th>
-                            <th class="text-white mb-4 col-center"> </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -53,10 +52,9 @@
                             <td class="text-white mb-4 col-center" th:text="${resort.data.region}"></td>
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
-                                <form th:action="@{favorite-resorts/{id}(id=${resort.data.id})}">
-                                    <input th:data-resortId="${resort.data.id}" onclick="addToFavorites(this.getAttribute('data-resortId'));" type="submit" value="Dodaj" />
-                                </form>
-                            </td>
+                                <div>
+                                    <button th:data-resortId="${resort.data.id}" onclick="addToFavorites(this.getAttribute('data-resortId'));">Usuń</button>
+                                </div>
                             <td>
                                 <form th:action="@{/search/resort}">
                                     <input type="submit" value="Zobacz więcej" />
@@ -69,11 +67,11 @@
             </div>
         </div>
 
-<!--        <div class="col-lg-6 my-4">-->
-<!--            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9327.875553339065!2d18.1026443!3d54.2337393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd8f5de5506011%3A0x259c6d4d8f703f84!2sKosza%C5%82kowo-Wiezyca%20Active%20Recreation%20Center!5e0!3m2!1sen!2spl!4v1683398403737!5m2!1sen!2spl"-->
-<!--                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"-->
-<!--                    referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-<!--        </div>-->
+        <!--        <div class="col-lg-6 my-4">-->
+        <!--            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9327.875553339065!2d18.1026443!3d54.2337393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd8f5de5506011%3A0x259c6d4d8f703f84!2sKosza%C5%82kowo-Wiezyca%20Active%20Recreation%20Center!5e0!3m2!1sen!2spl!4v1683398403737!5m2!1sen!2spl"-->
+        <!--                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"-->
+        <!--                    referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+        <!--        </div>-->
     </div>
 </header>
 
@@ -86,5 +84,14 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script>
+    function addToFavorites(data){
+        console.log("addToFavorites(): ", "/favorite-resorts/" + data);
+        let request = new XMLHttpRequest();
+        request.open("POST", "/favorite-resorts/" + data, true);
+        request.send();
+    }
+</script>
 </body>
 </html>
