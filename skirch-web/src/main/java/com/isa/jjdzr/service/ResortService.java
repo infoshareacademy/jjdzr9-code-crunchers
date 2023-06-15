@@ -11,7 +11,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class ResortService {
+
     private final SearchEngine searchEngine;
+
 
     public List<ResortExternalDto> searchByRegion(String region) {
         return searchEngine.searchByRegion(region);
@@ -28,4 +30,5 @@ public class ResortService {
     public List<ResortExternalDto> searchByCoordinates(String keyword) {
         return Collections.emptyList();// TODO do wypełnienia @Piotr Olszewski
     }
+
 }

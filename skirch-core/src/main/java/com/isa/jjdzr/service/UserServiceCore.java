@@ -12,12 +12,14 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class UserService {
-    @Autowired
+public class UserServiceCore {
+
+    private final ResortServiceCore resortServiceCore;
+
     private final UserMapper userMapper;
-    @Autowired
+
     private final UserRepository userRepository;
-    @Autowired
+
     private final PasswordEncoder passwordEncoder;
 
     public UserDto saveUser(UserDto userDto) {
@@ -31,9 +33,16 @@ public class UserService {
     }
 
     public UserDto findByEmail(String email) {
-        return userRepository.findByEmail(email)
-                .map(userMapper::toDto)
-                .orElseThrow(()-> new UsernameNotFoundException("User not found"));
+                return userRepository.findByEmail(email)
+                        .map(userMapper::toDto)
+                        .orElse(null);
+    }
+
+    public void addToFavorites(Integer id) {
+        User toUpdate = userRepository.findByEmail("jacek@wp.pl")
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        toUpdate.getFavoriteResorts().add(resortServiceCore.findById(id));
+        userRepository.save(toUpdate);
     }
 }
 

@@ -57,7 +57,7 @@
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
                                 <div>
-                                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                                    <button th:data-resortId="${resort.data.id}" onclick="addToFavorites(this.getAttribute('data-resortId'));">Add to favorites</button>
                                 </div>
                             </td>
                         </tr>
@@ -84,5 +84,14 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script>
+    function addToFavorites(data){
+        console.log("addToFavorites(): ", "/favorite-resorts/" + data);
+        let request = new XMLHttpRequest();
+        request.open("POST", "/favorite-resorts/" + data, true);
+        request.send();
+    }
+</script>
 </body>
 </html>
