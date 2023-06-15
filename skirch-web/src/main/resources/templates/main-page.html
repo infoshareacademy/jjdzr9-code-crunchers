@@ -23,10 +23,10 @@
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
-            <div sec:authorize="hasRole('USER')" class="text-center">
+            <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
                 <h4 class="text-white-50 mx-auto mt-2 mb-5">Wyszukiwarka ośrodków narciarskich</h4>
-                <a class="btn btn-primary" th:href="@{/login}">Zaloguj się</a>
+                <a class="btn btn-primary" href="/login">Zaloguj się</a>
                 <h6 class="text-white-50 mx-auto mt-2 mb-5"><i>*Zalogowani użytkownicy mają dostęp do dodatkowych funkcjonalności</i></h6>
                 <h2 class="text-white-50 mx-auto mt-2 mb-5">Jeżeli nie masz jeszcze konta przejdź do sekcji <p
                         class="nav-item"><a class="nav-link" th:href="@{/registration}"><b>Rejestracja</b></a></p>
@@ -39,7 +39,7 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script th:src="@{../static/js/scripts.js}"></script>
+<script src="../static/js/scripts.js"></script>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
