@@ -47,7 +47,8 @@ public class UserServiceCore {
     }
 
     public Set<Data> getFavorites(UserDto userDto){
-       return userMapper.toEntity(userDto).getFavoriteResorts();
+       User user = userRepository.findByEmail(userDto.getEmail()).orElseThrow(() -> new RuntimeException("User not found"));
+        return user.getFavoriteResorts();
     }
 
     public void deleteResortFromFavorites(UserDto userDto, Long resortId){
