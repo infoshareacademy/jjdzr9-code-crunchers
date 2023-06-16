@@ -89,12 +89,12 @@ public class ResortSearchController {
         }
     }
 
-    @PostMapping("/resort/{name}")
-    public String showOneResort(@PathVariable String name, ResortExternalDto resortExternalDto, Model model){
+    @PostMapping("/resort/{id}")
+    public String showOneResort(@PathVariable Long id, ResortExternalDto resortExternalDto, Model model){
+        resortExternalDto.getData().setId(id);
         System.out.println("----------------------------------");
         System.out.println("resort:" + resortExternalDto);
         System.out.println("----------------------------------");
-        name = resortExternalDto.getData().getName();
         model.addAttribute("resort", resortExternalDto);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
@@ -139,7 +139,12 @@ public class ResortSearchController {
 //
 //        }
 //    }
+
+
 }
+
+
+
 
 
 

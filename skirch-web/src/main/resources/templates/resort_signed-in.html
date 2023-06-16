@@ -15,9 +15,21 @@
           rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
     <style>
         body {
             background-image: url("/assets/img/bg-masthead.jpg")
+        }
+        .fav_btn {
+            padding: 5px;
+            background-color:gray;
+            color: white;
+        }
+        .fav_btn:hover {
+            background-color:darkslategray;
+        }
+        .fav_btn.remove:hover {
+            background-color: indianred;
         }
     </style>
 </head>
@@ -30,18 +42,22 @@
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <form th:object="${resort}">
-                                <h4 class="text-white" th:text="${resort}">Misty</h4>
-                                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or
-                                    anything
-                                    else, along with a description.</p>
-                                </form>
+                            <div th:object="${resort}" th:method="post" class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Nazwa ośrodka</h4>
+                                <p class="mb-0 text-white-50">Region, Kraj</p>
+                                <p class="mb-0 text-white-50">Strona internetowa</p>
+                                <p class="mb-0 text-white-50">Czynne wyciągi</p>
+                                <p class="mb-0 text-white-50">
+                                <br>
+                                <div class="fav_btn">Ulubione</div>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 d-flex h-100" th:insert="map"></div>
+                <div class="col-lg-6 d-flex h-100">
+                    <div id="map" style="width: 500px; height: 500px"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -51,5 +67,87 @@
 <script src="../static/js/scripts.js"></script>
 
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+    //Moved btn text into variable so it can be changed more easily
+    var btn_text = {
+        default: "Dodaj do ulubionych",
+        added: "Dodano ♥ ",
+        remove: "Usuń z ulubionych"
+    }
+
+    $('.fav_btn')
+        //set initial text and classes
+        .removeClass('remove added')
+        .html(btn_text.default)
+        //The click toggles the 'default' and 'added' states
+        .on('click', function(e) {
+
+            //Toogle the 'added' class
+            $(this).toggleClass('added');
+
+            //Swap the text
+            if ($(this).is('.added')) {
+                $(this).html(btn_text.added);
+            } else {
+                $(this)
+                    .removeClass('remove added')
+                    .html(btn_text.default)
+            }
+        })
+        .on('mouseover', function(){
+            //If it has the 'added' class...add the 'remove' text
+            if ($(this).is('.added')) {
+                $(this)
+                    .addClass('remove')
+                    .html(btn_text.remove)
+                    .on('mouseout', function() {
+
+                        //Get rid of the 'remove' class
+                        $(this).removeClass('remove');
+
+                        //Swap out the 'remove' text
+                        if ($(this).is('.added')) {
+                            $(this).html(btn_text.added);
+                        } else {
+                            $(this).html(btn_text.default);
+                        }
+                    });
+            }
+        });
+</script>
+
+<script>
+
+    // Creating map options
+    var mapOptions = {
+        center: [54.233739920483146, 18.102644473362446],
+        zoom: 10
+    }
+
+    // Creating a map object
+    var map = new L.map('map', mapOptions);
+
+    // Creating a Layer object
+    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // Adding layer to the map
+    map.addLayer(layer);
+
+    // Adding Popout to the map
+    L.marker([54.233739920483146, 18.102644473362446]).addTo(map)
+        .bindPopup('Wieżyca Koszałkowo<br>pomorskie, Polska<br>https://wiezyca.pl')
+        .openPopup();
+
+</script>
+
 </body>
 </html>

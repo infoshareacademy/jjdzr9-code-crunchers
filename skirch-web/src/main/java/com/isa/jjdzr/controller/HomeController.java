@@ -34,6 +34,10 @@ public class HomeController {
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "main-page";
         } else {
+            System.out.println("=====================================");
+            System.out.println("REDIRECT 10");
+            System.out.println("Details: " + authentication.getDetails());
+            System.out.println("Name: " + authentication.getName());
             return "main-page_signed-in";
         }
     }
@@ -81,10 +85,15 @@ public class HomeController {
         return "user-login";
     }
 
-    @PostMapping("/favorite-resorts/{id}")
+
+    @PostMapping("/favourites/{id}")
     public String addToFavorites(@PathVariable Integer id, UserDto userDto) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        userDto.setEmail(authentication.getName());
+        System.out.println("=====================================");
+        System.out.println(userDto.getEmail());
         userServiceCore.addToFavorites(id, userDto);
-        return "favourites";
+        return "redirect:/favourites";
     }
 
 }

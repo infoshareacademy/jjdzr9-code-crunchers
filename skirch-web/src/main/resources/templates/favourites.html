@@ -52,14 +52,14 @@
                             <td class="text-white mb-4 col-center" th:text="${resort.data.region}"></td>
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
-                                <div>
-                                    <button th:data-resortId="${resort.data.id}" onclick="addToFavorites(this.getAttribute('data-resortId'));">Usuń</button>
-                                </div>
-                            <td>
-                                <form th:action="@{/search/resort}">
-                                    <input type="submit" value="Zobacz więcej" />
-                                </form>
-                            </td>
+<!--                                <div>-->
+<!--                                    <button th:data-resortId="${resort.data.id}" onclick="addToFavorites(this.getAttribute('data-resortId'));">Usuń</button>-->
+<!--                                </div>-->
+<!--                            <td>-->
+<!--                                <form th:action="@{/search/resort}">-->
+<!--                                    <input type="submit" value="Zobacz więcej" />-->
+<!--                                </form>-->
+<!--                            </td>-->
                         </tr>
                         </tbody>
                     </table>
@@ -87,9 +87,9 @@
 
 <script>
     function addToFavorites(data){
-        console.log("addToFavorites(): ", "/favorite-resorts/" + data);
+        console.log("addToFavorites(): ", "/favorites/" + data);
         let request = new XMLHttpRequest();
-        request.open("POST", "/favorite-resorts/" + data, true);
+        request.open("POST", "/favorites/" + data, true);
         request.send();
     }
 </script>
