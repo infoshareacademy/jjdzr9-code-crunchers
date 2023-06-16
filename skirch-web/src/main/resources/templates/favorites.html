@@ -33,7 +33,6 @@
                     <table class="table table-sm">
                         <thead>
                         <tr class="g">
-                            <th class="text-white mb-4">#</th>
                             <th class="text-white mb-4 col-center">Nazwa</th>
                             <th class="text-white mb-4 col-center">Kraj</th>
                             <th class="text-white mb-4 col-center">Region</th>
@@ -46,10 +45,9 @@
                             <td colspan="2"> No Resorts Available</td>
                         </tr>
                         <tr th:each="resort : ${resorts}">
-                            <td class="text-white mb-4" th:text="${resorts.indexOf(resort)+1}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.name}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.country}"></td>
-                            <td class="text-white mb-4 col-center" th:text="${resort.data.region}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resort.name}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resort.country}"></td>
+                            <td class="text-white mb-4 col-center" th:text="${resort.region}"></td>
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
 <!--                                <div>-->
