@@ -11,11 +11,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import static com.isa.jjdzr.constants.Endpoints.RESORT;
+import static com.isa.jjdzr.constants.Endpoints.*;
 
 @RequiredArgsConstructor
 @Controller
@@ -23,8 +21,8 @@ import static com.isa.jjdzr.constants.Endpoints.RESORT;
 public class ResortSearchController {
     private final ResortService resortService;
 
-    @GetMapping("/by-region")
-    public String getFindByRegionForm(Model model, Model model2) {
+    @GetMapping(BY_REGION_LIST)
+    public String getFindByRegionForm(Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_REGION));
         model.addAttribute("text", "Wpisz region, z którego chcesz wyszukać ośrodki narciarskie:");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -68,8 +66,8 @@ public class ResortSearchController {
         }
     }
 
-    @GetMapping("/by-name")
-    public String searchByName(Model model, Model model2) {
+    @GetMapping(BY_NAME_LIST)
+    public String searchByName(Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_NAME));
         model.addAttribute("text", "Podaj nazwę ośrodka:");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -81,7 +79,7 @@ public class ResortSearchController {
     }
 
     @GetMapping(RESORT)
-    public String getByName(@ModelAttribute("searchQuery") SearchAttributes searchAttributes, Model model) {
+    public String getByName(SearchAttributes searchAttributes, Model model) {
         model.addAttribute("resort", resortService.searchByName(searchAttributes.getKeyword()));
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
@@ -91,8 +89,24 @@ public class ResortSearchController {
         }
     }
 
-    @GetMapping("/by-country")
-    public String searchByCountry(Model model, Model model2) {
+    @PostMapping("/resort/{name}")
+    public String showOneResort(@PathVariable String name, ResortExternalDto resortExternalDto, Model model){
+        System.out.println("----------------------------------");
+        System.out.println("resort:" + resortExternalDto);
+        System.out.println("----------------------------------");
+        name = resortExternalDto.getData().getName();
+        model.addAttribute("resort", resortExternalDto);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "resort";
+        } else {
+            return "resort_signed-in";
+        }
+    }
+
+
+    @GetMapping(BY_COUNTRY_LIST)
+    public String searchByCountry(Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COUNTRY));
         model.addAttribute("text", "Wpisz kraj, z którego chcesz wyszukać ośrodki narciarskie:");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -103,7 +117,7 @@ public class ResortSearchController {
         }
     }
 
-    @GetMapping("/by-coordinates")
+    @GetMapping(BY_COORDINATES_LIST)
     public String searchByCoordinates(@ModelAttribute("searchQuery") SearchAttributes searchAttributes, Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COORDINATES));
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -114,18 +128,17 @@ public class ResortSearchController {
         }
     }
 
-    @GetMapping("/resort-list")
-    public String chooseOneResort(Model model, ResortExternalDto resort) {
-        String zmienna = resort.getData().getName();
-        model.addAttribute("resortName", zmienna);
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "resort";
-        } else {
-            return "resort_signed-in";
-
-        }
-    }
+//    @GetMapping("/resort")
+//    public String chooseOneResort(@RequestParam ResortExternalDto resort, Model model) {
+//
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        if ((authentication instanceof AnonymousAuthenticationToken)) {
+//            return "resort";
+//        } else {
+//            return "resort_signed-in";
+//
+//        }
+//    }
 }
 
 

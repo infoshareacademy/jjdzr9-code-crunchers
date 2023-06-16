@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Skirch - logowanie</title>
-  <link rel="icon" type="image/x-icon" th:href="@{/assets/img/ski.png}"/>
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
-  <style>
-    body{
-      background-image: url("/assets/img/bg-masthead.jpg")
-    }
-  </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Skirch - logowanie</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/assets/img/ski.png}"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <style>
+        body {
+            background-image: url("/assets/img/bg-masthead.jpg")
+        }
+    </style>
 </head>
 <body id="page-top">
 <!-- Navigation-->
 <div th:insert="nav-bar"></div>
 <!-- Masthead-->
 <header class="masthead">
-  <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-    <div class="d-flex justify-content-center">
-      <div class="text-center" >
-        <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
-        <h4 class="text-white-50 mx-auto mt-2 mb-5">Logowanie użytkownika</h4>
-        <form th:action="@{/login}" th:object="${userDto}" method="post">
-          <label class= "text-white-50 mx-auto mt-2 mb-5" for="email">E-mail:</label>
-          <input type="text" id="email" name="email" th:field="*{email}"><br>
-          <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</p>
-          <label class="text-white-50 mx-auto mt-2 mb-5" for="password">Hasło:</label>
-          <input type="password" id="password" name="password" th:field="*{password}">
-          <p class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</p>
-          <br><br>
-        <button class="btn btn-primary activate" id="submitButton" type="submit">Zaloguj się</button>
-          <h6 class="text-white-50 mx-auto mt-2 mb-5"><p class="nav-item"><a class="nav-link" href="#"><b></b></a></p></h6>
-        </form>
-      </div>
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Skirch</h1>
+                <h4 class="text-white-50 mx-auto mt-2 mb-5">Logowanie użytkownika</h4>
+                <form th:action="@{/login}" th:object="${userDto}" method="post">
+                    <label class="text-white-50 mx-auto mt-2 mb-5" for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" th:field="*{email}"><br>
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+                        error</p>
+                    <label class="text-white-50 mx-auto mt-2 mb-5" for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" th:field="*{password}">
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                        Password error</p>
+                    <br><br>
+                    <button class="btn btn-primary activate" id="submitButton" type="submit">Zaloguj się</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
 
 <!-- Bootstrap core JS-->

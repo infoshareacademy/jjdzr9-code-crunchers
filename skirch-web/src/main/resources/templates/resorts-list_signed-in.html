@@ -58,7 +58,7 @@
                                 </form>
                             </td>
                             <td>
-                                <form th:action="@{/search/resort}">
+                                <form th:action="@{search/resort/{name}(name=${resort.data.name})}" th:method="post" th:object="${resort}">
                                     <input type="submit" value="Zobacz więcej" />
                                 </form>
                             </td>
@@ -86,5 +86,15 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script>
+    function addToFavorites(data){
+        console.log("addToFavorites(): ", "/favorite-resorts/" + data);
+        let request = new XMLHttpRequest();
+        request.open("POST", "/favorite-resorts/" + data, true);
+        request.send();
+    }
+</script>
+
 </body>
 </html>

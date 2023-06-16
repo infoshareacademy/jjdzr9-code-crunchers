@@ -1,19 +1,18 @@
-package com.isa.jjdzr;
+package com.isa.jjdzr.security;
 
 import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.model.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
 
-public class CustomUserDetails implements UserDetails {
+public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
 
     private UserDto userDto;
 
-    public CustomUserDetails(UserDto userDto) {
+    public UserDetails(UserDto userDto) {
         this.userDto = userDto;
     }
 
@@ -29,7 +28,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return userDto.getName();
+        return userDto.getEmail();
     }
 
     @Override

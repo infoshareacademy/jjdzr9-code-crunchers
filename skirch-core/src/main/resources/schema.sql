@@ -61,3 +61,4 @@ CREATE TABLE IF NOT EXISTS skirch.percentages(
 # DROP TABLE skirch.lifts;
 # DROP TABLE skirch.locations;
 # DROP TABLE skirch.resorts;
+# DROP TABLE skirch.favorite_resorts;

@@ -22,7 +22,7 @@ public class UserServiceCore {
 
     public UserDto saveUser(UserDto userDto) {
         if(userRepository.existsByEmail(userDto.getEmail())){
-            throw new RuntimeException("User already exists");
+            throw new IllegalArgumentException("User already exists");
         }
         User user = userMapper.toEntity(userDto);
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));

@@ -1,6 +1,7 @@
 package com.isa.jjdzr.controller;
 
 import com.isa.jjdzr.dto.UserDto;
+import com.isa.jjdzr.security.UserDetailsService;
 import com.isa.jjdzr.service.UserServiceCore;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,8 +26,9 @@ import javax.validation.Valid;
 public class HomeController {
 
     private final UserServiceCore userServiceCore;
+    private final UserDetailsService userDetailsService;
 
-    @GetMapping()
+    @GetMapping("/")
     public String mainPage() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
@@ -39,17 +41,25 @@ public class HomeController {
     @GetMapping("/login")
     public String getUserLoginForm(Model model, UserDto userDto) {
         model.addAttribute("userDto", userDto);
-        return "user-redirect:/login";
+        System.out.println("=====================================");
+        System.out.println("REDIRECT 1");
+        return "user-login";
     }
 
     @PostMapping("/login")
     public String loginUser(Model model, UserDto userDto) {
         model.addAttribute("userDto", userDto);
+        System.out.println("=====================================");
+        System.out.println("REDIRECT 666");
         userServiceCore.findByEmail(userDto.getEmail());
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
+            System.out.println("=====================================");
+            System.out.println("REDIRECT 2");
             return "user-login";
         } else {
+            System.out.println("=====================================");
+            System.out.println("REDIRECT 4");
             return "main-page_signed-in";
         }
     }
@@ -68,7 +78,7 @@ public class HomeController {
             return "user-registration";
         }
         model.addAttribute("userDto", savedUser);
-        return "redirect:/login";
+        return "user-login";
     }
 
     @PostMapping("/favorite-resorts/{id}")

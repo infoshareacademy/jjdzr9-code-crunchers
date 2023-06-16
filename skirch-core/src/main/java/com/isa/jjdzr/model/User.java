@@ -24,7 +24,7 @@ public class User {
     @NotNull
     @Column(nullable = false)
     private String password;
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "favorite_resorts",
             joinColumns = { @JoinColumn(name = "user_id") },
