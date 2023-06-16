@@ -25,11 +25,12 @@ public class HomeController {
     private final UserServiceCore userServiceCore;
     private final UserDetailsService userDetailsService;
 
-    private Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
 
 
     @GetMapping("/")
     public String mainPage() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "main-page";
         } else {
@@ -51,6 +52,7 @@ public class HomeController {
         System.out.println("=====================================");
         System.out.println("REDIRECT 666");
         userServiceCore.findByEmail(userDto.getEmail());
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             System.out.println("=====================================");
             System.out.println("REDIRECT 2");

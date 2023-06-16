@@ -20,12 +20,12 @@ import static com.isa.jjdzr.constants.Endpoints.*;
 @RequestMapping("/search")
 public class ResortSearchController {
     private final ResortService resortService;
-    private Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
     @GetMapping(BY_REGION_LIST)
     public String getFindByRegionForm(Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_REGION));
         model.addAttribute("text", "Wpisz region, z którego chcesz wyszukać ośrodki narciarskie:");
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "search";
         } else {
@@ -37,6 +37,7 @@ public class ResortSearchController {
     public String searchByName(Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_NAME));
         model.addAttribute("text", "Podaj nazwę ośrodka:");
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "search";
         } else {
@@ -49,6 +50,7 @@ public class ResortSearchController {
     public String searchByCountry(Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COUNTRY));
         model.addAttribute("text", "Wpisz kraj, z którego chcesz wyszukać ośrodki narciarskie:");
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "search";
         } else {
@@ -59,6 +61,7 @@ public class ResortSearchController {
     @GetMapping(BY_COORDINATES_LIST)
     public String searchByCoordinates(@ModelAttribute("searchQuery") SearchAttributes searchAttributes, Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COORDINATES));
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "search";
         } else {
@@ -68,6 +71,7 @@ public class ResortSearchController {
 
     @PostMapping("/list")
     public String getResorts(@ModelAttribute("searchAttributes") SearchAttributes searchAttributes, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         switch (searchAttributes.getAttribute()) {
             case BY_REGION:
                 model.addAttribute("resorts", resortService.searchByRegion(searchAttributes.getKeyword()));
@@ -111,6 +115,7 @@ public class ResortSearchController {
         System.out.println("resort:" + resortExternalDto);
         System.out.println("----------------------------------");
         model.addAttribute("resortDto", resortExternalDto);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "resort";
         } else {

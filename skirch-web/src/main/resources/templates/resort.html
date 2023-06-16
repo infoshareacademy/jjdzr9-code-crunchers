@@ -34,7 +34,7 @@
     </style>
 </head>
 <body id="page-top">
-<div th:insert="nav-bar_signed-in"></div>
+<div th:insert="nav-bar"></div>
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="container px-4 px-lg-5">
@@ -47,7 +47,6 @@
                                 <p class="mb-0 text-white-50" th:text="*{data.country}">Region, Kraj</p>
                                 <p class="mb-0 text-white-50" th:text="*{data.region}">Region, Kraj</p>
                                 <a th:href="*{data.href}" class="mb-0 text-white-50" th:text="*{data.href}">Strona internetowa</a>
-                                <p class="mb-0 text-white-50" th:text="*{data.lifts.stats.open}">Czynne wyciągi</p>
                                 <p class="mb-0 text-white-50">
                                     <br>
                                 <div class="fav_btn">Ulubione</div>
@@ -123,10 +122,9 @@
 <script th:inline="javascript">
 
     var name = [[${name}]];
-    var region = [[${region}]];
-    var country = [[${country}]];
     var latitude = [[${latitude}]];
     var longitude = [[${longitude}]];
+    var openLifts = [[${openLifts}]];
 
 
     // Creating map options
@@ -151,7 +149,7 @@
 
     // Adding Popout to the map
     L.marker([latitude, longitude]).addTo(map)
-        .bindPopup(latitude +', '+ longitude)
+        .bindPopup(latitude +', '+ longitude + '\n\r Otwarte wyciągi: ' + openLifts)
         .openPopup();
 
 </script>
