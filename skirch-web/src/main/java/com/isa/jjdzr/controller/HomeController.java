@@ -11,10 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -28,10 +25,11 @@ public class HomeController {
     private final UserServiceCore userServiceCore;
     private final UserDetailsService userDetailsService;
 
+    private Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
 
     @GetMapping("/")
     public String mainPage() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "main-page";
         } else {
@@ -53,7 +51,6 @@ public class HomeController {
         System.out.println("=====================================");
         System.out.println("REDIRECT 666");
         userServiceCore.findByEmail(userDto.getEmail());
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             System.out.println("=====================================");
             System.out.println("REDIRECT 2");
@@ -85,26 +82,19 @@ public class HomeController {
 
     @PostMapping("/favorites/{id}")
     public String addToFavorites(@PathVariable Integer id, UserDto userDto, Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        userDto.setEmail(authentication.getName());
-        System.out.println("==================Email===================");
-        System.out.println("Email: " + userDto.getEmail());
-        userServiceCore.addToFavorites(id, userDto);
-        System.out.println("======================ulubione resorty===============");
-        System.out.println(userServiceCore.getFavorites(userDto));
         model.addAttribute("resorts", userServiceCore.getFavorites(userDto));
         return "redirect:favorites";
     }
 
     @GetMapping("/favorites")
     public String showFavorites(UserDto userDto, Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        userDto.setEmail(authentication.getName());
-        System.out.println("======================ulubione resorty===============");
-        System.out.println(userServiceCore.getFavorites(userDto));
         model.addAttribute("resorts",userServiceCore.getFavorites(userDto));
         return "favorites";
     }
 
-
+    @DeleteMapping("/favorites")
+    public String deleteFromFavorites(Long id, UserDto userDto) {
+       userServiceCore.deleteResortFromFavorites(userDto,id);
+        return "favorites";
+    }
 }

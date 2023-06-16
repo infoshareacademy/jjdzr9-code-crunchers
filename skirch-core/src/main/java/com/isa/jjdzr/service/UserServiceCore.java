@@ -52,7 +52,9 @@ public class UserServiceCore {
     }
 
     public void deleteResortFromFavorites(UserDto userDto, Long resortId){
-        getFavorites(userDto).remove(resortId);
+        User user = userRepository.findByEmail(userDto.getEmail())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        getFavorites(userMapper.toDto(user)).remove(resortId);
     }
 
 }
