@@ -2,11 +2,14 @@ package com.isa.jjdzr.service;
 
 import com.isa.jjdzr.dto.UserDto;
 import com.isa.jjdzr.mappers.UserMapper;
+import com.isa.jjdzr.model.Data;
 import com.isa.jjdzr.model.User;
 import com.isa.jjdzr.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Set;
 
 @RequiredArgsConstructor
 @Service
@@ -42,6 +45,15 @@ public class UserServiceCore {
         toUpdate.getFavoriteResorts().add(resortServiceCore.findById(id));
         userRepository.save(toUpdate);
     }
+
+    public Set<Data> getFavorites(UserDto userDto){
+       return userMapper.toEntity(userDto).getFavoriteResorts();
+    }
+
+    public void deleteResortFromFavorites(UserDto userDto, Long resortId){
+        getFavorites(userDto).remove(resortId);
+    }
+
 }
 
 

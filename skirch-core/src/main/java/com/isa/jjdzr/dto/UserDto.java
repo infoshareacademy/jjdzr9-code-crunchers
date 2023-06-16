@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,4 +24,6 @@ public class UserDto {
     @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", message = "Hasło powinno zawierać " +
             "pomiędzy 8 a 20 znaków, w tym przynajmniej jedną małą literę, wielką literę, cyfrę oraz znak specjalny [#?!@$%^&*-]")
     private String password;
+
+    private Set<com.isa.jjdzr.model.Data> favoriteResorts;
 }

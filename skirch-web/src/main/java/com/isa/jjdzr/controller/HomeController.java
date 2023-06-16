@@ -1,6 +1,7 @@
 package com.isa.jjdzr.controller;
 
 import com.isa.jjdzr.dto.UserDto;
+import com.isa.jjdzr.mappers.UserMapper;
 import com.isa.jjdzr.security.UserDetailsService;
 import com.isa.jjdzr.service.UserServiceCore;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,7 @@ public class HomeController {
 
     private final UserServiceCore userServiceCore;
     private final UserDetailsService userDetailsService;
+
 
     @GetMapping("/")
     public String mainPage() {
@@ -86,14 +88,25 @@ public class HomeController {
     }
 
 
-    @PostMapping("/favourites/{id}")
+    @PostMapping("/favorites/{id}")
     public String addToFavorites(@PathVariable Integer id, UserDto userDto) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userDto.setEmail(authentication.getName());
         System.out.println("=====================================");
         System.out.println(userDto.getEmail());
         userServiceCore.addToFavorites(id, userDto);
-        return "redirect:/favourites";
+        return "redirect:/favorites";
     }
+
+    @GetMapping("/favorites")
+    public String showFavorites(UserDto userDto, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        userDto.setEmail(authentication.getName());
+        System.out.println("======================ulubione resorty===============");
+        System.out.println(userServiceCore.getFavorites(userDto));
+        model.addAttribute("resorts",userServiceCore.getFavorites(userDto));
+        return "favorites";
+    }
+
 
 }
