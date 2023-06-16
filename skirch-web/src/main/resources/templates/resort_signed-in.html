@@ -42,11 +42,11 @@
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
-                            <div th:object="${resort}" th:method="post" class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Nazwa ośrodka</h4>
-                                <p class="mb-0 text-white-50">Region, Kraj</p>
-                                <p class="mb-0 text-white-50">Strona internetowa</p>
-                                <p class="mb-0 text-white-50">Czynne wyciągi</p>
+                            <div th:object="${resort}" class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white" th:text="*{data.name}" >Nazwa ośrodka</h4>
+                                <p class="mb-0 text-white-50" th:text="*{data.country}">Kraj</p>
+                                <p class="mb-0 text-white-50" th:text="*{data.region}">Region</p>
+                                <a th:href="*{data.href}" class="mb-0 text-white-50" th:text="*{data.href}">Strona internetowa</a>
                                 <p class="mb-0 text-white-50">
                                 <br>
                                 <div class="fav_btn">Ulubione</div>
@@ -72,7 +72,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
-    //Moved btn text into variable so it can be changed more easily
     var btn_text = {
         default: "Dodaj do ulubionych",
         added: "Dodano ♥ ",
@@ -120,11 +119,17 @@
         });
 </script>
 
-<script>
+<script th:inline="javascript">
+
+    var name = [[${name}]];
+    var latitude = [[${latitude}]];
+    var longitude = [[${longitude}]];
+    var openLifts = [[${openLifts}]];
+
 
     // Creating map options
     var mapOptions = {
-        center: [54.233739920483146, 18.102644473362446],
+        center: [latitude, longitude],
         zoom: 10
     }
 
@@ -143,8 +148,8 @@
     map.addLayer(layer);
 
     // Adding Popout to the map
-    L.marker([54.233739920483146, 18.102644473362446]).addTo(map)
-        .bindPopup('Wieżyca Koszałkowo<br>pomorskie, Polska<br>https://wiezyca.pl')
+    L.marker([latitude, longitude]).addTo(map)
+        .bindPopup(latitude +', '+ longitude + '\n\r Otwarte wyciągi: ' + openLifts)
         .openPopup();
 
 </script>

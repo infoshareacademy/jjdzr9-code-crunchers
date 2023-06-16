@@ -35,10 +35,6 @@ public class HomeController {
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "main-page";
         } else {
-            System.out.println("=====================================");
-            System.out.println("REDIRECT 10");
-            System.out.println("Details: " + authentication.getDetails());
-            System.out.println("Name: " + authentication.getName());
             return "main-page_signed-in";
         }
     }
@@ -97,7 +93,7 @@ public class HomeController {
         System.out.println("======================ulubione resorty===============");
         System.out.println(userServiceCore.getFavorites(userDto));
         model.addAttribute("resorts", userServiceCore.getFavorites(userDto));
-        return "favorites";
+        return "redirect:favorites";
     }
 
     @GetMapping("/favorites")

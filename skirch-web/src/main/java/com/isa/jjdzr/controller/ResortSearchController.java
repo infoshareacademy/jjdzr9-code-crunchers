@@ -20,12 +20,12 @@ import static com.isa.jjdzr.constants.Endpoints.*;
 @RequestMapping("/search")
 public class ResortSearchController {
     private final ResortService resortService;
+    private Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
     @GetMapping(BY_REGION_LIST)
     public String getFindByRegionForm(Model model) {
         model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_REGION));
         model.addAttribute("text", "Wpisz region, z którego chcesz wyszukać ośrodki narciarskie:");
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "search";
         } else {
@@ -33,9 +33,41 @@ public class ResortSearchController {
         }
     }
 
-    @GetMapping("/list")
+    @GetMapping(BY_NAME_LIST)
+    public String searchByName(Model model) {
+        model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_NAME));
+        model.addAttribute("text", "Podaj nazwę ośrodka:");
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "search";
+        } else {
+            return "search_signed-in";
+        }
+    }
+
+
+    @GetMapping(BY_COUNTRY_LIST)
+    public String searchByCountry(Model model) {
+        model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COUNTRY));
+        model.addAttribute("text", "Wpisz kraj, z którego chcesz wyszukać ośrodki narciarskie:");
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "search";
+        } else {
+            return "search_signed-in";
+        }
+    }
+
+    @GetMapping(BY_COORDINATES_LIST)
+    public String searchByCoordinates(@ModelAttribute("searchQuery") SearchAttributes searchAttributes, Model model) {
+        model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COORDINATES));
+        if ((authentication instanceof AnonymousAuthenticationToken)) {
+            return "search";
+        } else {
+            return "search_signed-in";
+        }
+    }
+
+    @PostMapping("/list")
     public String getResorts(@ModelAttribute("searchAttributes") SearchAttributes searchAttributes, Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         switch (searchAttributes.getAttribute()) {
             case BY_REGION:
                 model.addAttribute("resorts", resortService.searchByRegion(searchAttributes.getKeyword()));
@@ -44,7 +76,12 @@ public class ResortSearchController {
                 }
                 return "resorts-list_signed-in";
             case BY_NAME:
-                model.addAttribute("resorts", resortService.searchByName(searchAttributes.getKeyword()));
+                ResortExternalDto resort = resortService.searchByName(searchAttributes.getKeyword()).get();
+                model.addAttribute("resort", resort);
+                model.addAttribute("latitude", resort.getData().getLocation().getLatitude());
+                model.addAttribute("longitude", resort.getData().getLocation().getLongitude());
+                model.addAttribute("name", resort.getData().getName());
+                model.addAttribute("openLifts", resort.getData().getLifts().getStats().getOpen());
                 if ((authentication instanceof AnonymousAuthenticationToken)) {
                     return "resort";
                 }
@@ -66,79 +103,20 @@ public class ResortSearchController {
         }
     }
 
-    @GetMapping(BY_NAME_LIST)
-    public String searchByName(Model model) {
-        model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_NAME));
-        model.addAttribute("text", "Podaj nazwę ośrodka:");
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "search";
-        } else {
-            return "search_signed-in";
-        }
-    }
-
-    @GetMapping(RESORT)
-    public String getByName(SearchAttributes searchAttributes, Model model) {
-        model.addAttribute("resort", resortService.searchByName(searchAttributes.getKeyword()));
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "resort";
-        } else {
-            return "resort_signed-in";
-        }
-    }
 
     @PostMapping("/resort/{id}")
-    public String showOneResort(@PathVariable Long id, ResortExternalDto resortExternalDto, Model model){
+    public String showOneResort(@PathVariable Long id, ResortExternalDto resortExternalDto, Model model) {
         resortExternalDto.getData().setId(id);
         System.out.println("----------------------------------");
         System.out.println("resort:" + resortExternalDto);
         System.out.println("----------------------------------");
-        model.addAttribute("resort", resortExternalDto);
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        model.addAttribute("resortDto", resortExternalDto);
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "resort";
         } else {
-            return "resort_signed-in";
+            return "redirect:/resort";
         }
     }
-
-
-    @GetMapping(BY_COUNTRY_LIST)
-    public String searchByCountry(Model model) {
-        model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COUNTRY));
-        model.addAttribute("text", "Wpisz kraj, z którego chcesz wyszukać ośrodki narciarskie:");
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "search";
-        } else {
-            return "search_signed-in";
-        }
-    }
-
-    @GetMapping(BY_COORDINATES_LIST)
-    public String searchByCoordinates(@ModelAttribute("searchQuery") SearchAttributes searchAttributes, Model model) {
-        model.addAttribute("searchAttributes", new SearchAttributes(Strings.EMPTY, SearchAttributesEnum.BY_COORDINATES));
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "search";
-        } else {
-            return "search_signed-in";
-        }
-    }
-
-//    @GetMapping("/resort")
-//    public String chooseOneResort(@RequestParam ResortExternalDto resort, Model model) {
-//
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        if ((authentication instanceof AnonymousAuthenticationToken)) {
-//            return "resort";
-//        } else {
-//            return "resort_signed-in";
-//
-//        }
-//    }
 
 
 }

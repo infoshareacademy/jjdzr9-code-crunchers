@@ -53,12 +53,12 @@
                             <td class="text-white mb-4 col-center" th:text="${resort.data.region}"></td>
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
-                                <form th:action="@{favorites/{id}(id=${resort.data.id})}">
+                                <form th:action="@{../favorites/{id}(id=${resort.data.id})}" th:object="${resort}" method="post">
                                     <input th:data="${resort.data.id}" onclick="addToFavorites(this.getAttribute('data'));" type="submit" value="Dodaj" />
                                 </form>
                             </td>
                             <td>
-                                <form th:action="@{resort/{id}(id=${resort.data.id})}">
+                                <form th:action="@{resort/{id}(id=${resort.data.id})}" th:object="${resort}" method="post">
                                     <input onclick="(this.getAttribute('data-resortId'));" type="submit" value="Zobacz więcej" />
                                 </form>
                             </td>
