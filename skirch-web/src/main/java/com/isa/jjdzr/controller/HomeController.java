@@ -84,12 +84,16 @@ public class HomeController {
 
     @PostMapping("/favorites/{id}")
     public String addToFavorites(@PathVariable Integer id, UserDto userDto, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        userDto.setEmail(authentication.getName());
         model.addAttribute("resorts", userServiceCore.getFavorites(userDto));
-        return "redirect:favorites";
+        return "favorites";
     }
 
     @GetMapping("/favorites")
     public String showFavorites(UserDto userDto, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        userDto.setEmail(authentication.getName());
         model.addAttribute("resorts",userServiceCore.getFavorites(userDto));
         return "favorites";
     }
@@ -97,6 +101,6 @@ public class HomeController {
     @DeleteMapping("/favorites")
     public String deleteFromFavorites(Long id, UserDto userDto) {
        userServiceCore.deleteResortFromFavorites(userDto,id);
-        return "favorites";
+        return "redirect:/favorites";
     }
 }

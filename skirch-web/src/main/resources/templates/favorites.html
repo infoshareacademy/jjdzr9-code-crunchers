@@ -50,10 +50,10 @@
                             <td class="text-white mb-4 col-center" th:text="${resort.region}"></td>
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
-<!--                                <div>-->
-<!--                                    <button th:data-resortId="${resort.data.id}" onclick="addToFavorites(this.getAttribute('data-resortId'));">Usuń</button>-->
-<!--                                </div>-->
-<!--                            <td>-->
+                                <form th:action="@{../favorites/{id}(id=${resort.id})}" th:object="${resort}" method="post">
+                                    <input th:data="${resort.id}" onclick="deleteFromFavorites(this.getAttribute('data'));" type="reset" value="Usuń" />
+                                </form>
+                            </td>
 <!--                                <form th:action="@{/search/resort}">-->
 <!--                                    <input type="submit" value="Zobacz więcej" />-->
 <!--                                </form>-->
@@ -76,14 +76,13 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-<!--<script>-->
-<!--    function addToFavorites(data){-->
-<!--        console.log("addToFavorites(): ", "/favorites/" + data);-->
-<!--        let request = new XMLHttpRequest();-->
-<!--        request.open("POST", "/favorites/" + data, true);-->
-<!--        request.send();-->
-<!--    }-->
-<!--</script>-->
+<script>
+    function deleteFromFavorites(data){
+        console.log("deleteFromFavorites(): ", "/favorites/" + data);
+        let request = new XMLHttpRequest();
+        request.open("DELETE", "/favorites/" + data, true);
+        request.send();
+    }
+</script>
 </body>
 </html>
