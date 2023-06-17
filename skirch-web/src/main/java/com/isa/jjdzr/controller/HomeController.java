@@ -86,6 +86,7 @@ public class HomeController {
     public String addToFavorites(@PathVariable Integer id, UserDto userDto, Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userDto.setEmail(authentication.getName());
+        userServiceCore.addToFavorites(id,userDto);
         model.addAttribute("resorts", userServiceCore.getFavorites(userDto));
         return "favorites";
     }

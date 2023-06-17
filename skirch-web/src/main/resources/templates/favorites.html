@@ -51,7 +51,7 @@
                             <td class="text-white mb-4 col-center"></td>
                             <td class="text-white mb-4 col-center">
                                 <form th:action="@{../favorites/{id}(id=${resort.id})}" th:object="${resort}" method="post">
-                                    <input th:data="${resort.id}" onclick="deleteFromFavorites(this.getAttribute('data'));" type="reset" value="Usuń" />
+                                    <input th:id="${resort.id}" onclick="deleteFromFavorites(this.getAttribute('data'), this.getAttribute('user'));" type="reset" value="Usuń" />
                                 </form>
                             </td>
 <!--                                <form th:action="@{/search/resort}">-->
@@ -77,10 +77,10 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 <script>
-    function deleteFromFavorites(data){
-        console.log("deleteFromFavorites(): ", "/favorites/" + data);
+    function deleteFromFavorites(id, user){
+        console.log("deleteFromFavorites(): ", "/favorites/" + id + user);
         let request = new XMLHttpRequest();
-        request.open("DELETE", "/favorites/" + data, true);
+        request.open("DELETE", "/favorites/" + id + user, true);
         request.send();
     }
 </script>
