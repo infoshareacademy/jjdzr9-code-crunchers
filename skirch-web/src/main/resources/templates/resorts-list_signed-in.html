@@ -58,9 +58,9 @@
                                 </form>
                             </td>
                             <td>
-                                <form th:action="@{resort/{id}(id=${resort.data.id})}" th:object="${resort}" method="post">
-                                    <input onclick="(this.getAttribute('data-resortId'));" type="submit" value="Zobacz więcej" />
-                                </form>
+                                <button>
+                                    <a th:href="@{resort/{id}(id=${resort.data.id})}">Zobacz więcej</a>
+                                </button>
                             </td>
                         </tr>
                         </tbody>

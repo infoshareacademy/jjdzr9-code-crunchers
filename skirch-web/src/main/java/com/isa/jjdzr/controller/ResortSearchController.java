@@ -108,18 +108,14 @@ public class ResortSearchController {
     }
 
 
-    @PostMapping("/resort/{id}")
-    public String showOneResort(@PathVariable Long id, ResortExternalDto resortExternalDto, Model model) {
-        resortExternalDto.getData().setId(id);
-        System.out.println("----------------------------------");
-        System.out.println("resort:" + resortExternalDto);
-        System.out.println("----------------------------------");
-        model.addAttribute("resortDto", resortExternalDto);
+    @GetMapping("/resort/{id}")
+    public String showOneResort(@PathVariable Long id, Model model) {
+        model.addAttribute("resort", resortService.searchById(id).orElseGet(ResortExternalDto::new));
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "resort";
+            return "redirect:/";
         } else {
-            return "redirect:/resort";
+            return "resort_signed-in";
         }
     }
 

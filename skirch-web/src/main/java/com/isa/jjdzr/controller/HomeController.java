@@ -28,38 +28,12 @@ public class HomeController {
 
 
 
-    @GetMapping("/")
+    @RequestMapping(path = "/", method = {RequestMethod.GET, RequestMethod.POST})
     public String mainPage() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
             return "main-page";
         } else {
-            return "main-page_signed-in";
-        }
-    }
-
-    @GetMapping("/login")
-    public String getUserLoginForm(Model model, UserDto userDto) {
-        model.addAttribute("userDto", userDto);
-        System.out.println("=====================================");
-        System.out.println("REDIRECT 1");
-        return "user-login";
-    }
-
-    @PostMapping("/login")
-    public String loginUser(Model model, UserDto userDto) {
-        model.addAttribute("userDto", userDto);
-        System.out.println("=====================================");
-        System.out.println("REDIRECT 666");
-        userServiceCore.findByEmail(userDto.getEmail());
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if ((authentication instanceof AnonymousAuthenticationToken)) {
-            System.out.println("=====================================");
-            System.out.println("REDIRECT 2");
-            return "user-login";
-        } else {
-            System.out.println("=====================================");
-            System.out.println("REDIRECT 4");
             return "main-page_signed-in";
         }
     }
@@ -72,13 +46,12 @@ public class HomeController {
 
     @PostMapping("/registration")
     public String userRegistration(@Valid UserDto userDto, BindingResult bindingResult, Model model) {
-        UserDto savedUser = userServiceCore.saveUser(userDto);
         if (bindingResult.hasErrors()) {
             model.addAttribute("userDto", userDto);
             return "user-registration";
         }
-        model.addAttribute("userDto", savedUser);
-        return "user-login";
+        userServiceCore.saveUser(userDto);
+        return "redirect:/login";
     }
 
 
