@@ -25,16 +25,10 @@ public class ResortsDao {
     public List<ResortExternalDto> getAllResorts() {
         final Query query = entityManager.createNativeQuery("SELECT * FROM skirch.resorts r", Data.class);
         List<Data> dataList = (List<Data>) query.getResultList();
-//        System.out.println("=============================");
-//        System.out.println("Data list :" + dataList);
-//        System.out.println("Data list size :" + dataList.size());
         List<ResortExternalDto> list = new ArrayList<>();
         for (int i = 0; i < dataList.size(); i++) {
             list.add(resortMapper.toDto(dataList.get(i)));
         }
-//        System.out.println("==============================");
-//        System.out.println("ExternalDto list :" + list);
-//        System.out.println("ExternalDto size :" + list.size());
         return list;
     }
 

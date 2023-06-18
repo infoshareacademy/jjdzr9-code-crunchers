@@ -2,9 +2,9 @@ package com.isa.jjdzr.service;
 
 import com.isa.jjdzr.dto.ResortExternalDto;
 import com.isa.jjdzr.mappers.ResortMapper;
+import com.isa.jjdzr.model.Data;
 import com.isa.jjdzr.repositories.ResortRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 @Service
 public class ResortServiceCore {
 
-    @Autowired
+
     private final ResortMapper resortMapper;
-    @Autowired
+
     private final ResortRepository resortRepository;
 
     public void saveAll(List<ResortExternalDto> listOfResorts) {
@@ -25,6 +25,9 @@ public class ResortServiceCore {
                     .map(resortMapper::toEntity).collect(Collectors.toList()));
         }
     }
-
+    public Data findById(Integer id) {
+        return resortRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Resort not found"));
+    }
 
 }

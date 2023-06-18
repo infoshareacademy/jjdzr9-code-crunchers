@@ -36,9 +36,9 @@
                 <br><br>
                 <br><br>
                 <br><br>
-                <h2 class="text-white mb-4 col-center ">Wpisz region, z którego chcesz wyszukać ośrodki
+                <h2 class="text-white mb-4 col-center" th:text="${text}">Wpisz region, z którego chcesz wyszukać ośrodki
                     narciarskie:</h2>
-                <form class="form-signup" id="contactForm" th:action="@{/search/list}" th:object="${searchAttributes}">
+                <form class="form-signup" id="contactForm" th:action="@{/search/list}" th:object="${searchAttributes}" method="post">
                     <div class="row input-group-newsletter">
                         <div class="col"><input aria-label="Wpisz tutaj..." class="form-control"
                                                 data-sb-validations="required,email"
@@ -49,8 +49,9 @@
                                                 id="attribute" th:hidden="true"
                                                 th:field="*{attribute}"/>
                         <div class="col-md-auto">
-                        <div class="col-md-auto">
-                            <button class="btn btn-primary activate" id="submitButton" type="submit">Szukaj</button>
+                            <div class="col-md-auto">
+                                <button class="btn btn-primary activate" id="submitButton" type="submit">Szukaj</button>
+                            </div>
                         </div>
                     </div>
                 </form>
