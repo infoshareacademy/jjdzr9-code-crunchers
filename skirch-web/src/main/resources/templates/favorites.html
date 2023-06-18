@@ -36,8 +36,7 @@
                             <th class="text-white mb-4 col-center">Nazwa</th>
                             <th class="text-white mb-4 col-center">Kraj</th>
                             <th class="text-white mb-4 col-center">Region</th>
-                            <th class="text-white mb-4 col-center"> </th>
-                            <th class="text-white mb-4 col-center">Ulubione</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -48,16 +47,9 @@
                             <td class="text-white mb-4 col-center" th:text="${resort.name}"></td>
                             <td class="text-white mb-4 col-center" th:text="${resort.country}"></td>
                             <td class="text-white mb-4 col-center" th:text="${resort.region}"></td>
-                            <td class="text-white mb-4 col-center"></td>
-                            <td class="text-white mb-4 col-center">
-                                <form th:action="@{../favorites/{id}(id=${resort.id})}" th:object="${resort}" method="post">
-                                    <input th:id="${resort.id}" onclick="deleteFromFavorites(this.getAttribute('data'), this.getAttribute('user'));" type="reset" value="Usuń" />
+
                                 </form>
                             </td>
-<!--                                <form th:action="@{/search/resort}">-->
-<!--                                    <input type="submit" value="Zobacz więcej" />-->
-<!--                                </form>-->
-<!--                            </td>-->
                         </tr>
                         </tbody>
                     </table>

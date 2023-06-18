@@ -9,6 +9,13 @@ import java.util.Optional;
 
 public class SearchEngine {
 
+    public Optional<ResortExternalDto> searchById(Long id) {
+        return Database.getListOfResorts()
+                .stream()
+                .filter(s -> s.getData().getId().equals(id))
+                .findFirst();
+    }
+
     public Optional<ResortExternalDto> searchByName(String name) {
         return Database.getListOfResorts()
                 .stream()

@@ -31,4 +31,8 @@ public class ResortService {
         return Collections.emptyList();// TODO do wypełnienia @Piotr Olszewski
     }
 
+    public Optional<ResortExternalDto> searchById(Long id) {
+        return searchEngine.searchById(id);
+    }
+
 }

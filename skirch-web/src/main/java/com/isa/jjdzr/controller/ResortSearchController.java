@@ -2,9 +2,11 @@ package com.isa.jjdzr.controller;
 
 import com.isa.jjdzr.constants.SearchAttributesEnum;
 import com.isa.jjdzr.dto.ResortExternalDto;
+import com.isa.jjdzr.model.Data;
 import com.isa.jjdzr.model.SearchAttributes;
 import com.isa.jjdzr.service.ResortService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,11 +15,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.NoSuchElementException;
+
 import static com.isa.jjdzr.constants.Endpoints.*;
 
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/search")
+@Slf4j
 public class ResortSearchController {
     private final ResortService resortService;
 
@@ -80,12 +85,20 @@ public class ResortSearchController {
                 }
                 return "resorts-list_signed-in";
             case BY_NAME:
-                ResortExternalDto resort = resortService.searchByName(searchAttributes.getKeyword()).get();
-                model.addAttribute("resort", resort);
-                model.addAttribute("latitude", resort.getData().getLocation().getLatitude());
-                model.addAttribute("longitude", resort.getData().getLocation().getLongitude());
-                model.addAttribute("name", resort.getData().getName());
-                model.addAttribute("openLifts", resort.getData().getLifts().getStats().getOpen());
+                Data data = new Data("","","",null, null,"Nie znaleziono ośrodka",null);
+                ResortExternalDto resort = new ResortExternalDto(data);
+                try {
+                    resort = resortService.searchByName(searchAttributes.getKeyword()).get();
+                    model.addAttribute("resort", resort);
+                    model.addAttribute("latitude", resort.getData().getLocation().getLatitude());
+                    model.addAttribute("longitude", resort.getData().getLocation().getLongitude());
+                    model.addAttribute("name", resort.getData().getName());
+                    model.addAttribute("openLifts", resort.getData().getLifts().getStats().getOpen());
+                } catch (NoSuchElementException e){
+                    model.addAttribute("resort", resort);
+                    model.addAttribute("name", resort.getData().getName());
+                    log.info("Nie znaleziono ośrodka");
+                }
                 if ((authentication instanceof AnonymousAuthenticationToken)) {
                     return "resort";
                 }
@@ -102,24 +115,25 @@ public class ResortSearchController {
                     return "resorts-list";
                 }
                 return "resorts-list_signed-in";
-            default:    // TODO do wypełnienia @Piotr Olszewski
+            default:
                 return "main-page";
         }
     }
 
 
-    @PostMapping("/resort/{id}")
-    public String showOneResort(@PathVariable Long id, ResortExternalDto resortExternalDto, Model model) {
-        resortExternalDto.getData().setId(id);
-        System.out.println("----------------------------------");
-        System.out.println("resort:" + resortExternalDto);
-        System.out.println("----------------------------------");
-        model.addAttribute("resortDto", resortExternalDto);
+    @GetMapping("/resort/{id}")
+    public String showOneResort(@PathVariable Long id, Model model) {
+        ResortExternalDto resort = resortService.searchById(id).orElseGet(ResortExternalDto::new);
+        model.addAttribute("resort", resort);
+        model.addAttribute("latitude", resort.getData().getLocation().getLatitude());
+        model.addAttribute("longitude", resort.getData().getLocation().getLongitude());
+        model.addAttribute("name", resort.getData().getName());
+        model.addAttribute("openLifts", resort.getData().getLifts().getStats().getOpen());
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "resort";
+            return "redirect:/";
         } else {
-            return "redirect:/resort";
+            return "resort_signed-in";
         }
     }
 

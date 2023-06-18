@@ -1,8 +1,12 @@
 package com.isa.jjdzr.dto;
 
 import com.isa.jjdzr.model.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @lombok.Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ResortExternalDto {
     private Data data;
 
