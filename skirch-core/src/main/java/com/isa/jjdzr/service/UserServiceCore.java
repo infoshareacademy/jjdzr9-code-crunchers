@@ -24,7 +24,7 @@ public class UserServiceCore {
     private final PasswordEncoder passwordEncoder;
 
     public UserDto saveUser(UserDto userDto) {
-        if(userRepository.existsByEmail(userDto.getEmail())){
+        if (userRepository.existsByEmail(userDto.getEmail())) {
             throw new IllegalArgumentException("User already exists");
         }
         User user = userMapper.toEntity(userDto);
@@ -34,9 +34,9 @@ public class UserServiceCore {
     }
 
     public UserDto findByEmail(String email) {
-                return userRepository.findByEmail(email)
-                        .map(userMapper::toDto)
-                        .orElse(null);
+        return userRepository.findByEmail(email)
+                .map(userMapper::toDto)
+                .orElse(null);
     }
 
     public void addToFavorites(Integer id, UserDto userDto) {
@@ -46,12 +46,13 @@ public class UserServiceCore {
         userRepository.save(toUpdate);
     }
 
-    public Set<Data> getFavorites(UserDto userDto){
-       User user = userRepository.findByEmail(userDto.getEmail()).orElseThrow(() -> new RuntimeException("User not found"));
+    public Set<Data> getFavorites(UserDto userDto) {
+        User user = userRepository.findByEmail(userDto.getEmail()).orElseThrow(() -> new RuntimeException("User not found"));
         return user.getFavoriteResorts();
+
     }
 
-    public void deleteResortFromFavorites(UserDto userDto, Long resortId){
+    public void deleteResortFromFavorites(UserDto userDto, Long resortId) {
         User user = userRepository.findByEmail(userDto.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         getFavorites(userMapper.toDto(user)).remove(resortId);

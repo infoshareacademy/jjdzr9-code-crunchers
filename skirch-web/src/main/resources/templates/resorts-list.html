@@ -44,7 +44,7 @@
                         </thead>
                         <tbody>
                         <tr th:if="${resorts!=null and resorts.isEmpty()}">
-                            <td colspan="2"> No Resorts Available</td>
+                            <td colspan="2">Brak wyciągów</td>
                         </tr>
                         <tr th:each="resort : ${resorts}">
                             <td class="text-white mb-4" th:text="${resorts.indexOf(resort)+1}"></td>

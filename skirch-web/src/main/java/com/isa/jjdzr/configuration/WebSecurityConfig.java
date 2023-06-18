@@ -23,8 +23,6 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        System.out.println("=====================================");
-        System.out.println("REDIRECT 5");
             http.csrf()
                 .disable()
                     .authorizeRequests(request ->

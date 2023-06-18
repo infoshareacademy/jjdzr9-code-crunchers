@@ -25,10 +25,7 @@ public class HomeController {
     private final UserServiceCore userServiceCore;
     private final UserDetailsService userDetailsService;
 
-
-
-
-    @RequestMapping(path = "/", method = {RequestMethod.GET, RequestMethod.POST})
+     @RequestMapping(path = "/", method = {RequestMethod.GET, RequestMethod.POST})
     public String mainPage() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
@@ -59,7 +56,7 @@ public class HomeController {
     public String addToFavorites(@PathVariable Integer id, UserDto userDto, Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userDto.setEmail(authentication.getName());
-        userServiceCore.addToFavorites(id,userDto);
+        userServiceCore.addToFavorites(id, userDto);
         model.addAttribute("resorts", userServiceCore.getFavorites(userDto));
         return "favorites";
     }
@@ -68,13 +65,8 @@ public class HomeController {
     public String showFavorites(UserDto userDto, Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userDto.setEmail(authentication.getName());
-        model.addAttribute("resorts",userServiceCore.getFavorites(userDto));
+        model.addAttribute("resorts", userServiceCore.getFavorites(userDto));
         return "favorites";
     }
 
-    @DeleteMapping("/favorites")
-    public String deleteFromFavorites(Long id, UserDto userDto) {
-       userServiceCore.deleteResortFromFavorites(userDto,id);
-        return "redirect:/favorites";
-    }
 }
