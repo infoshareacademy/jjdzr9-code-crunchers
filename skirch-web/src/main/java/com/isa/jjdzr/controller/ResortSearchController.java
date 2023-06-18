@@ -85,7 +85,7 @@ public class ResortSearchController {
                 }
                 return "resorts-list_signed-in";
             case BY_NAME:
-                Data data = new Data("","","",null, null,"Nie znaleziono ośrodka",null);
+                Data data = new Data("git","","",null, null,"Nie znaleziono ośrodka",null);
                 ResortExternalDto resort = new ResortExternalDto(data);
                 try {
                     resort = resortService.searchByName(searchAttributes.getKeyword()).get();
